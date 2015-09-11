@@ -68,6 +68,10 @@ namespace BioBotApp.Controls.Option
             {
                 setOptionControl(new optionLabwareParameterType(dsModuleStructure));
             }
+            else if (e.Node.Name.Equals("nodeMovement"))
+            {
+                setOptionControl(new optionMovement(dsModuleStructure));
+            }
             else
             {
               //  setOptionControl(new optionActionValueType());

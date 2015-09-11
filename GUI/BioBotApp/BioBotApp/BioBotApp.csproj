@@ -153,6 +153,12 @@
     <Compile Include="Controls\Option\Options\optionModuleTypeActionType.Designer.cs">
       <DependentUpon>optionModuleTypeActionType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Option\Options\optionMovement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionMovement.Designer.cs">
+      <DependentUpon>optionMovement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Steps\Parameter controls\TreeNodeAdvanced.cs" />
     <Compile Include="Controls\Protocol\ctrlProtocolsView.cs">
       <SubType>UserControl</SubType>
@@ -279,6 +285,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Option\Options\optionModuleTypeActionType.resx">
       <DependentUpon>optionModuleTypeActionType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Option\Options\optionMovement.resx">
+      <DependentUpon>optionMovement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Protocol\ctrlProtocolsView.resx">
       <DependentUpon>ctrlProtocolsView.cs</DependentUpon>
