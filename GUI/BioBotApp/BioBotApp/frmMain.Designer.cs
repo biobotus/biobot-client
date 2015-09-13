@@ -450,7 +450,6 @@
             this.Name = "frmMain";
             this.Padding = new System.Windows.Forms.Padding(4);
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.frmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsModuleStructure)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtActionTypeBindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);

@@ -92,3 +92,36 @@ C:\Users\Louis\Documents\biobot\GUI\BioBotApp\BioBotApp\bin\Debug\BioBotApp.exe
 C:\Users\Louis\Documents\biobot\GUI\BioBotApp\BioBotApp\bin\Debug\BioBotApp.pdb
 C:\Users\Louis\Documents\biobot\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.exe
 C:\Users\Louis\Documents\biobot\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.pdb
+C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\bin\Debug\BioBotApp.exe.config
+C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.exe
+C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.pdb
+C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.csprojResolveAssemblyReference.cache
+C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Deck.ctrlDeck.resources
+C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Labware.ctrlLabware.resources
+C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Option.Options.abstractDialog.resources
+C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Option.Options.namedInputTextBox.resources
+C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Option.Options.optionCommunication.resources
+C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Option.Options.optionCustomSerial.resources
+C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Option.Options.optionLabwareParameterType.resources
+C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Option.Options.optionLabwareTypeLabwareParameterType.resources
+C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Option.Options.optionLabwareType.resources
+C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Option.Options.optionModuleType.resources
+C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Option.Options.optionActionValueType.resources
+C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Option.Options.optionActionType.resources
+C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Option.Options.optionDBConnection.resources
+C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Option.frmOptions.resources
+C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Option.Options.optionModuleTypeActionType.resources
+C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Option.Options.optionMovement.resources
+C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Protocol.ctrlProtocolsView.resources
+C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Steps.frmNewProtocol.resources
+C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Steps.ctrlStepsView.resources
+C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Steps.frmNewStep.resources
+C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Parameter_controls.ctrlModuleParameters.resources
+C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Parameter_control.ParameterActions.resources
+C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Tools_controls.ctrlTools.resources
+C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.frmMain.resources
+C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Properties.Resources.resources
+C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Utils.crudOptions.resources
+C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.TCPConsole.ctrlConsole.resources
+C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.csproj.GenerateResource.Cache
+C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Steps.Parameter_controls.ctrlCommand.resources

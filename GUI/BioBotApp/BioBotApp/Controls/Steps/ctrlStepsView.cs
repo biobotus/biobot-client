@@ -25,7 +25,6 @@ namespace BioBotApp.Controls.Steps
 
         //Project's dataset
         DataSets.dsModuleStructure2 _dsModuleStructure;
-
         //Project's module_type binding source
         BindingSource _bsModuleType;
 
@@ -44,9 +43,21 @@ namespace BioBotApp.Controls.Steps
 
         void _bsModuleType_CurrentChanged(object sender, EventArgs e)
         {
-            Console.WriteLine("Changed !!!");
-
         }
+        /*
+        public DataSets.dsModuleStructure2.dtModuleRow getSelectedModuleRow()
+        {
+            DataSets.dsModuleStructure2.dtModuleRow moduleRow;
+            DataRowView rowView = _bsModuleType.Current as DataRowView;
+            if (rowView == null)
+            {
+                return null;
+            }
+
+            moduleRow = rowView.Row as DataSets.dsModuleStructure2.dtModuleRow;
+
+            return moduleRow;
+        }*/
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -71,21 +82,38 @@ namespace BioBotApp.Controls.Steps
             String protocolType = ((ToolStripMenuItem)sender).Text;
             //dialog result for adding new node to treeview
             DialogResult dialogResultAddNode = DialogResult.Cancel;
-            frmNewProtocol frmStepAdd;
+            frmNewProtocol frmProtocolAdd;
             frmNewStep frmNewStep;
             DataSets.dsModuleStructure2.dtStepLeafRow stepLeafRow = null;
-            String treeNodeText = String.Empty;
+            TreeNode treeNode = new TreeNode();
+            //String treeNodeText = String.Empty;
 
-            TreeNodeProtocolType treeNode = new TreeNodeProtocolType();
+            //TreeNodeProtocolType treeNode = new TreeNodeProtocolType();
 
             switch (protocolType)
             {
                 case PROTOCOL_TYPE:
-                    frmStepAdd = new frmNewProtocol();
-                    dialogResultAddNode = frmStepAdd.ShowDialog();
+                    frmProtocolAdd = new frmNewProtocol();
+
+                    dialogResultAddNode = frmProtocolAdd.ShowDialog();
                     if (dialogResultAddNode == DialogResult.OK)
                     {
-                        treeNodeText = frmStepAdd.getStepName();
+                        //treeNodeText = frmProtocolAdd.getStepName();
+                        DataSets.dsModuleStructure2.dtStepCompositeRow compositeRow = _dsModuleStructure.dtStepComposite.NewdtStepCompositeRow();
+                        DataSets.dsModuleStructure2.dtModuleRow module = getSelectedModuleRow();
+                        if(module == null)
+                        {
+                            return;
+                        }
+                        
+                        if(module.pk_id.Length == 0)
+                        {
+                            return;
+                        }
+
+                        compositeRow.fk_module_id = module.pk_id;
+                        compositeRow.description = frmProtocolAdd.getStepName();
+
                     }
 
                     break;
@@ -117,7 +145,8 @@ namespace BioBotApp.Controls.Steps
                     dialogResultAddNode = frmNewStep.ShowDialog();
                     if (dialogResultAddNode.Equals(DialogResult.OK))
                     {
-                        treeNodeText = frmNewStep.getSteapLeafRow().description;
+                        
+                        //treeNodeText = frmNewStep.getSteapLeafRow().description;
                         stepLeafRow = frmNewStep.getSteapLeafRow();
                     }
 
@@ -125,15 +154,9 @@ namespace BioBotApp.Controls.Steps
                 default:
                     break;
             }
+
             if (dialogResultAddNode.Equals(DialogResult.OK))
             {
-                treeNode.setNodeType(protocolType);
-                treeNode.setText(treeNodeText);
-                if (stepLeafRow != null)
-                {
-                    treeNode.setStepValue(stepLeafRow);
-                }
-
                 if (tlvSteps.SelectedNode != null)
                 {
                     tlvSteps.SelectedNode.Nodes.Add(treeNode);
@@ -165,7 +188,7 @@ namespace BioBotApp.Controls.Steps
 
             return moduleRow;
         }
-
+        /*
         #region JSON converter Section
         public String getJSON()
         {
@@ -201,5 +224,6 @@ namespace BioBotApp.Controls.Steps
             return jsonValue;
         }
         #endregion
+         * */
     }
 }

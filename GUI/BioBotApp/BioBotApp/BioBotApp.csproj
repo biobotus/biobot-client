@@ -159,6 +159,9 @@
     <Compile Include="Controls\Option\Options\optionMovement.Designer.cs">
       <DependentUpon>optionMovement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Steps\Parameter controls\ctrlCommand.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Controls\Steps\Parameter controls\TreeNodeAdvanced.cs" />
     <Compile Include="Controls\Protocol\ctrlProtocolsView.cs">
       <SubType>UserControl</SubType>
@@ -300,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Steps\frmNewStep.resx">
       <DependentUpon>frmNewStep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Steps\Parameter controls\ctrlCommand.resx">
+      <DependentUpon>ctrlCommand.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Steps\Parameter controls\ctrlModuleCommands.resx">
       <DependentUpon>ctrlModuleCommands.cs</DependentUpon>

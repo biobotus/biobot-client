@@ -48,10 +48,6 @@ namespace BioBotApp.DataSets {
         
         private global::System.Data.DataRelation relationdtModuleTypeActionType_dtModuleType;
         
-        private global::System.Data.DataRelation relationdtModuleTypeActionType_dtActionType;
-        
-        private global::System.Data.DataRelation relationdtModuleTypeActionType_dtActionValueType;
-        
         private global::System.Data.DataRelation relationdtModule_dtModuleType;
         
         private global::System.Data.DataRelation relationdtLabwareParameterType_dtLabwareTypeLabwareParameterType;
@@ -67,6 +63,10 @@ namespace BioBotApp.DataSets {
         private global::System.Data.DataRelation relationbbt_step_composite_bbt_step_composite;
         
         private global::System.Data.DataRelation relationdtModule_bbt_step_composite;
+        
+        private global::System.Data.DataRelation relationdtModuleTypeActionType_dtActionValueType;
+        
+        private global::System.Data.DataRelation relationdtModuleTypeActionType_dtActionType;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -457,8 +457,6 @@ namespace BioBotApp.DataSets {
                 }
             }
             this.relationdtModuleTypeActionType_dtModuleType = this.Relations["dtModuleTypeActionType_dtModuleType"];
-            this.relationdtModuleTypeActionType_dtActionType = this.Relations["dtModuleTypeActionType_dtActionType"];
-            this.relationdtModuleTypeActionType_dtActionValueType = this.Relations["dtModuleTypeActionType_dtActionValueType"];
             this.relationdtModule_dtModuleType = this.Relations["dtModule_dtModuleType"];
             this.relationdtLabwareParameterType_dtLabwareTypeLabwareParameterType = this.Relations["dtLabwareParameterType_dtLabwareTypeLabwareParameterType"];
             this.relationdtLabwareType_dtLabwareTypeLabwareParameterType = this.Relations["dtLabwareType_dtLabwareTypeLabwareParameterType"];
@@ -467,6 +465,8 @@ namespace BioBotApp.DataSets {
             this.relationdtStepLeaf_bbt_step_composite = this.Relations["dtStepLeaf_bbt_step_composite"];
             this.relationbbt_step_composite_bbt_step_composite = this.Relations["bbt_step_composite_bbt_step_composite"];
             this.relationdtModule_bbt_step_composite = this.Relations["dtModule_bbt_step_composite"];
+            this.relationdtModuleTypeActionType_dtActionValueType = this.Relations["dtModuleTypeActionType_dtActionValueType"];
+            this.relationdtModuleTypeActionType_dtActionType = this.Relations["dtModuleTypeActionType_dtActionType"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -504,14 +504,6 @@ namespace BioBotApp.DataSets {
                         this.tabledtModuleTypeActionType.fk_module_type_idColumn}, false);
             this.relationdtModuleTypeActionType_dtModuleType.Nested = true;
             this.Relations.Add(this.relationdtModuleTypeActionType_dtModuleType);
-            this.relationdtModuleTypeActionType_dtActionType = new global::System.Data.DataRelation("dtModuleTypeActionType_dtActionType", new global::System.Data.DataColumn[] {
-                        this.tabledtModuleTypeActionType.fk_action_type_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tabledtActionType.pk_idColumn}, false);
-            this.Relations.Add(this.relationdtModuleTypeActionType_dtActionType);
-            this.relationdtModuleTypeActionType_dtActionValueType = new global::System.Data.DataRelation("dtModuleTypeActionType_dtActionValueType", new global::System.Data.DataColumn[] {
-                        this.tabledtModuleTypeActionType.fk_action_value_type_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tabledtActionValueType.pk_idColumn}, false);
-            this.Relations.Add(this.relationdtModuleTypeActionType_dtActionValueType);
             this.relationdtModule_dtModuleType = new global::System.Data.DataRelation("dtModule_dtModuleType", new global::System.Data.DataColumn[] {
                         this.tabledtModuleType.pk_idColumn}, new global::System.Data.DataColumn[] {
                         this.tabledtModule.fk_module_typeColumn}, false);
@@ -544,6 +536,14 @@ namespace BioBotApp.DataSets {
                         this.tabledtModule.pk_idColumn}, new global::System.Data.DataColumn[] {
                         this.tabledtStepComposite.fk_module_idColumn}, false);
             this.Relations.Add(this.relationdtModule_bbt_step_composite);
+            this.relationdtModuleTypeActionType_dtActionValueType = new global::System.Data.DataRelation("dtModuleTypeActionType_dtActionValueType", new global::System.Data.DataColumn[] {
+                        this.tabledtActionValueType.pk_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tabledtModuleTypeActionType.fk_action_value_type_idColumn}, false);
+            this.Relations.Add(this.relationdtModuleTypeActionType_dtActionValueType);
+            this.relationdtModuleTypeActionType_dtActionType = new global::System.Data.DataRelation("dtModuleTypeActionType_dtActionType", new global::System.Data.DataColumn[] {
+                        this.tabledtActionType.pk_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tabledtModuleTypeActionType.fk_action_type_idColumn}, false);
+            this.Relations.Add(this.relationdtModuleTypeActionType_dtActionType);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2188,14 +2188,20 @@ namespace BioBotApp.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtModuleTypeActionTypeRow AdddtModuleTypeActionTypeRow(dtModuleTypeRow parentdtModuleTypeRowBydtModuleTypeActionType_dtModuleType, int fk_action_type_id, int fk_action_value_type_id) {
+            public dtModuleTypeActionTypeRow AdddtModuleTypeActionTypeRow(dtModuleTypeRow parentdtModuleTypeRowBydtModuleTypeActionType_dtModuleType, dtActionTypeRow parentdtActionTypeRowBydtModuleTypeActionType_dtActionType, dtActionValueTypeRow parentdtActionValueTypeRowBydtModuleTypeActionType_dtActionValueType) {
                 dtModuleTypeActionTypeRow rowdtModuleTypeActionTypeRow = ((dtModuleTypeActionTypeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        fk_action_type_id,
-                        fk_action_value_type_id};
+                        null,
+                        null};
                 if ((parentdtModuleTypeRowBydtModuleTypeActionType_dtModuleType != null)) {
                     columnValuesArray[0] = parentdtModuleTypeRowBydtModuleTypeActionType_dtModuleType[0];
+                }
+                if ((parentdtActionTypeRowBydtModuleTypeActionType_dtActionType != null)) {
+                    columnValuesArray[1] = parentdtActionTypeRowBydtModuleTypeActionType_dtActionType[0];
+                }
+                if ((parentdtActionValueTypeRowBydtModuleTypeActionType_dtActionValueType != null)) {
+                    columnValuesArray[2] = parentdtActionValueTypeRowBydtModuleTypeActionType_dtActionValueType[0];
                 }
                 rowdtModuleTypeActionTypeRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtModuleTypeActionTypeRow);
@@ -3887,12 +3893,12 @@ namespace BioBotApp.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtModuleTypeActionTypeRow dtModuleTypeActionTypeRow {
-                get {
-                    return ((dtModuleTypeActionTypeRow)(this.GetParentRow(this.Table.ParentRelations["dtModuleTypeActionType_dtActionType"])));
+            public dtModuleTypeActionTypeRow[] GetdtModuleTypeActionTypeRows() {
+                if ((this.Table.ChildRelations["dtModuleTypeActionType_dtActionType"] == null)) {
+                    return new dtModuleTypeActionTypeRow[0];
                 }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["dtModuleTypeActionType_dtActionType"]);
+                else {
+                    return ((dtModuleTypeActionTypeRow[])(base.GetChildRows(this.Table.ChildRelations["dtModuleTypeActionType_dtActionType"])));
                 }
             }
         }
@@ -3940,17 +3946,6 @@ namespace BioBotApp.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtModuleTypeActionTypeRow dtModuleTypeActionTypeRow {
-                get {
-                    return ((dtModuleTypeActionTypeRow)(this.GetParentRow(this.Table.ParentRelations["dtModuleTypeActionType_dtActionValueType"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["dtModuleTypeActionType_dtActionValueType"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsdescriptionNull() {
                 return this.IsNull(this.tabledtActionValueType.descriptionColumn);
             }
@@ -3959,6 +3954,17 @@ namespace BioBotApp.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetdescriptionNull() {
                 this[this.tabledtActionValueType.descriptionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public dtModuleTypeActionTypeRow[] GetdtModuleTypeActionTypeRows() {
+                if ((this.Table.ChildRelations["dtModuleTypeActionType_dtActionValueType"] == null)) {
+                    return new dtModuleTypeActionTypeRow[0];
+                }
+                else {
+                    return ((dtModuleTypeActionTypeRow[])(base.GetChildRows(this.Table.ChildRelations["dtModuleTypeActionType_dtActionValueType"])));
+                }
             }
         }
         
@@ -4250,23 +4256,23 @@ namespace BioBotApp.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtActionTypeRow[] GetdtActionTypeRows() {
-                if ((this.Table.ChildRelations["dtModuleTypeActionType_dtActionType"] == null)) {
-                    return new dtActionTypeRow[0];
+            public dtActionValueTypeRow dtActionValueTypeRow {
+                get {
+                    return ((dtActionValueTypeRow)(this.GetParentRow(this.Table.ParentRelations["dtModuleTypeActionType_dtActionValueType"])));
                 }
-                else {
-                    return ((dtActionTypeRow[])(base.GetChildRows(this.Table.ChildRelations["dtModuleTypeActionType_dtActionType"])));
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["dtModuleTypeActionType_dtActionValueType"]);
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtActionValueTypeRow[] GetdtActionValueTypeRows() {
-                if ((this.Table.ChildRelations["dtModuleTypeActionType_dtActionValueType"] == null)) {
-                    return new dtActionValueTypeRow[0];
+            public dtActionTypeRow dtActionTypeRow {
+                get {
+                    return ((dtActionTypeRow)(this.GetParentRow(this.Table.ParentRelations["dtModuleTypeActionType_dtActionType"])));
                 }
-                else {
-                    return ((dtActionValueTypeRow[])(base.GetChildRows(this.Table.ChildRelations["dtModuleTypeActionType_dtActionValueType"])));
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["dtModuleTypeActionType_dtActionType"]);
                 }
             }
         }
@@ -5204,9 +5210,9 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM \"BioBot\".\"biobot\".\"bbt_action_type\" WHERE ((\"pk_id\" = ?))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM \"biobot\".\"biobot\".\"bbt_action_type\" WHERE ((\"pk_id\" = ?))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_pk_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "pk_id", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("pk_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "pk_id", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO \"biobot\".\"biobot\".\"bbt_action_type\"\r\n                  (\"description\"" +
@@ -5215,10 +5221,10 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("description", global::System.Data.Odbc.OdbcType.Text, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "description", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE \"BioBot\".\"biobot\".\"bbt_action_type\" SET \"description\" = ? WHERE ((\"pk_id\" " +
+            this._adapter.UpdateCommand.CommandText = "UPDATE \"biobot\".\"biobot\".\"bbt_action_type\" SET \"description\" = ? WHERE ((\"pk_id\" " +
                 "= ?))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("description", global::System.Data.Odbc.OdbcType.Text, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "description", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("description", global::System.Data.Odbc.OdbcType.VarChar, 1024, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "description", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_pk_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "pk_id", global::System.Data.DataRowVersion.Original, false, null));
         }
         
@@ -5296,8 +5302,8 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_pk_id) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_pk_id));
+        public virtual int Delete(int pk_id) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(pk_id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5496,9 +5502,9 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM \"BioBot\".\"biobot\".\"bbt_action_value_type\" WHERE ((\"pk_id\" = ?))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM \"biobot\".\"biobot\".\"bbt_action_value_type\" WHERE ((\"pk_id\" = ?))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_pk_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "pk_id", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("pk_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "pk_id", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO biobot.bbt_action_value_type\r\n                  (description)\r\nVALUES" +
@@ -5507,10 +5513,10 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("description", global::System.Data.Odbc.OdbcType.VarChar, 1024, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "description", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE \"BioBot\".\"biobot\".\"bbt_action_value_type\" SET \"description\" = ? WHERE ((\"p" +
+            this._adapter.UpdateCommand.CommandText = "UPDATE \"biobot\".\"biobot\".\"bbt_action_value_type\" SET \"description\" = ? WHERE ((\"p" +
                 "k_id\" = ?))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("description", global::System.Data.Odbc.OdbcType.Text, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "description", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("description", global::System.Data.Odbc.OdbcType.VarChar, 1024, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "description", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_pk_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "pk_id", global::System.Data.DataRowVersion.Original, false, null));
         }
         
@@ -5588,8 +5594,8 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_pk_id) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_pk_id));
+        public virtual int Delete(int pk_id) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(pk_id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5639,7 +5645,7 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string description, int Original_pk_id) {
             if ((description == null)) {
-                throw new global::System.ArgumentNullException("description");
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(description));
@@ -5788,21 +5794,21 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM \"BioBot\".\"biobot\".\"bbt_module_type\" WHERE ((\"pk_id\" = ?))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM \"biobot\".\"biobot\".\"bbt_module_type\" WHERE ((\"pk_id\" = ?))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_pk_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "pk_id", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("pk_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "pk_id", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \"BioBot\".\"biobot\".\"bbt_module_type\"\r\n                  (\"description\"" +
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \"biobot\".\"biobot\".\"bbt_module_type\"\r\n                  (\"description\"" +
                 ")\r\nVALUES (?) RETURNING pk_id, description";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("description", global::System.Data.Odbc.OdbcType.Text, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "description", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE \"BioBot\".\"biobot\".\"bbt_module_type\" SET \"description\" = ? WHERE ((\"pk_id\" " +
+            this._adapter.UpdateCommand.CommandText = "UPDATE \"biobot\".\"biobot\".\"bbt_module_type\" SET \"description\" = ? WHERE ((\"pk_id\" " +
                 "= ?))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("description", global::System.Data.Odbc.OdbcType.Text, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "description", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("description", global::System.Data.Odbc.OdbcType.VarChar, 1024, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "description", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_pk_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "pk_id", global::System.Data.DataRowVersion.Original, false, null));
         }
         
@@ -5880,8 +5886,8 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_pk_id) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_pk_id));
+        public virtual int Delete(int pk_id) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(pk_id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5931,7 +5937,7 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string description, int Original_pk_id) {
             if ((description == null)) {
-                throw new global::System.ArgumentNullException("description");
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(description));
@@ -6080,10 +6086,10 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \"BioBot\".\"biobot\".\"bbt_module\" (\"pk_id\", \"fk_module_type\") VALUES (?," +
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \"biobot\".\"biobot\".\"bbt_module\" (\"pk_id\", \"fk_module_type\") VALUES (?," +
                 " ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("pk_id", global::System.Data.Odbc.OdbcType.Text, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "pk_id", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("pk_id", global::System.Data.Odbc.OdbcType.VarChar, 1024, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "pk_id", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("fk_module_type", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_module_type", global::System.Data.DataRowVersion.Current, false, null));
         }
         
@@ -6161,14 +6167,19 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string pk_id, int fk_module_type) {
+        public virtual int Insert(string pk_id, global::System.Nullable<int> fk_module_type) {
             if ((pk_id == null)) {
                 throw new global::System.ArgumentNullException("pk_id");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(pk_id));
             }
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(fk_module_type));
+            if ((fk_module_type.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(fk_module_type.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6312,20 +6323,20 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM \"BioBot\".\"biobot\".\"bbt_step_leaf\" WHERE ((\"pk_id\" = ?))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM \"biobot\".\"biobot\".\"bbt_step_leaf\" WHERE ((\"pk_id\" = ?))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_pk_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "pk_id", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("pk_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "pk_id", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \"BioBot\".\"biobot\".\"bbt_step_leaf\" (\"description\") VALUES (?)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \"biobot\".\"biobot\".\"bbt_step_leaf\" (\"description\") VALUES (?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("description", global::System.Data.Odbc.OdbcType.Text, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "description", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("description", global::System.Data.Odbc.OdbcType.VarChar, 1024, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "description", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE \"BioBot\".\"biobot\".\"bbt_step_leaf\" SET \"description\" = ? WHERE ((\"pk_id\" = " +
+            this._adapter.UpdateCommand.CommandText = "UPDATE \"biobot\".\"biobot\".\"bbt_step_leaf\" SET \"description\" = ? WHERE ((\"pk_id\" = " +
                 "?))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("description", global::System.Data.Odbc.OdbcType.Text, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "description", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("description", global::System.Data.Odbc.OdbcType.VarChar, 1024, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "description", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_pk_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "pk_id", global::System.Data.DataRowVersion.Original, false, null));
         }
         
@@ -6403,8 +6414,8 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_pk_id) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_pk_id));
+        public virtual int Delete(int pk_id) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(pk_id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6427,7 +6438,7 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
         public virtual int Insert(string description) {
             if ((description == null)) {
-                throw new global::System.ArgumentNullException("description");
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(description));
@@ -6454,7 +6465,7 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string description, int Original_pk_id) {
             if ((description == null)) {
-                throw new global::System.ArgumentNullException("description");
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(description));
@@ -6604,15 +6615,15 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM \"BioBot\".\"biobot\".\"bbt_module_type_action_type\" WHERE ((\"fk_module_ty" +
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM \"biobot\".\"biobot\".\"bbt_module_type_action_type\" WHERE ((\"fk_module_ty" +
                 "pe_id\" = ?) AND (\"fk_action_type_id\" = ?) AND (\"fk_action_value_type_id\" = ?))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_fk_module_type_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_module_type_id", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_fk_action_type_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_action_type_id", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_fk_action_value_type_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_action_value_type_id", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("fk_module_type_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_module_type_id", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("fk_action_type_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_action_type_id", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("fk_action_value_type_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_action_value_type_id", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \"BioBot\".\"biobot\".\"bbt_module_type_action_type\" (\"fk_module_type_id\"," +
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \"biobot\".\"biobot\".\"bbt_module_type_action_type\" (\"fk_module_type_id\"," +
                 " \"fk_action_type_id\", \"fk_action_value_type_id\") VALUES (?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("fk_module_type_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_module_type_id", global::System.Data.DataRowVersion.Current, false, null));
@@ -6620,7 +6631,7 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("fk_action_value_type_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_action_value_type_id", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE \"BioBot\".\"biobot\".\"bbt_module_type_action_type\" SET \"fk_module_type_id\" = " +
+            this._adapter.UpdateCommand.CommandText = "UPDATE \"biobot\".\"biobot\".\"bbt_module_type_action_type\" SET \"fk_module_type_id\" = " +
                 "?, \"fk_action_type_id\" = ?, \"fk_action_value_type_id\" = ? WHERE ((\"fk_module_typ" +
                 "e_id\" = ?) AND (\"fk_action_type_id\" = ?) AND (\"fk_action_value_type_id\" = ?))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
@@ -6707,10 +6718,10 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_fk_module_type_id, int Original_fk_action_type_id, int Original_fk_action_value_type_id) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_fk_module_type_id));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_fk_action_type_id));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_fk_action_value_type_id));
+        public virtual int Delete(int fk_module_type_id, int fk_action_type_id, int fk_action_value_type_id) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(fk_module_type_id));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(fk_action_type_id));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(fk_action_value_type_id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -8669,12 +8680,21 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._taModuleTypeActionType != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.dtModuleTypeActionType.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._taActionType != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.dtActionType.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._taModuleTypeActionType.Update(updatedRows));
+                    result = (result + this._taActionType.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._taActionValueType != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.dtActionValueType.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._taActionValueType.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -8714,21 +8734,12 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._taActionType != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.dtActionType.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._taModuleTypeActionType != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.dtModuleTypeActionType.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._taActionType.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._taActionValueType != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.dtActionValueType.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._taActionValueType.Update(updatedRows));
+                    result = (result + this._taModuleTypeActionType.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -8778,11 +8789,19 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._taModuleTypeActionType != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.dtModuleTypeActionType.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._taActionType != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.dtActionType.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._taModuleTypeActionType.Update(addedRows));
+                    result = (result + this._taActionType.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._taActionValueType != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.dtActionValueType.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._taActionValueType.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -8818,19 +8837,11 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._taActionType != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.dtActionType.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._taModuleTypeActionType != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.dtModuleTypeActionType.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._taActionType.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._taActionValueType != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.dtActionValueType.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._taActionValueType.Update(addedRows));
+                    result = (result + this._taModuleTypeActionType.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -8894,19 +8905,11 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._taActionValueType != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.dtActionValueType.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._taModuleTypeActionType != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.dtModuleTypeActionType.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._taActionValueType.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._taActionType != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.dtActionType.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._taActionType.Update(deletedRows));
+                    result = (result + this._taModuleTypeActionType.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -8942,11 +8945,19 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._taModuleTypeActionType != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.dtModuleTypeActionType.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._taActionValueType != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.dtActionValueType.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._taModuleTypeActionType.Update(deletedRows));
+                    result = (result + this._taActionValueType.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._taActionType != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.dtActionType.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._taActionType.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
