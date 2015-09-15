@@ -43,7 +43,6 @@ namespace BioBotApp.Controls.Option.Options
             if (dialog.DialogResult.Equals(DialogResult.OK))
             {
                 DataSets.dsModuleStructure2.dtStepLeafRow row;
-
                 row = dsModuleStructureGUI.dtStepLeaf.NewdtStepLeafRow();
                 row.description = description.getInputTextValue();
                 dsModuleStructureGUI.dtStepLeaf.AdddtStepLeafRow(row);
