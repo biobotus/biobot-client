@@ -50,7 +50,7 @@
             treeNode10});
             System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Movements");
             System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("TAC");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Plateform action", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Protocol", new System.Windows.Forms.TreeNode[] {
             treeNode13});
             this.panel1 = new System.Windows.Forms.Panel();
             this.tlvOptions = new System.Windows.Forms.TreeView();
@@ -114,8 +114,8 @@
             treeNode13.Name = "nodeTac";
             treeNode13.Tag = "TAC";
             treeNode13.Text = "TAC";
-            treeNode14.Name = "PlateformAction";
-            treeNode14.Text = "Plateform action";
+            treeNode14.Name = "nodeProtocol";
+            treeNode14.Text = "Protocol";
             this.tlvOptions.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode8,
             treeNode11,

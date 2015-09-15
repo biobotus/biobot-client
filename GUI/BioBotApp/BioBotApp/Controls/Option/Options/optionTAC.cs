@@ -117,6 +117,5 @@ namespace BioBotApp.Controls.Option.Options
                 dsModuleStructureGUI.RejectChanges();
             }
         }
-    
     }
 }
