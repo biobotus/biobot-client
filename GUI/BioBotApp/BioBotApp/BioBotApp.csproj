@@ -159,6 +159,12 @@
     <Compile Include="Controls\Option\Options\optionMovement.Designer.cs">
       <DependentUpon>optionMovement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Option\Options\optionTAC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionTAC.Designer.cs">
+      <DependentUpon>optionTAC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Steps\Parameter controls\ctrlCommand.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -294,6 +300,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Option\Options\optionMovement.resx">
       <DependentUpon>optionMovement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Option\Options\optionTAC.resx">
+      <DependentUpon>optionTAC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Protocol\ctrlProtocolsView.resx">
       <DependentUpon>ctrlProtocolsView.cs</DependentUpon>
