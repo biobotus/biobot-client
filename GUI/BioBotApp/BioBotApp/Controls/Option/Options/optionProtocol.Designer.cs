@@ -30,28 +30,27 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pkidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fk_step_composite = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bs_dtStepLeafBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dtStepCompositeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsModuleStructureGUI = new BioBotApp.DataSets.dsModuleStructure2();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.bs_dtStepLeafBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.crudOptions1 = new BioBotApp.Controls.Utils.crudOptions();
             this.ta_StepLeaf = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taStepLeaf();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dtStepCompositeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.taStepComposite = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taStepComposite();
+            this.pkidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pkidDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fkmoduleidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_dtStepLeafBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsModuleStructureGUI)).BeginInit();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtStepCompositeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsModuleStructureGUI)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_dtStepLeafBindingSource)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -64,6 +63,36 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Protocol";
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AllowUserToOrderColumns = true;
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.pkidDataGridViewTextBoxColumn1,
+            this.fkmoduleidDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn1});
+            this.dataGridView2.DataSource = this.dtStepCompositeBindingSource;
+            this.dataGridView2.Location = new System.Drawing.Point(6, 19);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersVisible = false;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(199, 341);
+            this.dataGridView2.TabIndex = 0;
+            // 
+            // dtStepCompositeBindingSource
+            // 
+            this.dtStepCompositeBindingSource.DataMember = "dtStepComposite";
+            this.dtStepCompositeBindingSource.DataSource = this.dsModuleStructureGUI;
+            // 
+            // dsModuleStructureGUI
+            // 
+            this.dsModuleStructureGUI.DataSetName = "dsModuleStructure2";
+            this.dsModuleStructureGUI.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -73,7 +102,6 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.pkidDataGridViewTextBoxColumn,
-            this.fk_step_composite,
             this.descriptionDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.bs_dtStepLeafBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(6, 63);
@@ -86,38 +114,10 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.Tag = "Protocol";
             // 
-            // pkidDataGridViewTextBoxColumn
-            // 
-            this.pkidDataGridViewTextBoxColumn.DataPropertyName = "pk_id";
-            this.pkidDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.pkidDataGridViewTextBoxColumn.Name = "pkidDataGridViewTextBoxColumn";
-            this.pkidDataGridViewTextBoxColumn.ReadOnly = true;
-            this.pkidDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // fk_step_composite
-            // 
-            this.fk_step_composite.DataPropertyName = "fk_step_composite";
-            this.fk_step_composite.HeaderText = "Protocol";
-            this.fk_step_composite.Name = "fk_step_composite";
-            this.fk_step_composite.ReadOnly = true;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // bs_dtStepLeafBindingSource
             // 
             this.bs_dtStepLeafBindingSource.DataMember = "dtStepLeaf";
             this.bs_dtStepLeafBindingSource.DataSource = this.dsModuleStructureGUI;
-            // 
-            // dsModuleStructureGUI
-            // 
-            this.dsModuleStructureGUI.DataSetName = "dsModuleStructure2";
-            this.dsModuleStructureGUI.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // crudOptions1
             // 
@@ -148,34 +148,25 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Steps";
             // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AllowUserToOrderColumns = true;
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.pkidDataGridViewTextBoxColumn1,
-            this.fkmoduleidDataGridViewTextBoxColumn,
-            this.descriptionDataGridViewTextBoxColumn1});
-            this.dataGridView2.DataSource = this.dtStepCompositeBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 19);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView2.Size = new System.Drawing.Size(199, 341);
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.TabIndex = 0;
-            // 
-            // dtStepCompositeBindingSource
-            // 
-            this.dtStepCompositeBindingSource.DataMember = "dtStepComposite";
-            this.dtStepCompositeBindingSource.DataSource = this.dsModuleStructureGUI;
-            // 
             // taStepComposite
             // 
             this.taStepComposite.ClearBeforeFill = true;
+            // 
+            // pkidDataGridViewTextBoxColumn
+            // 
+            this.pkidDataGridViewTextBoxColumn.DataPropertyName = "pk_id";
+            this.pkidDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.pkidDataGridViewTextBoxColumn.Name = "pkidDataGridViewTextBoxColumn";
+            this.pkidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pkidDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // pkidDataGridViewTextBoxColumn1
             // 
@@ -183,6 +174,7 @@
             this.pkidDataGridViewTextBoxColumn1.HeaderText = "ID";
             this.pkidDataGridViewTextBoxColumn1.Name = "pkidDataGridViewTextBoxColumn1";
             this.pkidDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.pkidDataGridViewTextBoxColumn1.Width = 25;
             // 
             // fkmoduleidDataGridViewTextBoxColumn
             // 
@@ -190,6 +182,7 @@
             this.fkmoduleidDataGridViewTextBoxColumn.HeaderText = "Module ID";
             this.fkmoduleidDataGridViewTextBoxColumn.Name = "fkmoduleidDataGridViewTextBoxColumn";
             this.fkmoduleidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fkmoduleidDataGridViewTextBoxColumn.Width = 80;
             // 
             // descriptionDataGridViewTextBoxColumn1
             // 
@@ -208,12 +201,12 @@
             this.Size = new System.Drawing.Size(458, 369);
             this.Tag = "TAC";
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_dtStepLeafBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsModuleStructureGUI)).EndInit();
-            this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtStepCompositeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsModuleStructureGUI)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_dtStepLeafBindingSource)).EndInit();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -226,15 +219,14 @@
         private System.Windows.Forms.BindingSource bs_dtStepLeafBindingSource;
         private DataSets.dsModuleStructure2 dsModuleStructureGUI;
         private DataSets.dsModuleStructure2TableAdapters.taStepLeaf ta_StepLeaf;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pkidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fk_step_composite;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pkidDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fkmoduleidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn1;
         private System.Windows.Forms.BindingSource dtStepCompositeBindingSource;
         private System.Windows.Forms.GroupBox groupBox2;
         private DataSets.dsModuleStructure2TableAdapters.taStepComposite taStepComposite;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pkidDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fkmoduleidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pkidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
     }
 }
