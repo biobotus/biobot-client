@@ -31,12 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bs_dtStepLeafBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsModuleStructureGUI = new BioBotApp.DataSets.dsModuleStructure2();
-            this.ta_StepLeaf = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taStepLeaf();
-            this.crudOptions1 = new BioBotApp.Controls.Utils.crudOptions();
             this.pkidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bs_dtStepLeafBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsModuleStructureGUI = new BioBotApp.DataSets.dsModuleStructure2();
+            this.crudOptions1 = new BioBotApp.Controls.Utils.crudOptions();
+            this.ta_StepLeaf = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taStepLeaf();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_dtStepLeafBindingSource)).BeginInit();
@@ -60,47 +60,20 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.pkidDataGridViewTextBoxColumn,
             this.descriptionDataGridViewTextBoxColumn});
-            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.DataSource = this.bs_dtStepLeafBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(3, 69);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(321, 144);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // bs_dtStepLeafBindingSource
-            // 
-            this.bs_dtStepLeafBindingSource.DataMember = "dtStepLeaf";
-            this.bs_dtStepLeafBindingSource.DataSource = this.dsModuleStructureGUI;
-            // 
-            // dsModuleStructureGUI
-            // 
-            this.dsModuleStructureGUI.DataSetName = "dsModuleStructure2";
-            this.dsModuleStructureGUI.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // ta_StepLeaf
-            // 
-            this.ta_StepLeaf.ClearBeforeFill = true;
-            // 
-            // crudOptions1
-            // 
-            this.crudOptions1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crudOptions1.ButtonRefreshVisible = false;
-            this.crudOptions1.LayoutLeftToRight = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.crudOptions1.Location = new System.Drawing.Point(207, 12);
-            this.crudOptions1.MinimumSize = new System.Drawing.Size(37, 37);
-            this.crudOptions1.Name = "crudOptions1";
-            this.crudOptions1.Size = new System.Drawing.Size(118, 41);
-            this.crudOptions1.TabIndex = 0;
-            this.crudOptions1.AddClickHandler += new System.EventHandler(this.crudOptions_AddClickHandler);
-            this.crudOptions1.DeleteClickHandler += new System.EventHandler(this.crudOptions_DeleteClickHandler);
-            this.crudOptions1.ModifyClickHandler += new System.EventHandler(this.crudOptions_ModifyClickHandler);
+            this.dataGridView1.Tag = "tac";
             // 
             // pkidDataGridViewTextBoxColumn
             // 
@@ -116,7 +89,34 @@
             this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
             this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
             this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
-           
+            // 
+            // bs_dtStepLeafBindingSource
+            // 
+            this.bs_dtStepLeafBindingSource.DataMember = "dtStepLeaf";
+            this.bs_dtStepLeafBindingSource.DataSource = this.dsModuleStructureGUI;
+            // 
+            // dsModuleStructureGUI
+            // 
+            this.dsModuleStructureGUI.DataSetName = "dsModuleStructure2";
+            this.dsModuleStructureGUI.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // crudOptions1
+            // 
+            this.crudOptions1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crudOptions1.ButtonRefreshVisible = false;
+            this.crudOptions1.LayoutLeftToRight = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.crudOptions1.Location = new System.Drawing.Point(207, 12);
+            this.crudOptions1.MinimumSize = new System.Drawing.Size(37, 37);
+            this.crudOptions1.Name = "crudOptions1";
+            this.crudOptions1.Size = new System.Drawing.Size(118, 41);
+            this.crudOptions1.TabIndex = 0;
+            this.crudOptions1.AddClickHandler += new System.EventHandler(this.crudOptions_AddClickHandler);
+            this.crudOptions1.DeleteClickHandler += new System.EventHandler(this.crudOptions_DeleteClickHandler);
+            this.crudOptions1.ModifyClickHandler += new System.EventHandler(this.crudOptions_ModifyClickHandler);
+            // 
+            // ta_StepLeaf
+            // 
+            this.ta_StepLeaf.ClearBeforeFill = true;
             // 
             // optionTAC
             // 
