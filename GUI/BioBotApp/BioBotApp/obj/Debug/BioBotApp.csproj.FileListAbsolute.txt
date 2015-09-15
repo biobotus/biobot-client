@@ -124,4 +124,5 @@ C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.
 C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Utils.crudOptions.resources
 C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.TCPConsole.ctrlConsole.resources
 C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.csproj.GenerateResource.Cache
-C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Steps.Parameter_controls.ctrlCommand.resources
+C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\bin\Debug\BioBotApp.exe
+C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\bin\Debug\BioBotApp.pdb
