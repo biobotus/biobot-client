@@ -43,6 +43,52 @@ namespace BioBotApp.Controls.Steps
             _dsModuleStructure = dsModuleStructure;
             _bsModuleType = bsModuleType;
             _bsModuleType.CurrentChanged += _bsModuleType_CurrentChanged;
+            initTree();
+        }
+
+        public void initTree()
+        {
+
+            foreach(DataSets.dsModuleStructure2.dtStepCompositeRow stepCompositeRow in _dsModuleStructure.dtStepComposite)
+            {
+                if(stepCompositeRow == null)
+                {
+                    return;
+                }
+
+                if(!stepCompositeRow.Isfk_step_parent_idNull())
+                {
+                    return;
+                }
+
+                addNodes(stepCompositeRow,null);
+            }
+            
+        }
+
+        public void addNodes(DataSets.dsModuleStructure2.dtStepCompositeRow row, TreeNode parentNode)
+        {
+            TreeNode treeNode = new StepCompositeNode(row);
+            
+            if(parentNode == null)
+            {
+                tlvSteps.Nodes.Add(treeNode);
+            }
+            else
+            {
+                parentNode.Nodes.Add(treeNode);
+            }
+
+            foreach (DataSets.dsModuleStructure2.dtStepCompositeRow childRows in row.GetdtStepCompositeRows())
+            {
+                addNodes(childRows, treeNode);
+            }
+
+            foreach (DataSets.dsModuleStructure2.dtStepLeafRow stepLeafRow in row.GetdtStepLeafRows())
+            {
+                TreeNode stepLeafNode = new StepLeafNode(stepLeafRow);
+                treeNode.Nodes.Add(stepLeafNode);
+            }
         }
 
         void _bsModuleType_CurrentChanged(object sender, EventArgs e)
@@ -116,6 +162,15 @@ namespace BioBotApp.Controls.Steps
 
                         compositeRow.fk_module_id = module.pk_id;
                         compositeRow.description = frmProtocolAdd.getStepName();
+                        
+                        if(tlvSteps.SelectedNode != null)
+                        {
+                            if(tlvSteps.SelectedNode is StepCompositeNode)
+                            {
+                                StepCompositeNode stepCompositeNode = tlvSteps.SelectedNode as StepCompositeNode;
+                                compositeRow.fk_step_parent_id = stepCompositeNode.getStepCompositeRow().pk_id;
+                            }
+                        }
 
                         _dsModuleStructure.dtStepComposite.AdddtStepCompositeRow(compositeRow);
 

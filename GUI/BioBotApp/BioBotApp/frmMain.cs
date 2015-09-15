@@ -54,6 +54,7 @@ namespace BioBotApp
             taLabwareTypeLabwareParameterType.Fill(dsModuleStructure.dtLabwareTypeLabwareParameterType);
             taStepLeaf.Fill(dsModuleStructure.dtStepLeaf);
             taStepComposite.Fill(dsModuleStructure.dtStepComposite);
+            taActionValue.Fill(dsModuleStructure.dtActionValue);
         }
 
         public void initControls()

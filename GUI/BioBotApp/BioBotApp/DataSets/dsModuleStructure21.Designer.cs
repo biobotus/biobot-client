@@ -74,6 +74,8 @@ namespace BioBotApp.DataSets {
         
         private global::System.Data.DataRelation relationdtModule_dtStepComposite;
         
+        private global::System.Data.DataRelation relationdtStepComposite_dtStepComposite;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -497,6 +499,7 @@ namespace BioBotApp.DataSets {
             this.relationdtStepLeaf_dtActionValue = this.Relations["dtStepLeaf_dtActionValue"];
             this.relationdtStepComposite_dtStepLeaf = this.Relations["dtStepComposite_dtStepLeaf"];
             this.relationdtModule_dtStepComposite = this.Relations["dtModule_dtStepComposite"];
+            this.relationdtStepComposite_dtStepComposite = this.Relations["dtStepComposite_dtStepComposite"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -584,6 +587,10 @@ namespace BioBotApp.DataSets {
                         this.tabledtModule.pk_idColumn}, new global::System.Data.DataColumn[] {
                         this.tabledtStepComposite.fk_module_idColumn}, false);
             this.Relations.Add(this.relationdtModule_dtStepComposite);
+            this.relationdtStepComposite_dtStepComposite = new global::System.Data.DataRelation("dtStepComposite_dtStepComposite", new global::System.Data.DataColumn[] {
+                        this.tabledtStepComposite.pk_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tabledtStepComposite.fk_step_parent_idColumn}, false);
+            this.Relations.Add(this.relationdtStepComposite_dtStepComposite);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4037,13 +4044,16 @@ namespace BioBotApp.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtStepCompositeRow AdddtStepCompositeRow(int fk_step_parent_id, dtModuleRow parentdtModuleRowBydtModule_dtStepComposite, string description) {
+            public dtStepCompositeRow AdddtStepCompositeRow(dtStepCompositeRow parentdtStepCompositeRowBydtStepComposite_dtStepComposite, dtModuleRow parentdtModuleRowBydtModule_dtStepComposite, string description) {
                 dtStepCompositeRow rowdtStepCompositeRow = ((dtStepCompositeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        fk_step_parent_id,
+                        null,
                         null,
                         description};
+                if ((parentdtStepCompositeRowBydtStepComposite_dtStepComposite != null)) {
+                    columnValuesArray[1] = parentdtStepCompositeRowBydtStepComposite_dtStepComposite[0];
+                }
                 if ((parentdtModuleRowBydtModule_dtStepComposite != null)) {
                     columnValuesArray[2] = parentdtModuleRowBydtModule_dtStepComposite[0];
                 }
@@ -5215,6 +5225,17 @@ namespace BioBotApp.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public dtStepCompositeRow dtStepCompositeRowParent {
+                get {
+                    return ((dtStepCompositeRow)(this.GetParentRow(this.Table.ParentRelations["dtStepComposite_dtStepComposite"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["dtStepComposite_dtStepComposite"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Isfk_step_parent_idNull() {
                 return this.IsNull(this.tabledtStepComposite.fk_step_parent_idColumn);
             }
@@ -5257,6 +5278,17 @@ namespace BioBotApp.DataSets {
                 }
                 else {
                     return ((dtStepLeafRow[])(base.GetChildRows(this.Table.ChildRelations["dtStepComposite_dtStepLeaf"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public dtStepCompositeRow[] GetdtStepCompositeRows() {
+                if ((this.Table.ChildRelations["dtStepComposite_dtStepComposite"] == null)) {
+                    return new dtStepCompositeRow[0];
+                }
+                else {
+                    return ((dtStepCompositeRow[])(base.GetChildRows(this.Table.ChildRelations["dtStepComposite_dtStepComposite"])));
                 }
             }
         }
@@ -8779,8 +8811,8 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_fk_step_composite", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_step_composite", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \"biobot\".\"biobot\".\"bbt_step_leaf\" (\"description\", \"fk_step_composite\"" +
-                ") VALUES (?, ?) R RETURNING pk_id, desciption dk_step_composite";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \"biobot\".\"biobot\".\"bbt_step_leaf\"\r\n                  (\"description\", " +
+                "\"fk_step_composite\")\r\nVALUES (?, ?) RETURNING pk_id";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("description", global::System.Data.Odbc.OdbcType.Text, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "description", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("fk_step_composite", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_step_composite", global::System.Data.DataRowVersion.Current, false, null));
@@ -9643,6 +9675,7 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
+                    this.SortSelfReferenceRows(updatedRows, dataSet.Relations["dtStepComposite_dtStepComposite"], false);
                     result = (result + this._taStepComposite.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
@@ -9758,6 +9791,7 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
                 global::System.Data.DataRow[] addedRows = dataSet.dtStepComposite.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
+                    this.SortSelfReferenceRows(addedRows, dataSet.Relations["dtStepComposite_dtStepComposite"], false);
                     result = (result + this._taStepComposite.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
@@ -9920,6 +9954,7 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
                 global::System.Data.DataRow[] deletedRows = dataSet.dtStepComposite.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
+                    this.SortSelfReferenceRows(deletedRows, dataSet.Relations["dtStepComposite_dtStepComposite"], true);
                     result = (result + this._taStepComposite.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
