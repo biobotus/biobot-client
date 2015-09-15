@@ -17,8 +17,7 @@ namespace BioBotApp.Controls.Parameter_controls
     {
         dsModuleStructure2 _dsModuleStructure;
         dsModuleStructure2.dtModuleRow _moduleRow;
-        List<ParameterActions> _moduleParametersStop = new List<ParameterActions>();
-        List<ParameterActions> _moduleParametersStart = new List<ParameterActions>();
+        Dictionary<dsModuleStructure2.dtActionValueTypeRow, ctrlCommand> actionTypeDict;
 
         public ctrlModuleParameters()
         {
@@ -36,7 +35,7 @@ namespace BioBotApp.Controls.Parameter_controls
 
         public void setParameterActions(dsModuleStructure2 dsModuleStructure, dsModuleStructure2.dtModuleRow module)
         {
-            Dictionary<dsModuleStructure2.dtActionValueTypeRow, ctrlCommand> actionTypeDict = new Dictionary<dsModuleStructure2.dtActionValueTypeRow, ctrlCommand>();
+            actionTypeDict = new Dictionary<dsModuleStructure2.dtActionValueTypeRow, ctrlCommand>();
 
             _dsModuleStructure = dsModuleStructure;
             
@@ -65,16 +64,6 @@ namespace BioBotApp.Controls.Parameter_controls
             }
         }
 
-        public List<ParameterActions> getParameterStartActions()
-        {
-            return _moduleParametersStart;
-        }
-
-        public List<ParameterActions> getParameterStopActions()
-        {
-            return _moduleParametersStop;
-        }
-
         public Button getAcceptButton()
         {
             return btnApply;
@@ -83,14 +72,6 @@ namespace BioBotApp.Controls.Parameter_controls
         public Button getCancelButton()
         {
             return btnCancel;
-        }
-
-        public dsModuleStructure2.dtStepLeafRow getStepLeaf()
-        {
-            dsModuleStructure2.dtStepLeafRow slf = dsModuleStructure.dtStepLeaf.NewdtStepLeafRow();
-            slf.description = edtStepName.Text;
-
-            return slf;
         }
     }
 }

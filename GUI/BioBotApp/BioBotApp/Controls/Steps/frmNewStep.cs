@@ -24,9 +24,5 @@ namespace BioBotApp.Controls.Steps
         {
             moduleParameters.setParameterActions(dsModuleStructure, moduleRow);
         }
-        public DataSets.dsModuleStructure2.dtStepLeafRow getSteapLeafRow()
-        {
-            return moduleParameters.getStepLeaf();
-        }
     }
 }

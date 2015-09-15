@@ -124,6 +124,7 @@ C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.
 C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Utils.crudOptions.resources
 C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.TCPConsole.ctrlConsole.resources
 C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.csproj.GenerateResource.Cache
+<<<<<<< HEAD
 C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Steps.Parameter_controls.ctrlCommand.resources
 D:\Biobot\GUI\BioBotApp\BioBotApp\bin\Debug\BioBotApp.exe.config
 D:\Biobot\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.exe
@@ -160,3 +161,7 @@ D:\Biobot\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Utils.crudOptions
 D:\Biobot\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.TCPConsole.ctrlConsole.resources
 D:\Biobot\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.csproj.GenerateResource.Cache
 D:\Biobot\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Option.Options.optionTAC.resources
+=======
+C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\bin\Debug\BioBotApp.exe
+C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\bin\Debug\BioBotApp.pdb
+>>>>>>> f00f0efe81289d3a853e66946c3fb30bf01daf2a

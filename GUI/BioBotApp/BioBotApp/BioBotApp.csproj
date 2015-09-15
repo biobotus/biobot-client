@@ -171,6 +171,11 @@
     <Compile Include="Controls\Steps\Parameter controls\ctrlCommand.Designer.cs">
       <DependentUpon>ctrlCommand.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Steps\Parameter controls\ProtocolTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Steps\Parameter controls\StepCompositeNode.cs" />
+    <Compile Include="Controls\Steps\Parameter controls\StepLeafNode.cs" />
     <Compile Include="Controls\Steps\Parameter controls\TreeNodeAdvanced.cs" />
     <Compile Include="Controls\Protocol\ctrlProtocolsView.cs">
       <SubType>UserControl</SubType>
@@ -217,7 +222,6 @@
     <Compile Include="Controls\Tools\ModuleTypeSelectionEventArgs.cs" />
     <Compile Include="DataSets\dsModuleStructure2.cs">
       <DependentUpon>dsModuleStructure2.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DataSets\dsModuleStructure21.Designer.cs">
       <AutoGen>True</AutoGen>

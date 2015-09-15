@@ -118,12 +118,18 @@ namespace BioBotApp.Controls.Steps
 
                     break;
                 case STEP_TYPE:
+
                     DataSets.dsModuleStructure2.dtModuleRow moduleRow = getSelectedModuleRow();
+                    DataSets.dsModuleStructure2.dtStepCompositeRow c = _dsModuleStructure.dtStepComposite.NewdtStepCompositeRow();
+                   
 
                     if (moduleRow == null)
                     {
                         break;
                     }
+
+                    c.fk_module_id = moduleRow.pk_id;
+                    //c.fk
 
                     String headerTitle = moduleRow.pk_id;
                     DataSets.dsModuleStructure2.dtActionTypeDataTable actionTypeTable =
@@ -147,7 +153,9 @@ namespace BioBotApp.Controls.Steps
                     {
                         
                         //treeNodeText = frmNewStep.getSteapLeafRow().description;
-                        stepLeafRow = frmNewStep.getSteapLeafRow();
+                        DataSets.dsModuleStructure2.dtStepCompositeRow stepCompositeRow = _dsModuleStructure.dtStepComposite.NewdtStepCompositeRow();
+                        //stepCompositeRow.
+                        //stepLeafRow = frmNewStep.getSteapLeafRow();
                     }
 
                     break;
