@@ -21,11 +21,9 @@ namespace BioBotApp.Controls.Option.Options
         {
 
             dsModuleStructureGUI = dsModuleStructure;
-            bs_dtStepLeafBindingSource.DataSource = dsModuleStructureGUI;
-            if (this.dsModuleStructureGUI.dtActionType.Count == 0)
-            {
-                ta_StepLeaf.Fill(this.dsModuleStructureGUI.dtStepLeaf);
-            }
+            dtStepCompositeBindingSource.DataSource = dsModuleStructureGUI;
+            bs_dtStepLeafBindingSource.DataSource = this.bs_dtStepLeafBindingSource;
+
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
