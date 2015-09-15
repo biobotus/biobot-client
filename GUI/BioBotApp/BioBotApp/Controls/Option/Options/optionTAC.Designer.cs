@@ -31,12 +31,13 @@
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pkidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.crudOptions1 = new BioBotApp.Controls.Utils.crudOptions();
             this.bs_dtStepLeafBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsModuleStructureGUI = new BioBotApp.DataSets.dsModuleStructure2();
-            this.crudOptions1 = new BioBotApp.Controls.Utils.crudOptions();
             this.ta_StepLeaf = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taStepLeaf();
+            this.pkidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fk_step_composite = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_dtStepLeafBindingSource)).BeginInit();
@@ -63,6 +64,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.pkidDataGridViewTextBoxColumn,
+            this.fk_step_composite,
             this.descriptionDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.bs_dtStepLeafBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(3, 69);
@@ -74,31 +76,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(321, 144);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.Tag = "tac";
-            // 
-            // pkidDataGridViewTextBoxColumn
-            // 
-            this.pkidDataGridViewTextBoxColumn.DataPropertyName = "pk_id";
-            this.pkidDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.pkidDataGridViewTextBoxColumn.Name = "pkidDataGridViewTextBoxColumn";
-            this.pkidDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // bs_dtStepLeafBindingSource
-            // 
-            this.bs_dtStepLeafBindingSource.DataMember = "dtStepLeaf";
-            this.bs_dtStepLeafBindingSource.DataSource = this.dsModuleStructureGUI;
-            // 
-            // dsModuleStructureGUI
-            // 
-            this.dsModuleStructureGUI.DataSetName = "dsModuleStructure2";
-            this.dsModuleStructureGUI.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // crudOptions1
             // 
@@ -114,9 +91,42 @@
             this.crudOptions1.DeleteClickHandler += new System.EventHandler(this.crudOptions_DeleteClickHandler);
             this.crudOptions1.ModifyClickHandler += new System.EventHandler(this.crudOptions_ModifyClickHandler);
             // 
+            // bs_dtStepLeafBindingSource
+            // 
+            this.bs_dtStepLeafBindingSource.DataMember = "dtStepLeaf";
+            this.bs_dtStepLeafBindingSource.DataSource = this.dsModuleStructureGUI;
+            // 
+            // dsModuleStructureGUI
+            // 
+            this.dsModuleStructureGUI.DataSetName = "dsModuleStructure2";
+            this.dsModuleStructureGUI.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // ta_StepLeaf
             // 
             this.ta_StepLeaf.ClearBeforeFill = true;
+            // 
+            // pkidDataGridViewTextBoxColumn
+            // 
+            this.pkidDataGridViewTextBoxColumn.DataPropertyName = "pk_id";
+            this.pkidDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.pkidDataGridViewTextBoxColumn.Name = "pkidDataGridViewTextBoxColumn";
+            this.pkidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pkidDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // fk_step_composite
+            // 
+            this.fk_step_composite.DataPropertyName = "fk_step_composite";
+            this.fk_step_composite.HeaderText = "Protocol";
+            this.fk_step_composite.Name = "fk_step_composite";
+            this.fk_step_composite.ReadOnly = true;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // optionTAC
             // 
@@ -143,6 +153,7 @@
         private DataSets.dsModuleStructure2 dsModuleStructureGUI;
         private DataSets.dsModuleStructure2TableAdapters.taStepLeaf ta_StepLeaf;
         private System.Windows.Forms.DataGridViewTextBoxColumn pkidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fk_step_composite;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
     }
 }
