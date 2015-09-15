@@ -74,7 +74,7 @@ namespace BioBotApp.Controls.Option
             }
             else if (e.Node.Name.Equals("nodeProtocol"))
             {
-                setOptionControl(new optionTAC(dsModuleStructure));
+                setOptionControl(new optionProtocol(dsModuleStructure));
             }
             else
             {

@@ -165,3 +165,4 @@ D:\Biobot\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Option.Options.op
 C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\bin\Debug\BioBotApp.exe
 C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\bin\Debug\BioBotApp.pdb
 >>>>>>> f00f0efe81289d3a853e66946c3fb30bf01daf2a
+D:\Biobot\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Option.Options.optionProtocol.resources

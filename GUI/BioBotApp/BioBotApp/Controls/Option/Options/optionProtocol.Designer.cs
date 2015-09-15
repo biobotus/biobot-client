@@ -1,6 +1,6 @@
 ﻿namespace BioBotApp.Controls.Option.Options
 {
-    partial class optionTAC
+    partial class optionProtocol
     {
         /// <summary> 
         /// Required designer variable.
@@ -75,7 +75,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(225, 144);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.Tag = "tac";
+            this.dataGridView1.Tag = "Protocol";
             // 
             // pkidDataGridViewTextBoxColumn
             // 
@@ -128,12 +128,12 @@
             // 
             this.ta_StepLeaf.ClearBeforeFill = true;
             // 
-            // optionTAC
+            // optionProtocol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
-            this.Name = "optionTAC";
+            this.Name = "optionProtocol";
             this.Size = new System.Drawing.Size(458, 369);
             this.Tag = "TAC";
             this.groupBox1.ResumeLayout(false);

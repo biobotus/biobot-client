@@ -49,9 +49,7 @@
             treeNode9,
             treeNode10});
             System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Movements");
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("TAC");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Protocol", new System.Windows.Forms.TreeNode[] {
-            treeNode13});
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Protocol");
             this.panel1 = new System.Windows.Forms.Panel();
             this.tlvOptions = new System.Windows.Forms.TreeView();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -111,16 +109,13 @@
             treeNode11.Text = "Communication";
             treeNode12.Name = "nodeMovement";
             treeNode12.Text = "Movements";
-            treeNode13.Name = "nodeTac";
-            treeNode13.Tag = "TAC";
-            treeNode13.Text = "TAC";
-            treeNode14.Name = "nodeProtocol";
-            treeNode14.Text = "Protocol";
+            treeNode13.Name = "nodeProtocol";
+            treeNode13.Text = "Protocol";
             this.tlvOptions.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode8,
             treeNode11,
             treeNode12,
-            treeNode14});
+            treeNode13});
             this.tlvOptions.Size = new System.Drawing.Size(150, 352);
             this.tlvOptions.TabIndex = 0;
             this.tlvOptions.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tlvOptions_AfterSelect);

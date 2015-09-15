@@ -11,13 +11,13 @@ using BioBotApp.Utils.Communication;
 
 namespace BioBotApp.Controls.Option.Options
 {
-    public partial class optionTAC : UserControl
+    public partial class optionProtocol : UserControl
     {
-        public optionTAC()
+        public optionProtocol()
         {
             InitializeComponent();
         }
-        public optionTAC(DataSets.dsModuleStructure2 dsModuleStructure) : this()
+        public optionProtocol(DataSets.dsModuleStructure2 dsModuleStructure) : this()
         {
 
             dsModuleStructureGUI = dsModuleStructure;
