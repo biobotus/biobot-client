@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,11 +19,12 @@ namespace BioBotApp.Controls.Steps.Parameter_controls
 
             if(stepLeaf.pk_id < 0)
             {
-                return;
+                //return;
             }
 
             _stepLeaf = stepLeaf;
             this.Text = stepLeaf.description;
+            this.BackColor = Color.LightBlue;
         }
 
         public DataSets.dsModuleStructure2.dtStepLeafRow getStepLeaf()
