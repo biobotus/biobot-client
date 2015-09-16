@@ -8,65 +8,60 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BioBotApp.Controls.Parameter_control;
+using BioBotApp.Controls.Steps.Parameter_controls;
+using BioBotApp.DataSets;
 
 namespace BioBotApp.Controls.Parameter_controls
 {
     public partial class ctrlModuleParameters : UserControl
     {
-        DataSets.dsModuleStructure2 _dsModuleStructure;
-        DataSets.dsModuleStructure2.dtModuleRow _moduleRow;
-        List<ParameterActions> _moduleParametersStop = new List<ParameterActions>();
-        List<ParameterActions> _moduleParametersStart = new List<ParameterActions>();
+        dsModuleStructure2 _dsModuleStructure;
+        dsModuleStructure2.dtModuleRow _moduleRow;
+        Dictionary<dsModuleStructure2.dtModuleTypeActionTypeRow, ctrlCommand> actionTypeDict;
 
         public ctrlModuleParameters()
         {
             InitializeComponent();
         }
 
-        public ctrlModuleParameters(DataSets.dsModuleStructure2.dtModuleRow moduleRow, 
-            DataSets.dsModuleStructure2 dsModuleStructure) : this()
+        public ctrlModuleParameters(dsModuleStructure2.dtModuleRow moduleRow, 
+            dsModuleStructure2 dsModuleStructure) : this()
         {
-
             _moduleRow = moduleRow;
             _dsModuleStructure = dsModuleStructure;
+
             setParameterActions(_dsModuleStructure, _moduleRow);
         }
 
-        public void setParameterActions(DataSets.dsModuleStructure2 dsModuleStructure, DataSets.dsModuleStructure2.dtModuleRow module)
+        public void setParameterActions(dsModuleStructure2 dsModuleStructure, dsModuleStructure2.dtModuleRow module)
         {
+            actionTypeDict = new Dictionary<dsModuleStructure2.dtModuleTypeActionTypeRow, ctrlCommand>();
+
             _dsModuleStructure = dsModuleStructure;
-            DataSets.dsModuleStructure2.dtModuleRow row = _dsModuleStructure.dtModule.FindBypk_id(module.pk_id);
 
-            //DataRow moduleTypeRow = r
-            DataSets.dsModuleStructure2.dtModuleTypeRow data = row.GetParentRow("dtModule_dtModuleType") as DataSets.dsModuleStructure2.dtModuleTypeRow;
-            DataSets.dsModuleStructure2.dtModuleTypeActionTypeRow[] m = data.GetChildRows("dtModuleTypeActionType_dtModuleType") as DataSets.dsModuleStructure2.dtModuleTypeActionTypeRow[];
-            
-
-            
-            //  DataRow[] r = row.GetParentRows("dtModuleTypeActionType_dtModuleType");
-
-            /*
-            foreach (DataSets.dsModuleStructure2.dtActionTypeRow row in actionTypes)
+            dsModuleStructure2.dtModuleTypeActionTypeRow[] moduleTypeActionTypeRows = module.dtModuleTypeRow.GetdtModuleTypeActionTypeRows();
+            foreach (dsModuleStructure2.dtModuleTypeActionTypeRow moduleTypeActionTypeRow in moduleTypeActionTypeRows)
             {
-                
-                ParameterActions parameter = new ParameterActions(row);
-                layoutModuleParametersStop.Controls.Add(parameter);
-                _moduleParametersStop.Add(parameter);
-                parameter = new ParameterActions(row);
-                layoutModuleParametersStart.Controls.Add(parameter);
-                _moduleParametersStart.Add(parameter);
+                ctrlCommand command;
+
+                if(actionTypeDict.ContainsKey(moduleTypeActionTypeRow))
+                {
+                    command = actionTypeDict[moduleTypeActionTypeRow];
+                }
+                else
+                {
+                    command = new ctrlCommand();
+                    command.init(moduleTypeActionTypeRow.dtActionValueTypeRow.description);
+                    actionTypeDict.Add(moduleTypeActionTypeRow, command);
+                }
+                command.addCommand(moduleTypeActionTypeRow.dtActionTypeRow);
             }
-            */
-        }
-
-        public List<ParameterActions> getParameterStartActions()
-        {
-            return _moduleParametersStart;
-        }
-
-        public List<ParameterActions> getParameterStopActions()
-        {
-            return _moduleParametersStop;
+            
+            foreach(ctrlCommand commands in actionTypeDict.Values)
+            {
+                commands.Dock = DockStyle.Top;
+                layoutMainPanel.Controls.Add(commands);
+            }
         }
 
         public Button getAcceptButton()
@@ -79,12 +74,14 @@ namespace BioBotApp.Controls.Parameter_controls
             return btnCancel;
         }
 
-        public DataSets.dsModuleStructure2.dtStepLeafRow getStepLeaf()
+        public Dictionary<dsModuleStructure2.dtModuleTypeActionTypeRow, ctrlCommand> getParameterActions()
         {
-            DataSets.dsModuleStructure2.dtStepLeafRow slf = dsModuleStructure.dtStepLeaf.NewdtStepLeafRow();
-            slf.description = edtStepName.Text;
+            return this.actionTypeDict;
+        }
 
-            return slf;
+        public String getStepName()
+        {
+            return edtStepName.Text;
         }
     }
 }

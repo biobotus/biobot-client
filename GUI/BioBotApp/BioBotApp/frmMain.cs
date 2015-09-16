@@ -45,6 +45,7 @@ namespace BioBotApp
         public void initData()
         {
             taModule.Fill(dsModuleStructure.dtModule);
+            taModuleType.Fill(dsModuleStructure.dtModuleType);
             taModuleTypeActionType.Fill(dsModuleStructure.dtModuleTypeActionType);
             taActionType.Fill(dsModuleStructure.dtActionType);
             taActionValueType.Fill(dsModuleStructure.dtActionValueType);
@@ -53,6 +54,7 @@ namespace BioBotApp
             taLabwareTypeLabwareParameterType.Fill(dsModuleStructure.dtLabwareTypeLabwareParameterType);
             taStepLeaf.Fill(dsModuleStructure.dtStepLeaf);
             taStepComposite.Fill(dsModuleStructure.dtStepComposite);
+            taActionValue.Fill(dsModuleStructure.dtActionValue);
         }
 
         public void initControls()
@@ -103,14 +105,6 @@ namespace BioBotApp
             a = a.PadRight(2000, '2');
             a += '\n';
             _tcpClient.send(a);
-        }
-
-        private void frmMain_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'dsModuleStructure.dtModule' table. You can move, or remove it, as needed.
-            this.taModule.Fill(this.dsModuleStructure.dtModule);
-            // TODO: This line of code loads data into the 'dsModuleStructure21.dtModuleType' table. You can move, or remove it, as needed.
-            this.taModuleType.Fill(this.dsModuleStructure.dtModuleType);
         }
 
         private void toolStripStatusLabel1_Click(object sender, EventArgs e)

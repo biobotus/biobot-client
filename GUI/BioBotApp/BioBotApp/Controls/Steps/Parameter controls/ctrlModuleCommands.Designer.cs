@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Label label2;
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.edtStepName = new System.Windows.Forms.TextBox();
@@ -37,32 +36,13 @@
             this.layoutButtons = new System.Windows.Forms.FlowLayoutPanel();
             this.btnApply = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.layoutModuleParametersStart = new System.Windows.Forms.FlowLayoutPanel();
-            this.layoutModuleParametersStop = new System.Windows.Forms.FlowLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.splitter1 = new System.Windows.Forms.Splitter();
             this.dsModuleStructure = new BioBotApp.DataSets.dsModuleStructure2();
-            label2 = new System.Windows.Forms.Label();
+            this.layoutMainPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.layoutButtons.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dsModuleStructure)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label2
-            // 
-            label2.Dock = System.Windows.Forms.DockStyle.Top;
-            label2.Location = new System.Drawing.Point(0, 0);
-            label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(420, 28);
-            label2.TabIndex = 0;
-            label2.Text = "Stop commands";
-            label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
             // 
@@ -157,75 +137,19 @@
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
-            // layoutModuleParametersStart
-            // 
-            this.layoutModuleParametersStart.AutoScroll = true;
-            this.layoutModuleParametersStart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutModuleParametersStart.Location = new System.Drawing.Point(0, 28);
-            this.layoutModuleParametersStart.Margin = new System.Windows.Forms.Padding(4);
-            this.layoutModuleParametersStart.Name = "layoutModuleParametersStart";
-            this.layoutModuleParametersStart.Size = new System.Drawing.Size(420, 264);
-            this.layoutModuleParametersStart.TabIndex = 3;
-            // 
-            // layoutModuleParametersStop
-            // 
-            this.layoutModuleParametersStop.AutoScroll = true;
-            this.layoutModuleParametersStop.AutoSize = true;
-            this.layoutModuleParametersStop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutModuleParametersStop.Location = new System.Drawing.Point(0, 31);
-            this.layoutModuleParametersStop.Margin = new System.Windows.Forms.Padding(4);
-            this.layoutModuleParametersStop.Name = "layoutModuleParametersStop";
-            this.layoutModuleParametersStop.Size = new System.Drawing.Size(421, 261);
-            this.layoutModuleParametersStop.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(421, 31);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Start commands";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.layoutModuleParametersStop);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 79);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(425, 296);
-            this.panel2.TabIndex = 4;
-            // 
-            // panel3
-            // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.layoutModuleParametersStart);
-            this.panel3.Controls.Add(label2);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(429, 79);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(424, 296);
-            this.panel3.TabIndex = 5;
-            // 
-            // splitter1
-            // 
-            this.splitter1.Location = new System.Drawing.Point(425, 79);
-            this.splitter1.Margin = new System.Windows.Forms.Padding(4);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(4, 296);
-            this.splitter1.TabIndex = 6;
-            this.splitter1.TabStop = false;
-            // 
             // dsModuleStructure
             // 
             this.dsModuleStructure.DataSetName = "dsModuleStructure2";
             this.dsModuleStructure.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // layoutMainPanel
+            // 
+            this.layoutMainPanel.AutoScroll = true;
+            this.layoutMainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutMainPanel.Location = new System.Drawing.Point(0, 79);
+            this.layoutMainPanel.Name = "layoutMainPanel";
+            this.layoutMainPanel.Size = new System.Drawing.Size(853, 296);
+            this.layoutMainPanel.TabIndex = 6;
             // 
             // ctrlModuleParameters
             // 
@@ -233,9 +157,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.splitter1);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.layoutMainPanel);
             this.Controls.Add(this.layoutButtons);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -245,9 +167,6 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.layoutButtons.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dsModuleStructure)).EndInit();
             this.ResumeLayout(false);
 
@@ -258,17 +177,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label txtModuleName;
         private System.Windows.Forms.FlowLayoutPanel layoutButtons;
-        private System.Windows.Forms.FlowLayoutPanel layoutModuleParametersStart;
-        private System.Windows.Forms.FlowLayoutPanel layoutModuleParametersStop;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.Button btnApply;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox edtStepName;
         private System.Windows.Forms.Label label3;
         private DataSets.dsModuleStructure2 dsModuleStructure;
+        private System.Windows.Forms.FlowLayoutPanel layoutMainPanel;
     }
 }

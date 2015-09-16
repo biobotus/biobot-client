@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BioBotApp.Controls.Steps.Parameter_controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,9 +25,15 @@ namespace BioBotApp.Controls.Steps
         {
             moduleParameters.setParameterActions(dsModuleStructure, moduleRow);
         }
-        public DataSets.dsModuleStructure2.dtStepLeafRow getSteapLeafRow()
+
+        public Dictionary<DataSets.dsModuleStructure2.dtModuleTypeActionTypeRow, ctrlCommand> getActionValues()
         {
-            return moduleParameters.getStepLeaf();
+            return moduleParameters.getParameterActions();
+        }
+
+        public String getStepDescription()
+        {
+            return moduleParameters.getStepName();
         }
     }
 }

@@ -159,7 +159,17 @@
     <Compile Include="Controls\Option\Options\optionMovement.Designer.cs">
       <DependentUpon>optionMovement.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Steps\Parameter controls\TreeNodeAdvanced.cs" />
+    <Compile Include="Controls\Steps\Parameter controls\ctrlCommand.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Steps\Parameter controls\ctrlCommand.Designer.cs">
+      <DependentUpon>ctrlCommand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Steps\Parameter controls\ProtocolTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Steps\Parameter controls\StepCompositeNode.cs" />
+    <Compile Include="Controls\Steps\Parameter controls\StepLeafNode.cs" />
     <Compile Include="Controls\Protocol\ctrlProtocolsView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -225,6 +235,7 @@
     <Compile Include="Utils\Communication\CustomSerial.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Utils\Communication\JSONParser.cs" />
     <Compile Include="Utils\DataBase\DBManager.cs" />
     <Compile Include="Utils\Form\ApplicationExeptionHandlers.cs" />
     <Compile Include="Controls\Utils\crudOptions.cs">

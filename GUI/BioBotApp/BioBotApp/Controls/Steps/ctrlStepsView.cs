@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BioBotApp.Controls.Steps;
 using BioBotApp.Controls.Parameter_controls;
+using BioBotApp.Controls.Steps.Parameter_controls;
+using BioBotApp.DataSets;
 
 namespace BioBotApp.Controls.Steps
 {
@@ -20,12 +22,13 @@ namespace BioBotApp.Controls.Steps
 
         //Context menu for the Protocol add type
         private ContextMenuStrip _contextMenuAutoFill;
+        ToolStripItem _protocolToolStripItem;
+        ToolStripItem _stepToolStripItem;
         //List that contains protocol types
         List<String> _protocolAddType = new List<string>(new String[] { PROTOCOL_TYPE, STEP_TYPE });
 
         //Project's dataset
         DataSets.dsModuleStructure2 _dsModuleStructure;
-
         //Project's module_type binding source
         BindingSource _bsModuleType;
 
@@ -40,13 +43,71 @@ namespace BioBotApp.Controls.Steps
             _dsModuleStructure = dsModuleStructure;
             _bsModuleType = bsModuleType;
             _bsModuleType.CurrentChanged += _bsModuleType_CurrentChanged;
+            initTree();
+        }
+
+        public void initTree()
+        {
+
+            foreach(DataSets.dsModuleStructure2.dtStepCompositeRow stepCompositeRow in _dsModuleStructure.dtStepComposite)
+            {
+                if(stepCompositeRow == null)
+                {
+                    return;
+                }
+
+                if(!stepCompositeRow.Isfk_step_parent_idNull())
+                {
+                    return;
+                }
+
+                addNodes(stepCompositeRow,null);
+            }
+            
+        }
+
+        public void addNodes(DataSets.dsModuleStructure2.dtStepCompositeRow row, TreeNode parentNode)
+        {
+            TreeNode treeNode = new StepCompositeNode(row);
+            
+            if(parentNode == null)
+            {
+                tlvSteps.Nodes.Add(treeNode);
+            }
+            else
+            {
+                parentNode.Nodes.Add(treeNode);
+            }
+
+            foreach (DataSets.dsModuleStructure2.dtStepCompositeRow childRows in row.GetdtStepCompositeRows())
+            {
+                addNodes(childRows, treeNode);
+            }
+
+            foreach (DataSets.dsModuleStructure2.dtStepLeafRow stepLeafRow in row.GetdtStepLeafRows())
+            {
+                TreeNode stepLeafNode = new StepLeafNode(stepLeafRow);
+                treeNode.Nodes.Add(stepLeafNode);
+            }
         }
 
         void _bsModuleType_CurrentChanged(object sender, EventArgs e)
         {
-            Console.WriteLine("Changed !!!");
-
         }
+        /*
+        public DataSets.dsModuleStructure2.dtModuleRow getSelectedModuleRow()
+        {
+            DataSets.dsModuleStructure2.dtModuleRow moduleRow;
+            DataRowView rowView = _bsModuleType.Current as DataRowView;
+            if (rowView == null)
+            {
+                return null;
+            }
+
+            moduleRow = rowView.Row as DataSets.dsModuleStructure2.dtModuleRow;
+
+            return moduleRow;
+        }*/
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -57,8 +118,9 @@ namespace BioBotApp.Controls.Steps
         private void CreateContextMenuStrip()
         {
             _contextMenuAutoFill = new ContextMenuStrip();
-            _contextMenuAutoFill.Items.Add(PROTOCOL_TYPE);
-            _contextMenuAutoFill.Items.Add(STEP_TYPE);
+            _stepToolStripItem = _contextMenuAutoFill.Items.Add(STEP_TYPE);
+            _protocolToolStripItem = _contextMenuAutoFill.Items.Add(PROTOCOL_TYPE);
+
 
             foreach (ToolStripMenuItem mItem in _contextMenuAutoFill.Items)
             {
@@ -71,31 +133,66 @@ namespace BioBotApp.Controls.Steps
             String protocolType = ((ToolStripMenuItem)sender).Text;
             //dialog result for adding new node to treeview
             DialogResult dialogResultAddNode = DialogResult.Cancel;
-            frmNewProtocol frmStepAdd;
-            frmNewStep frmNewStep;
-            DataSets.dsModuleStructure2.dtStepLeafRow stepLeafRow = null;
-            String treeNodeText = String.Empty;
+            frmNewProtocol frmProtocolAdd;
+            frmNewStep _frmNewStep;
+            TreeNode treeNode = new TreeNode();
 
-            TreeNodeProtocolType treeNode = new TreeNodeProtocolType();
 
             switch (protocolType)
             {
                 case PROTOCOL_TYPE:
-                    frmStepAdd = new frmNewProtocol();
-                    dialogResultAddNode = frmStepAdd.ShowDialog();
+
+                    frmProtocolAdd = new frmNewProtocol();
+
+                    dialogResultAddNode = frmProtocolAdd.ShowDialog();
                     if (dialogResultAddNode == DialogResult.OK)
                     {
-                        treeNodeText = frmStepAdd.getStepName();
+                        //treeNodeText = frmProtocolAdd.getStepName();
+                        DataSets.dsModuleStructure2.dtStepCompositeRow compositeRow = _dsModuleStructure.dtStepComposite.NewdtStepCompositeRow();
+                        DataSets.dsModuleStructure2.dtModuleRow module = getSelectedModuleRow();
+                        if (module == null)
+                        {
+                            return;
+                        }
+
+                        if (module.pk_id.Length == 0)
+                        {
+                            return;
+                        }
+
+                        compositeRow.fk_module_id = module.pk_id;
+                        compositeRow.description = frmProtocolAdd.getStepName();
+                        
+                        if(tlvSteps.SelectedNode != null)
+                        {
+                            if(tlvSteps.SelectedNode is StepCompositeNode)
+                            {
+                                StepCompositeNode stepCompositeNode = tlvSteps.SelectedNode as StepCompositeNode;
+                                compositeRow.fk_step_parent_id = stepCompositeNode.getStepCompositeRow().pk_id;
+                            }
+                        }
+
+                        _dsModuleStructure.dtStepComposite.AdddtStepCompositeRow(compositeRow);
+
+                        updateRow(compositeRow);
+
+                        treeNode = new Steps.Parameter_controls.StepCompositeNode(compositeRow);
                     }
 
                     break;
                 case STEP_TYPE:
+
                     DataSets.dsModuleStructure2.dtModuleRow moduleRow = getSelectedModuleRow();
+                    DataSets.dsModuleStructure2.dtStepCompositeRow c = _dsModuleStructure.dtStepComposite.NewdtStepCompositeRow();
+
 
                     if (moduleRow == null)
                     {
                         break;
                     }
+
+                    c.fk_module_id = moduleRow.pk_id;
+                    //c.fk
 
                     String headerTitle = moduleRow.pk_id;
                     DataSets.dsModuleStructure2.dtActionTypeDataTable actionTypeTable =
@@ -112,28 +209,45 @@ namespace BioBotApp.Controls.Steps
                         }
                     }
 
-                    frmNewStep = new frmNewStep(_dsModuleStructure, moduleRow);
+                    _frmNewStep = new frmNewStep(_dsModuleStructure, moduleRow);
 
-                    dialogResultAddNode = frmNewStep.ShowDialog();
+                    dialogResultAddNode = _frmNewStep.ShowDialog();
                     if (dialogResultAddNode.Equals(DialogResult.OK))
                     {
-                        treeNodeText = frmNewStep.getSteapLeafRow().description;
-                        stepLeafRow = frmNewStep.getSteapLeafRow();
+                        if (tlvSteps.SelectedNode is StepCompositeNode)
+                        {
+                            StepCompositeNode stepCompositeNode = tlvSteps.SelectedNode as StepCompositeNode;
+                            DataSets.dsModuleStructure2.dtStepLeafRow stepLeafRow = _dsModuleStructure.dtStepLeaf.NewdtStepLeafRow();
+                            stepLeafRow.fk_step_composite = stepCompositeNode.getStepCompositeRow().pk_id;
+                            stepLeafRow.description = _frmNewStep.getStepDescription();
+
+                            _dsModuleStructure.dtStepLeaf.AdddtStepLeafRow(stepLeafRow);
+
+                            updateRow(stepLeafRow);
+
+                            treeNode = new StepLeafNode(stepLeafRow);
+
+                            Dictionary<dsModuleStructure2.dtModuleTypeActionTypeRow, ctrlCommand> command = _frmNewStep.getActionValues();
+                            foreach(KeyValuePair<dsModuleStructure2.dtModuleTypeActionTypeRow, ctrlCommand> kvp in command)
+                            {
+                                DataSets.dsModuleStructure2.dtActionValueRow actionValue = _dsModuleStructure.dtActionValue.NewdtActionValueRow();
+                                actionValue.fk_action_type = kvp.Key.dtActionTypeRow.pk_id;
+                                actionValue.fk_action_value_type = kvp.Key.dtActionValueTypeRow.pk_id;
+                                actionValue.fk_step_leaf_id = stepLeafRow.pk_id;
+                                actionValue.description = kvp.Value.getValue();
+                                _dsModuleStructure.dtActionValue.AdddtActionValueRow(actionValue);
+                                updateRow(actionValue);
+                            }
+                        }
                     }
 
                     break;
                 default:
                     break;
             }
+
             if (dialogResultAddNode.Equals(DialogResult.OK))
             {
-                treeNode.setNodeType(protocolType);
-                treeNode.setText(treeNodeText);
-                if (stepLeafRow != null)
-                {
-                    treeNode.setStepValue(stepLeafRow);
-                }
-
                 if (tlvSteps.SelectedNode != null)
                 {
                     tlvSteps.SelectedNode.Nodes.Add(treeNode);
@@ -166,40 +280,68 @@ namespace BioBotApp.Controls.Steps
             return moduleRow;
         }
 
-        #region JSON converter Section
-        public String getJSON()
+        private void tlvSteps_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            String jsonValue = String.Empty;
-            foreach (TreeNodeProtocolType treeNodeChilds in tlvSteps.Nodes)
+            if (e.Node is StepCompositeNode)
             {
-                if (treeNodeChilds.getNodeType().Equals(PROTOCOL_TYPE))
-                {
-                    jsonValue += getNodeStepValues(treeNodeChilds);
-                }
-
+                _protocolToolStripItem.Enabled = true;
+                _stepToolStripItem.Enabled = true;
             }
-
-            return jsonValue;
+            else if (e.Node is StepLeafNode)
+            {
+                _protocolToolStripItem.Enabled = false;
+                _stepToolStripItem.Enabled = false;
+            }
+            else
+            {
+                throw new Exception("Wrong node type in steps treelist !");
+            }
         }
 
-        public String getNodeStepValues(TreeNodeProtocolType treeNode)
+        public void updateRow(DataSets.dsModuleStructure2.dtStepCompositeRow updateRow)
         {
-            String jsonValue = String.Empty;
-            foreach (TreeNodeProtocolType treeNodeChilds in treeNode.Nodes)
+            try
             {
-                if (treeNodeChilds.getNodeType().Equals(PROTOCOL_TYPE))
-                {
-                    jsonValue += getNodeStepValues(treeNodeChilds);
-                }
-                else
-                {
-                    jsonValue += treeNodeChilds.getStepValue().description;
-                }
-
+                taStepComposite.Update(updateRow);
             }
-
-            return jsonValue;
+            catch (Exception ex)
+            {
+                MessageBox.Show("Invalid step composite row, try again !",
+                    "Error !",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                _dsModuleStructure.RejectChanges();
+            }
         }
-        #endregion
+        public void updateRow(DataSets.dsModuleStructure2.dtActionValueRow updateRow)
+        {
+            try
+            {
+                taActionValue.Update(updateRow);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Invalid step composite row, try again !",
+                    "Error !",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                _dsModuleStructure.RejectChanges();
+            }
+        }
+        public void updateRow(DataSets.dsModuleStructure2.dtStepLeafRow updateRow)
+        {
+            try
+            {
+                taStepLeaf.Update(updateRow);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Invalid step composite row, try again !",
+                    "Error !",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                _dsModuleStructure.RejectChanges();
+            }
+        }
     }
 }
