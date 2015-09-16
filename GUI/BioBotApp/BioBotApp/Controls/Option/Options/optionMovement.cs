@@ -71,7 +71,6 @@ namespace BioBotApp.Controls.Option.Options
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            sendGCode("G28");
                 
         }
 

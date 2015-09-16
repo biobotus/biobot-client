@@ -159,6 +159,12 @@
     <Compile Include="Controls\Option\Options\optionMovement.Designer.cs">
       <DependentUpon>optionMovement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Option\Options\optionJoypad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionJoypad.Designer.cs">
+      <DependentUpon>optionJoypad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Steps\Parameter controls\TreeNodeAdvanced.cs" />
     <Compile Include="Controls\Protocol\ctrlProtocolsView.cs">
       <SubType>UserControl</SubType>
@@ -205,7 +211,6 @@
     <Compile Include="Controls\Tools\ModuleTypeSelectionEventArgs.cs" />
     <Compile Include="DataSets\dsModuleStructure2.cs">
       <DependentUpon>dsModuleStructure2.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DataSets\dsModuleStructure21.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -258,6 +263,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Option\Options\optionCustomSerial.resx">
       <DependentUpon>optionCustomSerial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Option\Options\optionJoypad.resx">
+      <DependentUpon>optionJoypad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Option\Options\optionLabwareParameterType.resx">
       <DependentUpon>optionLabwareParameterType.cs</DependentUpon>
@@ -387,6 +395,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\arrow_refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Haut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gauche.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ref.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Droite.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
