@@ -30,6 +30,7 @@ namespace BioBotApp.Controls.Steps
         private void InitializeComponent()
         {
             this.moduleParameters = new BioBotApp.Controls.Parameter_controls.ctrlModuleParameters();
+            this.taStepComposite = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taStepComposite();
             this.SuspendLayout();
             // 
             // moduleParameters
@@ -38,17 +39,23 @@ namespace BioBotApp.Controls.Steps
             this.moduleParameters.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.moduleParameters.Dock = System.Windows.Forms.DockStyle.Fill;
             this.moduleParameters.Location = new System.Drawing.Point(0, 0);
+            this.moduleParameters.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.moduleParameters.Name = "moduleParameters";
-            this.moduleParameters.Size = new System.Drawing.Size(693, 261);
+            this.moduleParameters.Size = new System.Drawing.Size(924, 321);
             this.moduleParameters.TabIndex = 0;
             // 
-            // frmStep
+            // taStepComposite
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.taStepComposite.ClearBeforeFill = true;
+            // 
+            // frmNewStep
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(693, 261);
+            this.ClientSize = new System.Drawing.Size(924, 321);
             this.Controls.Add(this.moduleParameters);
-            this.Name = "frmStep";
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "frmNewStep";
             this.Text = "Step";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -58,5 +65,6 @@ namespace BioBotApp.Controls.Steps
         #endregion
 
         private ctrlModuleParameters moduleParameters;
+        private DataSets.dsModuleStructure2TableAdapters.taStepComposite taStepComposite;
     }
 }
