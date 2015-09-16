@@ -87,6 +87,7 @@
             // 
             this.dtStepCompositeBindingSource.DataMember = "dtStepComposite";
             this.dtStepCompositeBindingSource.DataSource = this.dsModuleStructureGUI;
+            this.dtStepCompositeBindingSource.CurrentChanged += new System.EventHandler(this.dtStepCompositeBindingSource_CurrentChanged);
             // 
             // dsModuleStructureGUI
             // 
@@ -118,6 +119,7 @@
             // 
             this.bs_dtStepLeafBindingSource.DataMember = "dtStepLeaf";
             this.bs_dtStepLeafBindingSource.DataSource = this.dsModuleStructureGUI;
+            
             // 
             // crudOptions1
             // 
@@ -199,7 +201,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "optionProtocol";
             this.Size = new System.Drawing.Size(458, 369);
-            this.Tag = "TAC";
+            this.Tag = "Protocol";
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtStepCompositeBindingSource)).EndInit();
@@ -209,6 +211,11 @@
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
+        }
+
+        private void Bs_dtStepLeafBindingSource_CurrentChanged(object sender, System.EventArgs e)
+        {
+            throw new System.NotImplementedException();
         }
 
         #endregion

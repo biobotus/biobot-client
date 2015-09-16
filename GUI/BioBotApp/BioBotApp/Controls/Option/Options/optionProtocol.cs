@@ -22,13 +22,37 @@ namespace BioBotApp.Controls.Option.Options
 
             dsModuleStructureGUI = dsModuleStructure;
             dtStepCompositeBindingSource.DataSource = dsModuleStructureGUI;
-            bs_dtStepLeafBindingSource.DataSource = this.bs_dtStepLeafBindingSource;
+            bs_dtStepLeafBindingSource.DataSource = dsModuleStructureGUI;
+            //bs_dtStepLeafBindingSource.DataMember = "dtStepLeaf";
+            
 
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
+        //private void dtStepCompositeBindingSource_CurrentChanged(object sender, EventArgs e)
+        //{
+        //    DataSets.dsModuleStructure2.dtStepLeafRow row = getSelectedLabwareTypeRow;
+        //    if (row == null)
+        //    {
+        //        return;
+        //    }
+
+        //}
+        //public DataSets.dsModuleStructure2.dtLabwareTypeRow getSelectedLabwareTypeRow()
+        //{
+        //    DataSets.dsModuleStructure2.dtLabwareTypeRow row;
+
+        //    if (bsLabwareType.Current == null)
+        //    {
+        //        return null;
+        //    }
+
+        //    DataRowView rowView = bsLabwareType.Current as DataRowView;
+        //    row = rowView.Row as DataSets.dsModuleStructure2.dtLabwareTypeRow;
+        //    return row;
+        //}
         private void crudOptions_AddClickHandler(object sender, EventArgs e)
         {
             abstractDialog dialog = new abstractDialog("Action type", "Add");
