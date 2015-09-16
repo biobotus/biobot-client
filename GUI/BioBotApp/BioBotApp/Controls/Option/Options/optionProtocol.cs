@@ -21,45 +21,58 @@ namespace BioBotApp.Controls.Option.Options
         {
 
             dsModuleStructureGUI = dsModuleStructure;
-            dtStepCompositeBindingSource.DataSource = dsModuleStructureGUI;
-            bs_dtStepLeafBindingSource.DataSource = dsModuleStructureGUI;
-            //bs_dtStepLeafBindingSource.DataMember = "dtStepLeaf";
+            dtStepCompositeBindingSource.DataSource = dsModuleStructureGUI.dtStepComposite;
+            bs_dtStepLeafBindingSource.DataSource = dsModuleStructureGUI.dtStepLeaf;
+
+
+
+        }
+        private void dtStepCompositeBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+            UpdateStepGrid();
+
+        }
+        public void UpdateStepGrid()
+        {
+
+            DataSets.dsModuleStructure2.dtStepCompositeRow row = getSelectedCompositeRow();
+            if (row == null)
+            {
+                dsModuleStructureGUI.dtStepLeaf.DefaultView.RowFilter = String.Empty;
+                return;
+            }
+            dsModuleStructureGUI.dtStepLeaf.DefaultView.RowFilter = "fk_step_composite = " + row.pk_id;
+
+        }
+        public DataSets.dsModuleStructure2.dtStepCompositeRow getSelectedCompositeRow()
+        {
+            DataSets.dsModuleStructure2.dtStepCompositeRow row;
+
+            if (dtStepCompositeBindingSource.Current == null)
+            {
+                return null;
+            }
+
+            DataRowView rowView = dtStepCompositeBindingSource.Current as DataRowView;
+            row = rowView.Row as DataSets.dsModuleStructure2.dtStepCompositeRow;
+            return row;
+        }
+        private void crudOptionsStep_AddClickHandler(object sender, EventArgs e)
+        {
+            DataSets.dsModuleStructure2.dtStepCompositeRow ProtocolSelectedRow = getSelectedProtocolRow();
+
+            abstractDialog dialog = new abstractDialog("Add Step", "For the " + ProtocolSelectedRow.description + " protocol");
+
+            //ComboBox ProtocolID = new ComboBox();
+            namedInputTextBox description = new namedInputTextBox("Description");
+
+            //ProtocolID.DataSource = dsModuleStructureGUI.dtStepComposite;
+            //ProtocolID.DisplayMember = "description";
             
 
-        }
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-        //private void dtStepCompositeBindingSource_CurrentChanged(object sender, EventArgs e)
-        //{
-        //    DataSets.dsModuleStructure2.dtStepLeafRow row = getSelectedLabwareTypeRow;
-        //    if (row == null)
-        //    {
-        //        return;
-        //    }
-
-        //}
-        //public DataSets.dsModuleStructure2.dtLabwareTypeRow getSelectedLabwareTypeRow()
-        //{
-        //    DataSets.dsModuleStructure2.dtLabwareTypeRow row;
-
-        //    if (bsLabwareType.Current == null)
-        //    {
-        //        return null;
-        //    }
-
-        //    DataRowView rowView = bsLabwareType.Current as DataRowView;
-        //    row = rowView.Row as DataSets.dsModuleStructure2.dtLabwareTypeRow;
-        //    return row;
-        //}
-        private void crudOptions_AddClickHandler(object sender, EventArgs e)
-        {
-            abstractDialog dialog = new abstractDialog("Action type", "Add");
-
-            namedInputTextBox description = new namedInputTextBox("Description");
             dialog.addNamedInputTextBox(description);
-
+            //dialog.addControl(ProtocolID);
             dialog.ShowDialog();
 
             if (dialog.DialogResult.Equals(DialogResult.OK))
@@ -67,12 +80,13 @@ namespace BioBotApp.Controls.Option.Options
                 DataSets.dsModuleStructure2.dtStepLeafRow row;
                 row = dsModuleStructureGUI.dtStepLeaf.NewdtStepLeafRow();
                 row.description = description.getInputTextValue();
+                row.fk_step_composite = ProtocolSelectedRow.pk_id;
                 dsModuleStructureGUI.dtStepLeaf.AdddtStepLeafRow(row);
                 updateRow(row);
             }
         }
 
-        private void crudOptions_DeleteClickHandler(object sender, EventArgs e)
+        private void crudOptionsStep_DeleteClickHandler(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count == 0)
             {
@@ -95,7 +109,70 @@ namespace BioBotApp.Controls.Option.Options
             updateRow(row);
         }
 
-        private void crudOptions_ModifyClickHandler(object sender, EventArgs e)
+        private void crudOptionsStep_ModifyClickHandler(object sender, EventArgs e)
+        {
+            abstractDialog dialog = new abstractDialog("Action type", "Modify");
+            DataSets.dsModuleStructure2.dtStepLeafRow row = getSelectedRow();
+
+            if (row == null)
+            {
+                return;
+            }
+
+            namedInputTextBox description = new namedInputTextBox("Description", row.description);
+            dialog.addNamedInputTextBox(description);
+
+            dialog.ShowDialog();
+
+            if (dialog.DialogResult.Equals(DialogResult.OK))
+            {
+                row.description = description.getInputTextValue();
+                updateRow(row);
+            }
+        }
+        private void crudOptionsProto_AddClickHandler(object sender, EventArgs e)
+        {
+            abstractDialog dialog = new abstractDialog("Action type", "Add");
+
+            namedInputTextBox description = new namedInputTextBox("Description");
+            dialog.addNamedInputTextBox(description);
+
+            dialog.ShowDialog();
+
+            if (dialog.DialogResult.Equals(DialogResult.OK))
+            {
+                DataSets.dsModuleStructure2.dtStepLeafRow row;
+                row = dsModuleStructureGUI.dtStepLeaf.NewdtStepLeafRow();
+                row.description = description.getInputTextValue();
+                dsModuleStructureGUI.dtStepLeaf.AdddtStepLeafRow(row);
+                updateRow(row);
+            }
+        }
+
+        private void crudOptionsProto_DeleteClickHandler(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                return;
+            }
+
+            DataSets.dsModuleStructure2.dtStepLeafRow row;
+            row = getSelectedRow();
+
+            DialogResult result = MessageBox.Show("Delete : " + row.description + " ?", "Delete action type ?", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (result.Equals(DialogResult.No)
+                && row != null)
+            {
+                return;
+            }
+
+            row.Delete();
+            updateRow(row);
+        }
+
+        private void crudOptionsProto_ModifyClickHandler(object sender, EventArgs e)
         {
             abstractDialog dialog = new abstractDialog("Action type", "Modify");
             DataSets.dsModuleStructure2.dtStepLeafRow row = getSelectedRow();
@@ -123,7 +200,19 @@ namespace BioBotApp.Controls.Option.Options
             row = rowView.Row as DataSets.dsModuleStructure2.dtStepLeafRow;
             return row;
         }
+        public DataSets.dsModuleStructure2.dtStepCompositeRow getSelectedProtocolRow()
+        {
+            DataSets.dsModuleStructure2.dtStepCompositeRow row;
 
+            if (dtStepCompositeBindingSource.Current == null)
+            {
+                return null;
+            }
+
+            DataRowView rowView = dtStepCompositeBindingSource.Current as DataRowView;
+            row = rowView.Row as DataSets.dsModuleStructure2.dtStepCompositeRow;
+            return row;
+        }
         public void updateRow(DataSets.dsModuleStructure2.dtStepLeafRow updateRow)
         {
             try
