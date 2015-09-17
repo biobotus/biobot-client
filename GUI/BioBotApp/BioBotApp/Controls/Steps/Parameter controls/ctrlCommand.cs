@@ -15,8 +15,10 @@ namespace BioBotApp.Controls.Steps.Parameter_controls
 {
     public partial class ctrlCommand : UserControl
     {
-        Dictionary<dsModuleStructure2.dtActionTypeRow, namedInputTextBox> actionTypeInputBoxDict;
-        namedInputTextBox inputBox;
+        private Dictionary<dsModuleStructure2.dtActionTypeRow, namedInputTextBox> actionTypeInputBoxDict;
+        private namedInputTextBox inputBox;
+        private Boolean _isInitialized = false;
+
         public ctrlCommand()
         {
             InitializeComponent();
@@ -26,6 +28,7 @@ namespace BioBotApp.Controls.Steps.Parameter_controls
         public void init(String title)
         {
             txtCommandTypeName.Text = title;
+            _isInitialized = true;
         }
 
         public void addCommand(dsModuleStructure2.dtActionTypeRow actionType)
@@ -37,6 +40,11 @@ namespace BioBotApp.Controls.Steps.Parameter_controls
         public String getValue()
         {
             return inputBox.getInputTextValue();
+        }
+
+        public Boolean isInitialized()
+        {
+            return _isInitialized;
         }
     }
 }
