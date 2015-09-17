@@ -22,7 +22,7 @@ namespace BioBotApp.Controls.Option.Options
         {
             this.dsModuleStructureGUI = dsModuleStructure;
             this.bsLabwareType.DataSource = dsModuleStructureGUI;
-            bsLabwareParameterType.DataSource = dsModuleStructureGUI;
+            this.bsLabwareParameterType.DataSource = dsModuleStructureGUI;
             this.bsLabwareTypedtLabwareTypeLabwareParameterType.DataMember = "dtLabwareType_dtLabwareTypeLabwareParameterType";
             this.bsLabwareTypedtLabwareTypeLabwareParameterType.DataSource = this.bsLabwareType;
             /*

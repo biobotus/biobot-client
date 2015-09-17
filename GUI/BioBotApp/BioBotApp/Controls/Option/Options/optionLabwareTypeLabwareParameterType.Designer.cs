@@ -84,7 +84,7 @@
             this.dtLabwareTypeDataGridView.DataSource = this.bsLabwareType;
             this.dtLabwareTypeDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtLabwareTypeDataGridView.Location = new System.Drawing.Point(2, 15);
-            this.dtLabwareTypeDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtLabwareTypeDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.dtLabwareTypeDataGridView.Name = "dtLabwareTypeDataGridView";
             this.dtLabwareTypeDataGridView.RowHeadersVisible = false;
             this.dtLabwareTypeDataGridView.RowTemplate.Height = 24;
@@ -121,7 +121,7 @@
             this.dataGridView1.DataSource = this.bsLabwareTypedtLabwareTypeLabwareParameterType;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(2, 45);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -168,7 +168,7 @@
             this.crudOptions1.Dock = System.Windows.Forms.DockStyle.Top;
             this.crudOptions1.LayoutLeftToRight = System.Windows.Forms.FlowDirection.RightToLeft;
             this.crudOptions1.Location = new System.Drawing.Point(2, 15);
-            this.crudOptions1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.crudOptions1.Margin = new System.Windows.Forms.Padding(2);
             this.crudOptions1.MinimumSize = new System.Drawing.Size(28, 30);
             this.crudOptions1.Name = "crudOptions1";
             this.crudOptions1.Size = new System.Drawing.Size(261, 30);
@@ -180,9 +180,9 @@
             this.groupBox1.Controls.Add(this.crudOptions1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupBox1.Location = new System.Drawing.Point(309, 0);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(265, 305);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
@@ -193,9 +193,9 @@
             this.groupBox2.Controls.Add(this.dtLabwareTypeDataGridView);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(309, 305);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
@@ -220,7 +220,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "optionLabwareTypeLabwareParameterType";
             this.Size = new System.Drawing.Size(574, 305);
             this.Tag = "Labware type labware parameters";

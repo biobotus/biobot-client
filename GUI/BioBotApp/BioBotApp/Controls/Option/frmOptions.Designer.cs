@@ -28,28 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Action types");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Action value types");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Module types");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Module types action types");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Labware types labware parameters");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Labware types");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Labware parameter types");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Database", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3,
-            treeNode4,
-            treeNode5,
-            treeNode6,
-            treeNode7});
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Gcode Serial");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("serial -> can");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Communication", new System.Windows.Forms.TreeNode[] {
-            treeNode9,
-            treeNode10});
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Movements");
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Protocol");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Action types");
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Action value types");
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Module types");
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Module types action types");
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Labware types labware parameters");
+            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Labware types");
+            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Labware parameter types");
+            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Database", new System.Windows.Forms.TreeNode[] {
+            treeNode14,
+            treeNode15,
+            treeNode16,
+            treeNode17,
+            treeNode18,
+            treeNode19,
+            treeNode20});
+            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Gcode Serial");
+            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("serial -> can");
+            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Communication", new System.Windows.Forms.TreeNode[] {
+            treeNode22,
+            treeNode23});
+            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Movements");
+            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Protocol");
             this.panel1 = new System.Windows.Forms.Panel();
             this.tlvOptions = new System.Windows.Forms.TreeView();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -81,41 +81,41 @@
             this.tlvOptions.Location = new System.Drawing.Point(0, 0);
             this.tlvOptions.Margin = new System.Windows.Forms.Padding(2);
             this.tlvOptions.Name = "tlvOptions";
-            treeNode1.Name = "nodeActionTypes";
-            treeNode1.Tag = "actionTypes";
-            treeNode1.Text = "Action types";
-            treeNode2.Name = "nodeActionValueTypes";
-            treeNode2.Tag = "actionValueTypes";
-            treeNode2.Text = "Action value types";
-            treeNode3.Name = "nodeModuleTypes";
-            treeNode3.Tag = "moduleType";
-            treeNode3.Text = "Module types";
-            treeNode4.Name = "nodeModuleTypesActionTypes";
-            treeNode4.Tag = "moduleTypeActionType";
-            treeNode4.Text = "Module types action types";
-            treeNode5.Name = "nodeLabwareTypesLabwareParameterTypes";
-            treeNode5.Text = "Labware types labware parameters";
-            treeNode6.Name = "nodeLabwareTypes";
-            treeNode6.Text = "Labware types";
-            treeNode7.Name = "nodeLabwareParameterTypes";
-            treeNode7.Text = "Labware parameter types";
-            treeNode8.Name = "nodeDB";
-            treeNode8.Text = "Database";
-            treeNode9.Name = "nodeGCode";
-            treeNode9.Text = "Gcode Serial";
-            treeNode10.Name = "nodeCan";
-            treeNode10.Text = "serial -> can";
-            treeNode11.Name = "nodeCom";
-            treeNode11.Text = "Communication";
-            treeNode12.Name = "nodeMovement";
-            treeNode12.Text = "Movements";
-            treeNode13.Name = "nodeProtocol";
-            treeNode13.Text = "Protocol";
+            treeNode14.Name = "nodeActionTypes";
+            treeNode14.Tag = "actionTypes";
+            treeNode14.Text = "Action types";
+            treeNode15.Name = "nodeActionValueTypes";
+            treeNode15.Tag = "actionValueTypes";
+            treeNode15.Text = "Action value types";
+            treeNode16.Name = "nodeModuleTypes";
+            treeNode16.Tag = "moduleType";
+            treeNode16.Text = "Module types";
+            treeNode17.Name = "nodeModuleTypesActionTypes";
+            treeNode17.Tag = "moduleTypeActionType";
+            treeNode17.Text = "Module types action types";
+            treeNode18.Name = "nodeLabwareTypesLabwareParameterTypes";
+            treeNode18.Text = "Labware types labware parameters";
+            treeNode19.Name = "nodeLabwareTypes";
+            treeNode19.Text = "Labware types";
+            treeNode20.Name = "nodeLabwareParameterTypes";
+            treeNode20.Text = "Labware parameter types";
+            treeNode21.Name = "nodeDB";
+            treeNode21.Text = "Database";
+            treeNode22.Name = "nodeGCode";
+            treeNode22.Text = "Gcode Serial";
+            treeNode23.Name = "nodeCan";
+            treeNode23.Text = "serial -> can";
+            treeNode24.Name = "nodeCom";
+            treeNode24.Text = "Communication";
+            treeNode25.Name = "nodeMovement";
+            treeNode25.Text = "Movements";
+            treeNode26.Name = "nodeProtocol";
+            treeNode26.Text = "Protocol";
             this.tlvOptions.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode8,
-            treeNode11,
-            treeNode12,
-            treeNode13});
+            treeNode21,
+            treeNode24,
+            treeNode25,
+            treeNode26});
             this.tlvOptions.Size = new System.Drawing.Size(150, 352);
             this.tlvOptions.TabIndex = 0;
             this.tlvOptions.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tlvOptions_AfterSelect);
@@ -145,6 +145,7 @@
             // 
             // mainPanel
             // 
+            this.mainPanel.AutoSize = true;
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(152, 37);
             this.mainPanel.Margin = new System.Windows.Forms.Padding(2);
@@ -194,6 +195,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(604, 352);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.panel3);
@@ -208,6 +210,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dsModuleStructure)).EndInit();
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

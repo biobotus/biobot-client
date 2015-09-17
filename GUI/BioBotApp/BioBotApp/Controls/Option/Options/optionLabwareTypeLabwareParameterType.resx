@@ -130,15 +130,15 @@
     <value>17, 63</value>
   </metadata>
   <metadata name="taLabwareTypeLabwareParameterType.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>500, 63</value>
+    <value>349, 62</value>
   </metadata>
   <metadata name="dsModuleStructureGUIBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>761, 63</value>
+    <value>207, 105</value>
   </metadata>
   <metadata name="taLabwareParameterType.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 102</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>91</value>
+    <value>323</value>
   </metadata>
 </root>
