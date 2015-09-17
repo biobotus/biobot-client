@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,11 +20,12 @@ namespace BioBotApp.Controls.Steps.Parameter_controls
 
             if(stepCompositeRow.pk_id < 0)
             {
-                return;
+                //return;
             }
 
             _stepCompositeRow = stepCompositeRow;
             this.Text = stepCompositeRow.description;
+            this.BackColor = Color.Yellow;
         }
 
         public DataSets.dsModuleStructure2.dtStepCompositeRow getStepCompositeRow()

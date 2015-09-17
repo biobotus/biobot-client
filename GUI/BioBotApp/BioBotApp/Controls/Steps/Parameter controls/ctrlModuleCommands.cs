@@ -17,7 +17,7 @@ namespace BioBotApp.Controls.Parameter_controls
     {
         dsModuleStructure2 _dsModuleStructure;
         dsModuleStructure2.dtModuleRow _moduleRow;
-        Dictionary<dsModuleStructure2.dtActionValueTypeRow, ctrlCommand> actionTypeDict;
+        Dictionary<dsModuleStructure2.dtModuleTypeActionTypeRow, ctrlCommand> actionTypeDict;
 
         public ctrlModuleParameters()
         {
@@ -35,24 +35,24 @@ namespace BioBotApp.Controls.Parameter_controls
 
         public void setParameterActions(dsModuleStructure2 dsModuleStructure, dsModuleStructure2.dtModuleRow module)
         {
-            actionTypeDict = new Dictionary<dsModuleStructure2.dtActionValueTypeRow, ctrlCommand>();
+            actionTypeDict = new Dictionary<dsModuleStructure2.dtModuleTypeActionTypeRow, ctrlCommand>();
 
             _dsModuleStructure = dsModuleStructure;
-            
+
             dsModuleStructure2.dtModuleTypeActionTypeRow[] moduleTypeActionTypeRows = module.dtModuleTypeRow.GetdtModuleTypeActionTypeRows();
             foreach (dsModuleStructure2.dtModuleTypeActionTypeRow moduleTypeActionTypeRow in moduleTypeActionTypeRows)
             {
                 ctrlCommand command;
 
-                if(actionTypeDict.ContainsKey(moduleTypeActionTypeRow.dtActionValueTypeRow))
+                if(actionTypeDict.ContainsKey(moduleTypeActionTypeRow))
                 {
-                    command = actionTypeDict[moduleTypeActionTypeRow.dtActionValueTypeRow];
+                    command = actionTypeDict[moduleTypeActionTypeRow];
                 }
                 else
                 {
                     command = new ctrlCommand();
                     command.init(moduleTypeActionTypeRow.dtActionValueTypeRow.description);
-                    actionTypeDict.Add(moduleTypeActionTypeRow.dtActionValueTypeRow, command);
+                    actionTypeDict.Add(moduleTypeActionTypeRow, command);
                 }
                 command.addCommand(moduleTypeActionTypeRow.dtActionTypeRow);
             }
@@ -72,6 +72,16 @@ namespace BioBotApp.Controls.Parameter_controls
         public Button getCancelButton()
         {
             return btnCancel;
+        }
+
+        public Dictionary<dsModuleStructure2.dtModuleTypeActionTypeRow, ctrlCommand> getParameterActions()
+        {
+            return this.actionTypeDict;
+        }
+
+        public String getStepName()
+        {
+            return edtStepName.Text;
         }
     }
 }

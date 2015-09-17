@@ -73,6 +73,7 @@
             this.taLabwareTypeLabwareParameterType = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taLabwareTypeLabwareParameterType();
             this.taStepComposite = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taStepComposite();
             this.taStepLeaf = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taStepLeaf();
+            this.taActionValue = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taActionValue();
             ((System.ComponentModel.ISupportInitialize)(this.bsModuleStructure)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtActionTypeBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -319,7 +320,7 @@
             this.ctrlSteps.Location = new System.Drawing.Point(0, 0);
             this.ctrlSteps.Margin = new System.Windows.Forms.Padding(5);
             this.ctrlSteps.Name = "ctrlSteps";
-            this.ctrlSteps.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctrlSteps.Padding = new System.Windows.Forms.Padding(4);
             this.ctrlSteps.Size = new System.Drawing.Size(267, 644);
             this.ctrlSteps.TabIndex = 7;
             // 
@@ -437,6 +438,10 @@
             // 
             this.taStepLeaf.ClearBeforeFill = true;
             // 
+            // taActionValue
+            // 
+            this.taActionValue.ClearBeforeFill = true;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -520,6 +525,7 @@
         private DataSets.dsModuleStructure2TableAdapters.taLabwareTypeLabwareParameterType taLabwareTypeLabwareParameterType;
         private DataSets.dsModuleStructure2TableAdapters.taStepComposite taStepComposite;
         private DataSets.dsModuleStructure2TableAdapters.taStepLeaf taStepLeaf;
+        private DataSets.dsModuleStructure2TableAdapters.taActionValue taActionValue;
         
     }
 }

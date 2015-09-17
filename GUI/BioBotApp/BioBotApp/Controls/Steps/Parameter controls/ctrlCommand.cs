@@ -16,6 +16,7 @@ namespace BioBotApp.Controls.Steps.Parameter_controls
     public partial class ctrlCommand : UserControl
     {
         Dictionary<dsModuleStructure2.dtActionTypeRow, namedInputTextBox> actionTypeInputBoxDict;
+        namedInputTextBox inputBox;
         public ctrlCommand()
         {
             InitializeComponent();
@@ -29,33 +30,13 @@ namespace BioBotApp.Controls.Steps.Parameter_controls
 
         public void addCommand(dsModuleStructure2.dtActionTypeRow actionType)
         {
-            namedInputTextBox inputBox = new namedInputTextBox(actionType.description);
-            actionTypeInputBoxDict.Add(actionType, inputBox);
+            inputBox = new namedInputTextBox(actionType.description);
             layoutModuleParametersStop.Controls.Add(inputBox);
         }
 
-        public String getActionValue(dsModuleStructure2.dtActionTypeRow actionType)
+        public String getValue()
         {
-            String actionValue = String.Empty;
-           
-            if(actionType == null)
-            {
-                return null;
-            }
-            if(!actionTypeInputBoxDict.ContainsKey(actionType))
-            {
-                return null;
-            }
-
-            actionValue = actionTypeInputBoxDict[actionType].getInputTextValue();
-            if(actionValue.Length == 0)
-            {
-                return null;
-            }
-            else
-            {
-                return actionValue;
-            }
+            return inputBox.getInputTextValue();
         }
     }
 }

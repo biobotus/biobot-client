@@ -44,9 +44,9 @@ namespace BioBotApp.DataSets {
         
         private dtActionValueDataTable tabledtActionValue;
         
-        private dtStepCompositeDataTable tabledtStepComposite;
-        
         private dtStepLeafDataTable tabledtStepLeaf;
+        
+        private dtStepCompositeDataTable tabledtStepComposite;
         
         private global::System.Data.DataRelation relationdtModuleTypeActionType_dtModuleType;
         
@@ -64,17 +64,17 @@ namespace BioBotApp.DataSets {
         
         private global::System.Data.DataRelation relationdtModuleTypeActionType_dtActionType;
         
-        private global::System.Data.DataRelation relationbbt_step_composite_bbt_step_composite1;
-        
-        private global::System.Data.DataRelation relationdtModule_bbt_step_composite1;
-        
         private global::System.Data.DataRelation relationdtActionType_bbt_action_value;
         
         private global::System.Data.DataRelation relationdtActionValueType_bbt_action_value;
         
-        private global::System.Data.DataRelation relationdtStepLeaf_dtStepComposite;
-        
         private global::System.Data.DataRelation relationdtStepLeaf_dtActionValue;
+        
+        private global::System.Data.DataRelation relationdtStepComposite_dtStepLeaf;
+        
+        private global::System.Data.DataRelation relationdtModule_dtStepComposite;
+        
+        private global::System.Data.DataRelation relationdtStepComposite_dtStepComposite;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -134,11 +134,11 @@ namespace BioBotApp.DataSets {
                 if ((ds.Tables["dtActionValue"] != null)) {
                     base.Tables.Add(new dtActionValueDataTable(ds.Tables["dtActionValue"]));
                 }
-                if ((ds.Tables["dtStepComposite"] != null)) {
-                    base.Tables.Add(new dtStepCompositeDataTable(ds.Tables["dtStepComposite"]));
-                }
                 if ((ds.Tables["dtStepLeaf"] != null)) {
                     base.Tables.Add(new dtStepLeafDataTable(ds.Tables["dtStepLeaf"]));
+                }
+                if ((ds.Tables["dtStepComposite"] != null)) {
+                    base.Tables.Add(new dtStepCompositeDataTable(ds.Tables["dtStepComposite"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -262,9 +262,9 @@ namespace BioBotApp.DataSets {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public dtStepCompositeDataTable dtStepComposite {
+        public dtStepLeafDataTable dtStepLeaf {
             get {
-                return this.tabledtStepComposite;
+                return this.tabledtStepLeaf;
             }
         }
         
@@ -272,9 +272,9 @@ namespace BioBotApp.DataSets {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public dtStepLeafDataTable dtStepLeaf {
+        public dtStepCompositeDataTable dtStepComposite {
             get {
-                return this.tabledtStepLeaf;
+                return this.tabledtStepComposite;
             }
         }
         
@@ -375,11 +375,11 @@ namespace BioBotApp.DataSets {
                 if ((ds.Tables["dtActionValue"] != null)) {
                     base.Tables.Add(new dtActionValueDataTable(ds.Tables["dtActionValue"]));
                 }
-                if ((ds.Tables["dtStepComposite"] != null)) {
-                    base.Tables.Add(new dtStepCompositeDataTable(ds.Tables["dtStepComposite"]));
-                }
                 if ((ds.Tables["dtStepLeaf"] != null)) {
                     base.Tables.Add(new dtStepLeafDataTable(ds.Tables["dtStepLeaf"]));
+                }
+                if ((ds.Tables["dtStepComposite"] != null)) {
+                    base.Tables.Add(new dtStepCompositeDataTable(ds.Tables["dtStepComposite"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -474,16 +474,16 @@ namespace BioBotApp.DataSets {
                     this.tabledtActionValue.InitVars();
                 }
             }
-            this.tabledtStepComposite = ((dtStepCompositeDataTable)(base.Tables["dtStepComposite"]));
-            if ((initTable == true)) {
-                if ((this.tabledtStepComposite != null)) {
-                    this.tabledtStepComposite.InitVars();
-                }
-            }
             this.tabledtStepLeaf = ((dtStepLeafDataTable)(base.Tables["dtStepLeaf"]));
             if ((initTable == true)) {
                 if ((this.tabledtStepLeaf != null)) {
                     this.tabledtStepLeaf.InitVars();
+                }
+            }
+            this.tabledtStepComposite = ((dtStepCompositeDataTable)(base.Tables["dtStepComposite"]));
+            if ((initTable == true)) {
+                if ((this.tabledtStepComposite != null)) {
+                    this.tabledtStepComposite.InitVars();
                 }
             }
             this.relationdtModuleTypeActionType_dtModuleType = this.Relations["dtModuleTypeActionType_dtModuleType"];
@@ -494,12 +494,12 @@ namespace BioBotApp.DataSets {
             this.relationdtModuleType_dtModuleTypeLabwareParameterType = this.Relations["dtModuleType_dtModuleTypeLabwareParameterType"];
             this.relationdtModuleTypeActionType_dtActionValueType = this.Relations["dtModuleTypeActionType_dtActionValueType"];
             this.relationdtModuleTypeActionType_dtActionType = this.Relations["dtModuleTypeActionType_dtActionType"];
-            this.relationbbt_step_composite_bbt_step_composite1 = this.Relations["bbt_step_composite_bbt_step_composite1"];
-            this.relationdtModule_bbt_step_composite1 = this.Relations["dtModule_bbt_step_composite1"];
             this.relationdtActionType_bbt_action_value = this.Relations["dtActionType_bbt_action_value"];
             this.relationdtActionValueType_bbt_action_value = this.Relations["dtActionValueType_bbt_action_value"];
-            this.relationdtStepLeaf_dtStepComposite = this.Relations["dtStepLeaf_dtStepComposite"];
             this.relationdtStepLeaf_dtActionValue = this.Relations["dtStepLeaf_dtActionValue"];
+            this.relationdtStepComposite_dtStepLeaf = this.Relations["dtStepComposite_dtStepLeaf"];
+            this.relationdtModule_dtStepComposite = this.Relations["dtModule_dtStepComposite"];
+            this.relationdtStepComposite_dtStepComposite = this.Relations["dtStepComposite_dtStepComposite"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -530,10 +530,10 @@ namespace BioBotApp.DataSets {
             base.Tables.Add(this.tabledtLabwareTypeLabwareParameterType);
             this.tabledtActionValue = new dtActionValueDataTable();
             base.Tables.Add(this.tabledtActionValue);
-            this.tabledtStepComposite = new dtStepCompositeDataTable();
-            base.Tables.Add(this.tabledtStepComposite);
             this.tabledtStepLeaf = new dtStepLeafDataTable();
             base.Tables.Add(this.tabledtStepLeaf);
+            this.tabledtStepComposite = new dtStepCompositeDataTable();
+            base.Tables.Add(this.tabledtStepComposite);
             this.relationdtModuleTypeActionType_dtModuleType = new global::System.Data.DataRelation("dtModuleTypeActionType_dtModuleType", new global::System.Data.DataColumn[] {
                         this.tabledtModuleType.pk_idColumn}, new global::System.Data.DataColumn[] {
                         this.tabledtModuleTypeActionType.fk_module_type_idColumn}, false);
@@ -567,14 +567,6 @@ namespace BioBotApp.DataSets {
                         this.tabledtActionType.pk_idColumn}, new global::System.Data.DataColumn[] {
                         this.tabledtModuleTypeActionType.fk_action_type_idColumn}, false);
             this.Relations.Add(this.relationdtModuleTypeActionType_dtActionType);
-            this.relationbbt_step_composite_bbt_step_composite1 = new global::System.Data.DataRelation("bbt_step_composite_bbt_step_composite1", new global::System.Data.DataColumn[] {
-                        this.tabledtStepComposite.pk_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tabledtStepComposite.fk_step_parent_idColumn}, false);
-            this.Relations.Add(this.relationbbt_step_composite_bbt_step_composite1);
-            this.relationdtModule_bbt_step_composite1 = new global::System.Data.DataRelation("dtModule_bbt_step_composite1", new global::System.Data.DataColumn[] {
-                        this.tabledtModule.pk_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tabledtStepComposite.fk_module_idColumn}, false);
-            this.Relations.Add(this.relationdtModule_bbt_step_composite1);
             this.relationdtActionType_bbt_action_value = new global::System.Data.DataRelation("dtActionType_bbt_action_value", new global::System.Data.DataColumn[] {
                         this.tabledtActionType.pk_idColumn}, new global::System.Data.DataColumn[] {
                         this.tabledtActionValue.fk_action_typeColumn}, false);
@@ -583,14 +575,22 @@ namespace BioBotApp.DataSets {
                         this.tabledtActionValueType.pk_idColumn}, new global::System.Data.DataColumn[] {
                         this.tabledtActionValue.fk_action_value_typeColumn}, false);
             this.Relations.Add(this.relationdtActionValueType_bbt_action_value);
-            this.relationdtStepLeaf_dtStepComposite = new global::System.Data.DataRelation("dtStepLeaf_dtStepComposite", new global::System.Data.DataColumn[] {
-                        this.tabledtStepLeaf.fk_step_compositeColumn}, new global::System.Data.DataColumn[] {
-                        this.tabledtStepComposite.pk_idColumn}, false);
-            this.Relations.Add(this.relationdtStepLeaf_dtStepComposite);
             this.relationdtStepLeaf_dtActionValue = new global::System.Data.DataRelation("dtStepLeaf_dtActionValue", new global::System.Data.DataColumn[] {
                         this.tabledtStepLeaf.pk_idColumn}, new global::System.Data.DataColumn[] {
                         this.tabledtActionValue.fk_step_leaf_idColumn}, false);
             this.Relations.Add(this.relationdtStepLeaf_dtActionValue);
+            this.relationdtStepComposite_dtStepLeaf = new global::System.Data.DataRelation("dtStepComposite_dtStepLeaf", new global::System.Data.DataColumn[] {
+                        this.tabledtStepComposite.pk_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tabledtStepLeaf.fk_step_compositeColumn}, false);
+            this.Relations.Add(this.relationdtStepComposite_dtStepLeaf);
+            this.relationdtModule_dtStepComposite = new global::System.Data.DataRelation("dtModule_dtStepComposite", new global::System.Data.DataColumn[] {
+                        this.tabledtModule.pk_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tabledtStepComposite.fk_module_idColumn}, false);
+            this.Relations.Add(this.relationdtModule_dtStepComposite);
+            this.relationdtStepComposite_dtStepComposite = new global::System.Data.DataRelation("dtStepComposite_dtStepComposite", new global::System.Data.DataColumn[] {
+                        this.tabledtStepComposite.pk_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tabledtStepComposite.fk_step_parent_idColumn}, false);
+            this.Relations.Add(this.relationdtStepComposite_dtStepComposite);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -655,13 +655,13 @@ namespace BioBotApp.DataSets {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializedtStepComposite() {
+        private bool ShouldSerializedtStepLeaf() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializedtStepLeaf() {
+        private bool ShouldSerializedtStepComposite() {
             return false;
         }
         
@@ -751,10 +751,10 @@ namespace BioBotApp.DataSets {
         public delegate void dtActionValueRowChangeEventHandler(object sender, dtActionValueRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void dtStepCompositeRowChangeEventHandler(object sender, dtStepCompositeRowChangeEvent e);
+        public delegate void dtStepLeafRowChangeEventHandler(object sender, dtStepLeafRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void dtStepLeafRowChangeEventHandler(object sender, dtStepLeafRowChangeEvent e);
+        public delegate void dtStepCompositeRowChangeEventHandler(object sender, dtStepCompositeRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -3639,317 +3639,6 @@ namespace BioBotApp.DataSets {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class dtStepCompositeDataTable : global::System.Data.TypedTableBase<dtStepCompositeRow> {
-            
-            private global::System.Data.DataColumn columnpk_id;
-            
-            private global::System.Data.DataColumn columnfk_step_parent_id;
-            
-            private global::System.Data.DataColumn columnfk_module_id;
-            
-            private global::System.Data.DataColumn columndescription;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtStepCompositeDataTable() {
-                this.TableName = "dtStepComposite";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal dtStepCompositeDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected dtStepCompositeDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn pk_idColumn {
-                get {
-                    return this.columnpk_id;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn fk_step_parent_idColumn {
-                get {
-                    return this.columnfk_step_parent_id;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn fk_module_idColumn {
-                get {
-                    return this.columnfk_module_id;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn descriptionColumn {
-                get {
-                    return this.columndescription;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtStepCompositeRow this[int index] {
-                get {
-                    return ((dtStepCompositeRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event dtStepCompositeRowChangeEventHandler dtStepCompositeRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event dtStepCompositeRowChangeEventHandler dtStepCompositeRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event dtStepCompositeRowChangeEventHandler dtStepCompositeRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event dtStepCompositeRowChangeEventHandler dtStepCompositeRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AdddtStepCompositeRow(dtStepCompositeRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtStepCompositeRow AdddtStepCompositeRow(dtStepLeafRow parentdtStepLeafRowBydtStepLeaf_dtStepComposite, dtStepCompositeRow parentdtStepCompositeRowBybbt_step_composite_bbt_step_composite1, dtModuleRow parentdtModuleRowBydtModule_bbt_step_composite1, string description) {
-                dtStepCompositeRow rowdtStepCompositeRow = ((dtStepCompositeRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        null,
-                        null,
-                        description};
-                if ((parentdtStepLeafRowBydtStepLeaf_dtStepComposite != null)) {
-                    columnValuesArray[0] = parentdtStepLeafRowBydtStepLeaf_dtStepComposite[2];
-                }
-                if ((parentdtStepCompositeRowBybbt_step_composite_bbt_step_composite1 != null)) {
-                    columnValuesArray[1] = parentdtStepCompositeRowBybbt_step_composite_bbt_step_composite1[0];
-                }
-                if ((parentdtModuleRowBydtModule_bbt_step_composite1 != null)) {
-                    columnValuesArray[2] = parentdtModuleRowBydtModule_bbt_step_composite1[0];
-                }
-                rowdtStepCompositeRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowdtStepCompositeRow);
-                return rowdtStepCompositeRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtStepCompositeRow FindBypk_id(int pk_id) {
-                return ((dtStepCompositeRow)(this.Rows.Find(new object[] {
-                            pk_id})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                dtStepCompositeDataTable cln = ((dtStepCompositeDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new dtStepCompositeDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnpk_id = base.Columns["pk_id"];
-                this.columnfk_step_parent_id = base.Columns["fk_step_parent_id"];
-                this.columnfk_module_id = base.Columns["fk_module_id"];
-                this.columndescription = base.Columns["description"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnpk_id = new global::System.Data.DataColumn("pk_id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpk_id);
-                this.columnfk_step_parent_id = new global::System.Data.DataColumn("fk_step_parent_id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfk_step_parent_id);
-                this.columnfk_module_id = new global::System.Data.DataColumn("fk_module_id", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfk_module_id);
-                this.columndescription = new global::System.Data.DataColumn("description", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndescription);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnpk_id}, true));
-                this.columnpk_id.AllowDBNull = false;
-                this.columnpk_id.Unique = true;
-                this.columnfk_module_id.MaxLength = 8190;
-                this.columndescription.MaxLength = 8190;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtStepCompositeRow NewdtStepCompositeRow() {
-                return ((dtStepCompositeRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new dtStepCompositeRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(dtStepCompositeRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.dtStepCompositeRowChanged != null)) {
-                    this.dtStepCompositeRowChanged(this, new dtStepCompositeRowChangeEvent(((dtStepCompositeRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.dtStepCompositeRowChanging != null)) {
-                    this.dtStepCompositeRowChanging(this, new dtStepCompositeRowChangeEvent(((dtStepCompositeRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.dtStepCompositeRowDeleted != null)) {
-                    this.dtStepCompositeRowDeleted(this, new dtStepCompositeRowChangeEvent(((dtStepCompositeRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.dtStepCompositeRowDeleting != null)) {
-                    this.dtStepCompositeRowDeleting(this, new dtStepCompositeRowChangeEvent(((dtStepCompositeRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemovedtStepCompositeRow(dtStepCompositeRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dsModuleStructure2 ds = new dsModuleStructure2();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "dtStepCompositeDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class dtStepLeafDataTable : global::System.Data.TypedTableBase<dtStepLeafRow> {
             
             private global::System.Data.DataColumn columnpk_id;
@@ -4052,12 +3741,15 @@ namespace BioBotApp.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtStepLeafRow AdddtStepLeafRow(string description, int fk_step_composite) {
+            public dtStepLeafRow AdddtStepLeafRow(string description, dtStepCompositeRow parentdtStepCompositeRowBydtStepComposite_dtStepLeaf) {
                 dtStepLeafRow rowdtStepLeafRow = ((dtStepLeafRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         description,
-                        fk_step_composite};
+                        null};
+                if ((parentdtStepCompositeRowBydtStepComposite_dtStepLeaf != null)) {
+                    columnValuesArray[2] = parentdtStepCompositeRowBydtStepComposite_dtStepLeaf[0];
+                }
                 rowdtStepLeafRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtStepLeafRow);
                 return rowdtStepLeafRow;
@@ -4195,6 +3887,317 @@ namespace BioBotApp.DataSets {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "dtStepLeafDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class dtStepCompositeDataTable : global::System.Data.TypedTableBase<dtStepCompositeRow> {
+            
+            private global::System.Data.DataColumn columnpk_id;
+            
+            private global::System.Data.DataColumn columnfk_step_parent_id;
+            
+            private global::System.Data.DataColumn columnfk_module_id;
+            
+            private global::System.Data.DataColumn columndescription;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public dtStepCompositeDataTable() {
+                this.TableName = "dtStepComposite";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal dtStepCompositeDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected dtStepCompositeDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn pk_idColumn {
+                get {
+                    return this.columnpk_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fk_step_parent_idColumn {
+                get {
+                    return this.columnfk_step_parent_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fk_module_idColumn {
+                get {
+                    return this.columnfk_module_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn descriptionColumn {
+                get {
+                    return this.columndescription;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public dtStepCompositeRow this[int index] {
+                get {
+                    return ((dtStepCompositeRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event dtStepCompositeRowChangeEventHandler dtStepCompositeRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event dtStepCompositeRowChangeEventHandler dtStepCompositeRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event dtStepCompositeRowChangeEventHandler dtStepCompositeRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event dtStepCompositeRowChangeEventHandler dtStepCompositeRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AdddtStepCompositeRow(dtStepCompositeRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public dtStepCompositeRow AdddtStepCompositeRow(dtStepCompositeRow parentdtStepCompositeRowBydtStepComposite_dtStepComposite, dtModuleRow parentdtModuleRowBydtModule_dtStepComposite, string description) {
+                dtStepCompositeRow rowdtStepCompositeRow = ((dtStepCompositeRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        null,
+                        null,
+                        description};
+                if ((parentdtStepCompositeRowBydtStepComposite_dtStepComposite != null)) {
+                    columnValuesArray[1] = parentdtStepCompositeRowBydtStepComposite_dtStepComposite[0];
+                }
+                if ((parentdtModuleRowBydtModule_dtStepComposite != null)) {
+                    columnValuesArray[2] = parentdtModuleRowBydtModule_dtStepComposite[0];
+                }
+                rowdtStepCompositeRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowdtStepCompositeRow);
+                return rowdtStepCompositeRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public dtStepCompositeRow FindBypk_id(int pk_id) {
+                return ((dtStepCompositeRow)(this.Rows.Find(new object[] {
+                            pk_id})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                dtStepCompositeDataTable cln = ((dtStepCompositeDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new dtStepCompositeDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnpk_id = base.Columns["pk_id"];
+                this.columnfk_step_parent_id = base.Columns["fk_step_parent_id"];
+                this.columnfk_module_id = base.Columns["fk_module_id"];
+                this.columndescription = base.Columns["description"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnpk_id = new global::System.Data.DataColumn("pk_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpk_id);
+                this.columnfk_step_parent_id = new global::System.Data.DataColumn("fk_step_parent_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfk_step_parent_id);
+                this.columnfk_module_id = new global::System.Data.DataColumn("fk_module_id", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfk_module_id);
+                this.columndescription = new global::System.Data.DataColumn("description", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndescription);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnpk_id}, true));
+                this.columnpk_id.AutoIncrement = true;
+                this.columnpk_id.AutoIncrementSeed = -1;
+                this.columnpk_id.AutoIncrementStep = -1;
+                this.columnpk_id.AllowDBNull = false;
+                this.columnpk_id.Unique = true;
+                this.columnfk_module_id.MaxLength = 8190;
+                this.columndescription.MaxLength = 8190;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public dtStepCompositeRow NewdtStepCompositeRow() {
+                return ((dtStepCompositeRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new dtStepCompositeRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(dtStepCompositeRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.dtStepCompositeRowChanged != null)) {
+                    this.dtStepCompositeRowChanged(this, new dtStepCompositeRowChangeEvent(((dtStepCompositeRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.dtStepCompositeRowChanging != null)) {
+                    this.dtStepCompositeRowChanging(this, new dtStepCompositeRowChangeEvent(((dtStepCompositeRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.dtStepCompositeRowDeleted != null)) {
+                    this.dtStepCompositeRowDeleted(this, new dtStepCompositeRowChangeEvent(((dtStepCompositeRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.dtStepCompositeRowDeleting != null)) {
+                    this.dtStepCompositeRowDeleting(this, new dtStepCompositeRowChangeEvent(((dtStepCompositeRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemovedtStepCompositeRow(dtStepCompositeRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsModuleStructure2 ds = new dsModuleStructure2();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "dtStepCompositeDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -4524,11 +4527,11 @@ namespace BioBotApp.DataSets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public dtStepCompositeRow[] GetdtStepCompositeRows() {
-                if ((this.Table.ChildRelations["dtModule_bbt_step_composite1"] == null)) {
+                if ((this.Table.ChildRelations["dtModule_dtStepComposite"] == null)) {
                     return new dtStepCompositeRow[0];
                 }
                 else {
-                    return ((dtStepCompositeRow[])(base.GetChildRows(this.Table.ChildRelations["dtModule_bbt_step_composite1"])));
+                    return ((dtStepCompositeRow[])(base.GetChildRows(this.Table.ChildRelations["dtModule_dtStepComposite"])));
                 }
             }
         }
@@ -5035,6 +5038,110 @@ namespace BioBotApp.DataSets {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
+        public partial class dtStepLeafRow : global::System.Data.DataRow {
+            
+            private dtStepLeafDataTable tabledtStepLeaf;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal dtStepLeafRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tabledtStepLeaf = ((dtStepLeafDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int pk_id {
+                get {
+                    return ((int)(this[this.tabledtStepLeaf.pk_idColumn]));
+                }
+                set {
+                    this[this.tabledtStepLeaf.pk_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string description {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtStepLeaf.descriptionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'description\' in table \'dtStepLeaf\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtStepLeaf.descriptionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int fk_step_composite {
+                get {
+                    try {
+                        return ((int)(this[this.tabledtStepLeaf.fk_step_compositeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'fk_step_composite\' in table \'dtStepLeaf\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtStepLeaf.fk_step_compositeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public dtStepCompositeRow dtStepCompositeRow {
+                get {
+                    return ((dtStepCompositeRow)(this.GetParentRow(this.Table.ParentRelations["dtStepComposite_dtStepLeaf"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["dtStepComposite_dtStepLeaf"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsdescriptionNull() {
+                return this.IsNull(this.tabledtStepLeaf.descriptionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetdescriptionNull() {
+                this[this.tabledtStepLeaf.descriptionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isfk_step_compositeNull() {
+                return this.IsNull(this.tabledtStepLeaf.fk_step_compositeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setfk_step_compositeNull() {
+                this[this.tabledtStepLeaf.fk_step_compositeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public dtActionValueRow[] GetdtActionValueRows() {
+                if ((this.Table.ChildRelations["dtStepLeaf_dtActionValue"] == null)) {
+                    return new dtActionValueRow[0];
+                }
+                else {
+                    return ((dtActionValueRow[])(base.GetChildRows(this.Table.ChildRelations["dtStepLeaf_dtActionValue"])));
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
         public partial class dtStepCompositeRow : global::System.Data.DataRow {
             
             private dtStepCompositeDataTable tabledtStepComposite;
@@ -5107,34 +5214,23 @@ namespace BioBotApp.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtStepCompositeRow dtStepCompositeRowParent {
-                get {
-                    return ((dtStepCompositeRow)(this.GetParentRow(this.Table.ParentRelations["bbt_step_composite_bbt_step_composite1"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["bbt_step_composite_bbt_step_composite1"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public dtModuleRow dtModuleRow {
                 get {
-                    return ((dtModuleRow)(this.GetParentRow(this.Table.ParentRelations["dtModule_bbt_step_composite1"])));
+                    return ((dtModuleRow)(this.GetParentRow(this.Table.ParentRelations["dtModule_dtStepComposite"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["dtModule_bbt_step_composite1"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["dtModule_dtStepComposite"]);
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtStepLeafRow dtStepLeafRow {
+            public dtStepCompositeRow dtStepCompositeRowParent {
                 get {
-                    return ((dtStepLeafRow)(this.GetParentRow(this.Table.ParentRelations["dtStepLeaf_dtStepComposite"])));
+                    return ((dtStepCompositeRow)(this.GetParentRow(this.Table.ParentRelations["dtStepComposite_dtStepComposite"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["dtStepLeaf_dtStepComposite"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["dtStepComposite_dtStepComposite"]);
                 }
             }
             
@@ -5176,116 +5272,23 @@ namespace BioBotApp.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtStepCompositeRow[] GetdtStepCompositeRows() {
-                if ((this.Table.ChildRelations["bbt_step_composite_bbt_step_composite1"] == null)) {
-                    return new dtStepCompositeRow[0];
+            public dtStepLeafRow[] GetdtStepLeafRows() {
+                if ((this.Table.ChildRelations["dtStepComposite_dtStepLeaf"] == null)) {
+                    return new dtStepLeafRow[0];
                 }
                 else {
-                    return ((dtStepCompositeRow[])(base.GetChildRows(this.Table.ChildRelations["bbt_step_composite_bbt_step_composite1"])));
+                    return ((dtStepLeafRow[])(base.GetChildRows(this.Table.ChildRelations["dtStepComposite_dtStepLeaf"])));
                 }
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class dtStepLeafRow : global::System.Data.DataRow {
-            
-            private dtStepLeafDataTable tabledtStepLeaf;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal dtStepLeafRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tabledtStepLeaf = ((dtStepLeafDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int pk_id {
-                get {
-                    return ((int)(this[this.tabledtStepLeaf.pk_idColumn]));
-                }
-                set {
-                    this[this.tabledtStepLeaf.pk_idColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string description {
-                get {
-                    try {
-                        return ((string)(this[this.tabledtStepLeaf.descriptionColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'description\' in table \'dtStepLeaf\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtStepLeaf.descriptionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int fk_step_composite {
-                get {
-                    try {
-                        return ((int)(this[this.tabledtStepLeaf.fk_step_compositeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'fk_step_composite\' in table \'dtStepLeaf\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtStepLeaf.fk_step_compositeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsdescriptionNull() {
-                return this.IsNull(this.tabledtStepLeaf.descriptionColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetdescriptionNull() {
-                this[this.tabledtStepLeaf.descriptionColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isfk_step_compositeNull() {
-                return this.IsNull(this.tabledtStepLeaf.fk_step_compositeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setfk_step_compositeNull() {
-                this[this.tabledtStepLeaf.fk_step_compositeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public dtStepCompositeRow[] GetdtStepCompositeRows() {
-                if ((this.Table.ChildRelations["dtStepLeaf_dtStepComposite"] == null)) {
+                if ((this.Table.ChildRelations["dtStepComposite_dtStepComposite"] == null)) {
                     return new dtStepCompositeRow[0];
                 }
                 else {
-                    return ((dtStepCompositeRow[])(base.GetChildRows(this.Table.ChildRelations["dtStepLeaf_dtStepComposite"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtActionValueRow[] GetdtActionValueRows() {
-                if ((this.Table.ChildRelations["dtStepLeaf_dtActionValue"] == null)) {
-                    return new dtActionValueRow[0];
-                }
-                else {
-                    return ((dtActionValueRow[])(base.GetChildRows(this.Table.ChildRelations["dtStepLeaf_dtActionValue"])));
+                    return ((dtStepCompositeRow[])(base.GetChildRows(this.Table.ChildRelations["dtStepComposite_dtStepComposite"])));
                 }
             }
         }
@@ -5634,22 +5637,22 @@ namespace BioBotApp.DataSets {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class dtStepCompositeRowChangeEvent : global::System.EventArgs {
+        public class dtStepLeafRowChangeEvent : global::System.EventArgs {
             
-            private dtStepCompositeRow eventRow;
+            private dtStepLeafRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtStepCompositeRowChangeEvent(dtStepCompositeRow row, global::System.Data.DataRowAction action) {
+            public dtStepLeafRowChangeEvent(dtStepLeafRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtStepCompositeRow Row {
+            public dtStepLeafRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -5668,22 +5671,22 @@ namespace BioBotApp.DataSets {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class dtStepLeafRowChangeEvent : global::System.EventArgs {
+        public class dtStepCompositeRowChangeEvent : global::System.EventArgs {
             
-            private dtStepLeafRow eventRow;
+            private dtStepCompositeRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtStepLeafRowChangeEvent(dtStepLeafRow row, global::System.Data.DataRowAction action) {
+            public dtStepCompositeRowChangeEvent(dtStepCompositeRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtStepLeafRow Row {
+            public dtStepCompositeRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -8682,341 +8685,6 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class taStepComposite : global::System.ComponentModel.Component {
-        
-        private global::System.Data.Odbc.OdbcDataAdapter _adapter;
-        
-        private global::System.Data.Odbc.OdbcConnection _connection;
-        
-        private global::System.Data.Odbc.OdbcTransaction _transaction;
-        
-        private global::System.Data.Odbc.OdbcCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public taStepComposite() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected internal global::System.Data.Odbc.OdbcDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.Odbc.OdbcConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.Odbc.OdbcCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.Odbc.OdbcTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected global::System.Data.Odbc.OdbcCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.Odbc.OdbcDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "dtStepComposite";
-            tableMapping.ColumnMappings.Add("pk_id", "pk_id");
-            tableMapping.ColumnMappings.Add("fk_step_parent_id", "fk_step_parent_id");
-            tableMapping.ColumnMappings.Add("fk_module_id", "fk_module_id");
-            tableMapping.ColumnMappings.Add("description", "description");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.Odbc.OdbcCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM \"biobot\".\"biobot\".\"bbt_step_composite\" WHERE ((\"pk_id\" = ?) AND ((? =" +
-                " 1 AND \"fk_step_parent_id\" IS NULL) OR (\"fk_step_parent_id\" = ?)))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_pk_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "pk_id", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_fk_step_parent_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_step_parent_id", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_fk_step_parent_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_step_parent_id", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.InsertCommand = new global::System.Data.Odbc.OdbcCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \"biobot\".\"biobot\".\"bbt_step_composite\" (\"pk_id\", \"fk_step_parent_id\"," +
-                " \"fk_module_id\", \"description\") VALUES (?, ?, ?, ?) RETURNING pk_id";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("pk_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "pk_id", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("fk_step_parent_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_step_parent_id", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("fk_module_id", global::System.Data.Odbc.OdbcType.Text, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_module_id", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("description", global::System.Data.Odbc.OdbcType.Text, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "description", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand = new global::System.Data.Odbc.OdbcCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE \"biobot\".\"biobot\".\"bbt_step_composite\" SET \"pk_id\" = ?, \"fk_step_parent_id" +
-                "\" = ?, \"fk_module_id\" = ?, \"description\" = ? WHERE ((\"pk_id\" = ?) AND ((? = 1 AN" +
-                "D \"fk_step_parent_id\" IS NULL) OR (\"fk_step_parent_id\" = ?)))";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("pk_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "pk_id", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("fk_step_parent_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_step_parent_id", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("fk_module_id", global::System.Data.Odbc.OdbcType.Text, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_module_id", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("description", global::System.Data.Odbc.OdbcType.Text, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "description", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_pk_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "pk_id", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_fk_step_parent_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_step_parent_id", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_fk_step_parent_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_step_parent_id", global::System.Data.DataRowVersion.Original, false, null));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.Odbc.OdbcConnection();
-            this._connection.ConnectionString = global::BioBotApp.Properties.Settings.Default.BioBotLocalhostConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.Odbc.OdbcCommand[1];
-            this._commandCollection[0] = new global::System.Data.Odbc.OdbcCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT \"pk_id\", \"fk_step_parent_id\", \"fk_module_id\", \"description\" FROM \"biobot\"." +
-                "\"bbt_step_composite\"";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dsModuleStructure2.dtStepCompositeDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dsModuleStructure2.dtStepCompositeDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            dsModuleStructure2.dtStepCompositeDataTable dataTable = new dsModuleStructure2.dtStepCompositeDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dsModuleStructure2.dtStepCompositeDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dsModuleStructure2 dataSet) {
-            return this.Adapter.Update(dataSet, "dtStepComposite");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_pk_id, int Original_fk_step_parent_id) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_pk_id));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_fk_step_parent_id));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int pk_id, int fk_step_parent_id, string fk_module_id, string description) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(pk_id));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(fk_step_parent_id));
-            if ((fk_module_id == null)) {
-                throw new global::System.ArgumentNullException("fk_module_id");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(fk_module_id));
-            }
-            if ((description == null)) {
-                throw new global::System.ArgumentNullException("description");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(description));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int pk_id, int fk_step_parent_id, string fk_module_id, string description, int Original_pk_id, int Original_fk_step_parent_id) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(pk_id));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(fk_step_parent_id));
-            if ((fk_module_id == null)) {
-                throw new global::System.ArgumentNullException("fk_module_id");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(fk_module_id));
-            }
-            if ((description == null)) {
-                throw new global::System.ArgumentNullException("description");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(description));
-            }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_pk_id));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_fk_step_parent_id));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int fk_step_parent_id, string fk_module_id, string description, int Original_pk_id, int Original_fk_step_parent_id) {
-            return this.Update(Original_pk_id, fk_step_parent_id, fk_module_id, description, Original_pk_id, Original_fk_step_parent_id);
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class taStepLeaf : global::System.ComponentModel.Component {
         
         private global::System.Data.Odbc.OdbcDataAdapter _adapter;
@@ -9143,8 +8811,8 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_fk_step_composite", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_step_composite", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \"biobot\".\"biobot\".\"bbt_step_leaf\" (\"description\", \"fk_step_composite\"" +
-                ") VALUES (?, ?) R RETURNING pk_id, desciption dk_step_composite";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \"biobot\".\"biobot\".\"bbt_step_leaf\"\r\n                  (\"description\", " +
+                "\"fk_step_composite\")\r\nVALUES (?, ?) RETURNING pk_id";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("description", global::System.Data.Odbc.OdbcType.Text, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "description", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("fk_step_composite", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_step_composite", global::System.Data.DataRowVersion.Current, false, null));
@@ -9316,6 +8984,329 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class taStepComposite : global::System.ComponentModel.Component {
+        
+        private global::System.Data.Odbc.OdbcDataAdapter _adapter;
+        
+        private global::System.Data.Odbc.OdbcConnection _connection;
+        
+        private global::System.Data.Odbc.OdbcTransaction _transaction;
+        
+        private global::System.Data.Odbc.OdbcCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public taStepComposite() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.Odbc.OdbcDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.Odbc.OdbcConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.Odbc.OdbcCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.Odbc.OdbcTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.Odbc.OdbcCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.Odbc.OdbcDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "dtStepComposite";
+            tableMapping.ColumnMappings.Add("pk_id", "pk_id");
+            tableMapping.ColumnMappings.Add("fk_step_parent_id", "fk_step_parent_id");
+            tableMapping.ColumnMappings.Add("fk_module_id", "fk_module_id");
+            tableMapping.ColumnMappings.Add("description", "description");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.Odbc.OdbcCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM \"biobot\".\"biobot\".\"bbt_step_composite\" WHERE ((\"pk_id\" = ?) AND ((? =" +
+                " 1 AND \"fk_step_parent_id\" IS NULL) OR (\"fk_step_parent_id\" = ?)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_pk_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "pk_id", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_fk_step_parent_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_step_parent_id", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_fk_step_parent_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_step_parent_id", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.InsertCommand = new global::System.Data.Odbc.OdbcCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO biobot.bbt_step_composite\r\n                  (fk_step_parent_id, fk_m" +
+                "odule_id, description)\r\nVALUES (?, ?, ?) RETURNING pk_id\r\n;";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("fk_step_parent_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_step_parent_id", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("fk_module_id", global::System.Data.Odbc.OdbcType.Text, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_module_id", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("description", global::System.Data.Odbc.OdbcType.Text, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "description", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand = new global::System.Data.Odbc.OdbcCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = "UPDATE \"biobot\".\"biobot\".\"bbt_step_composite\" SET \"fk_step_parent_id\" = ?, \"fk_mo" +
+                "dule_id\" = ?, \"description\" = ? WHERE ((\"pk_id\" = ?) AND ((? = 1 AND \"fk_step_pa" +
+                "rent_id\" IS NULL) OR (\"fk_step_parent_id\" = ?)))";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("fk_step_parent_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_step_parent_id", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("fk_module_id", global::System.Data.Odbc.OdbcType.Text, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_module_id", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("description", global::System.Data.Odbc.OdbcType.Text, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "description", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_pk_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "pk_id", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_fk_step_parent_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_step_parent_id", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_fk_step_parent_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "fk_step_parent_id", global::System.Data.DataRowVersion.Original, false, null));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.Odbc.OdbcConnection();
+            this._connection.ConnectionString = global::BioBotApp.Properties.Settings.Default.BioBotLocalhostConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.Odbc.OdbcCommand[1];
+            this._commandCollection[0] = new global::System.Data.Odbc.OdbcCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT \"pk_id\", \"fk_step_parent_id\", \"fk_module_id\", \"description\" FROM \"biobot\"." +
+                "\"bbt_step_composite\"";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(dsModuleStructure2.dtStepCompositeDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual dsModuleStructure2.dtStepCompositeDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            dsModuleStructure2.dtStepCompositeDataTable dataTable = new dsModuleStructure2.dtStepCompositeDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(dsModuleStructure2.dtStepCompositeDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(dsModuleStructure2 dataSet) {
+            return this.Adapter.Update(dataSet, "dtStepComposite");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_pk_id, int Original_fk_step_parent_id) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_pk_id));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_fk_step_parent_id));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(int fk_step_parent_id, string fk_module_id, string description) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(fk_step_parent_id));
+            if ((fk_module_id == null)) {
+                throw new global::System.ArgumentNullException("fk_module_id");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(fk_module_id));
+            }
+            if ((description == null)) {
+                throw new global::System.ArgumentNullException("description");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(description));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(int fk_step_parent_id, string fk_module_id, string description, int Original_pk_id, int Original_fk_step_parent_id) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(fk_step_parent_id));
+            if ((fk_module_id == null)) {
+                throw new global::System.ArgumentNullException("fk_module_id");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(fk_module_id));
+            }
+            if ((description == null)) {
+                throw new global::System.ArgumentNullException("description");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(description));
+            }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_pk_id));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_fk_step_parent_id));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9347,9 +9338,9 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
         
         private taActionValue _taActionValue;
         
-        private taStepComposite _taStepComposite;
-        
         private taStepLeaf _taStepLeaf;
+        
+        private taStepComposite _taStepComposite;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -9511,12 +9502,12 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public taStepComposite taStepComposite {
+        public taStepLeaf taStepLeaf {
             get {
-                return this._taStepComposite;
+                return this._taStepLeaf;
             }
             set {
-                this._taStepComposite = value;
+                this._taStepLeaf = value;
             }
         }
         
@@ -9525,12 +9516,12 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public taStepLeaf taStepLeaf {
+        public taStepComposite taStepComposite {
             get {
-                return this._taStepLeaf;
+                return this._taStepComposite;
             }
             set {
-                this._taStepLeaf = value;
+                this._taStepComposite = value;
             }
         }
         
@@ -9593,13 +9584,13 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
                             && (this._taActionValue.Connection != null))) {
                     return this._taActionValue.Connection;
                 }
-                if (((this._taStepComposite != null) 
-                            && (this._taStepComposite.Connection != null))) {
-                    return this._taStepComposite.Connection;
-                }
                 if (((this._taStepLeaf != null) 
                             && (this._taStepLeaf.Connection != null))) {
                     return this._taStepLeaf.Connection;
+                }
+                if (((this._taStepComposite != null) 
+                            && (this._taStepComposite.Connection != null))) {
+                    return this._taStepComposite.Connection;
                 }
                 return null;
             }
@@ -9644,10 +9635,10 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
                 if ((this._taActionValue != null)) {
                     count = (count + 1);
                 }
-                if ((this._taStepComposite != null)) {
+                if ((this._taStepLeaf != null)) {
                     count = (count + 1);
                 }
-                if ((this._taStepLeaf != null)) {
+                if ((this._taStepComposite != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -9670,6 +9661,25 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._taModule != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.dtModule.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._taModule.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._taStepComposite != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.dtStepComposite.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    this.SortSelfReferenceRows(updatedRows, dataSet.Relations["dtStepComposite_dtStepComposite"], false);
+                    result = (result + this._taStepComposite.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._taActionType != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.dtActionType.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -9685,15 +9695,6 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._taActionValueType.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._taModule != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.dtModule.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._taModule.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -9760,16 +9761,6 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._taStepComposite != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.dtStepComposite.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    this.SortSelfReferenceRows(updatedRows, dataSet.Relations["bbt_step_composite_bbt_step_composite1"], false);
-                    result = (result + this._taStepComposite.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             return result;
         }
         
@@ -9788,6 +9779,23 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._taModule != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.dtModule.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._taModule.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._taStepComposite != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.dtStepComposite.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    this.SortSelfReferenceRows(addedRows, dataSet.Relations["dtStepComposite_dtStepComposite"], false);
+                    result = (result + this._taStepComposite.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._taActionType != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.dtActionType.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -9801,14 +9809,6 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._taActionValueType.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._taModule != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.dtModule.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._taModule.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -9868,15 +9868,6 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._taStepComposite != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.dtStepComposite.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    this.SortSelfReferenceRows(addedRows, dataSet.Relations["bbt_step_composite_bbt_step_composite1"], false);
-                    result = (result + this._taStepComposite.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             return result;
         }
         
@@ -9887,15 +9878,6 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateDeletedRows(dsModuleStructure2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._taStepComposite != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.dtStepComposite.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    this.SortSelfReferenceRows(deletedRows, dataSet.Relations["bbt_step_composite_bbt_step_composite1"], true);
-                    result = (result + this._taStepComposite.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._taActionValue != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.dtActionValue.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -9952,14 +9934,6 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._taModule != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.dtModule.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._taModule.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._taActionValueType != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.dtActionValueType.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -9973,6 +9947,23 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._taActionType.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._taStepComposite != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.dtStepComposite.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    this.SortSelfReferenceRows(deletedRows, dataSet.Relations["dtStepComposite_dtStepComposite"], true);
+                    result = (result + this._taStepComposite.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._taModule != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.dtModule.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._taModule.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -10073,13 +10064,13 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._taStepComposite != null) 
-                        && (this.MatchTableAdapterConnection(this._taStepComposite.Connection) == false))) {
+            if (((this._taStepLeaf != null) 
+                        && (this.MatchTableAdapterConnection(this._taStepLeaf.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._taStepLeaf != null) 
-                        && (this.MatchTableAdapterConnection(this._taStepLeaf.Connection) == false))) {
+            if (((this._taStepComposite != null) 
+                        && (this.MatchTableAdapterConnection(this._taStepComposite.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -10205,15 +10196,6 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
                         adaptersWithAcceptChangesDuringUpdate.Add(this._taActionValue.Adapter);
                     }
                 }
-                if ((this._taStepComposite != null)) {
-                    revertConnections.Add(this._taStepComposite, this._taStepComposite.Connection);
-                    this._taStepComposite.Connection = ((global::System.Data.Odbc.OdbcConnection)(workConnection));
-                    this._taStepComposite.Transaction = ((global::System.Data.Odbc.OdbcTransaction)(workTransaction));
-                    if (this._taStepComposite.Adapter.AcceptChangesDuringUpdate) {
-                        this._taStepComposite.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._taStepComposite.Adapter);
-                    }
-                }
                 if ((this._taStepLeaf != null)) {
                     revertConnections.Add(this._taStepLeaf, this._taStepLeaf.Connection);
                     this._taStepLeaf.Connection = ((global::System.Data.Odbc.OdbcConnection)(workConnection));
@@ -10221,6 +10203,15 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
                     if (this._taStepLeaf.Adapter.AcceptChangesDuringUpdate) {
                         this._taStepLeaf.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._taStepLeaf.Adapter);
+                    }
+                }
+                if ((this._taStepComposite != null)) {
+                    revertConnections.Add(this._taStepComposite, this._taStepComposite.Connection);
+                    this._taStepComposite.Connection = ((global::System.Data.Odbc.OdbcConnection)(workConnection));
+                    this._taStepComposite.Transaction = ((global::System.Data.Odbc.OdbcTransaction)(workTransaction));
+                    if (this._taStepComposite.Adapter.AcceptChangesDuringUpdate) {
+                        this._taStepComposite.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._taStepComposite.Adapter);
                     }
                 }
                 // 
@@ -10321,13 +10312,13 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
                     this._taActionValue.Connection = ((global::System.Data.Odbc.OdbcConnection)(revertConnections[this._taActionValue]));
                     this._taActionValue.Transaction = null;
                 }
-                if ((this._taStepComposite != null)) {
-                    this._taStepComposite.Connection = ((global::System.Data.Odbc.OdbcConnection)(revertConnections[this._taStepComposite]));
-                    this._taStepComposite.Transaction = null;
-                }
                 if ((this._taStepLeaf != null)) {
                     this._taStepLeaf.Connection = ((global::System.Data.Odbc.OdbcConnection)(revertConnections[this._taStepLeaf]));
                     this._taStepLeaf.Transaction = null;
+                }
+                if ((this._taStepComposite != null)) {
+                    this._taStepComposite.Connection = ((global::System.Data.Odbc.OdbcConnection)(revertConnections[this._taStepComposite]));
+                    this._taStepComposite.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

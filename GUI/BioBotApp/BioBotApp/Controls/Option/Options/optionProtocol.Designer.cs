@@ -220,7 +220,7 @@
             // 
             // dtStepLeafdtStepCompositeBindingSource
             // 
-            this.dtStepLeafdtStepCompositeBindingSource.DataMember = "bbt_step_composite_bbt_step_composite1";
+            //this.dtStepLeafdtStepCompositeBindingSource.DataMember = "bbt_step_composite_bbt_step_composite1";
             this.dtStepLeafdtStepCompositeBindingSource.DataSource = this.dtStepCompositeBindingSource;
             // 
             // optionProtocol
