@@ -28,12 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.crudOptions1 = new BioBotApp.Controls.Utils.crudOptions();
             this.btnValidation = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvTacCalibrationDataView = new System.Windows.Forms.DataGridView();
             this.cmbTacSelector = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dsModuleStructure = new BioBotApp.DataSets.dsModuleStructure2();
+            this.crudOptions1 = new BioBotApp.Controls.Utils.crudOptions();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTacCalibrationDataView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsModuleStructure)).BeginInit();
             this.SuspendLayout();
+            // 
+            // btnValidation
+            // 
+            this.btnValidation.Location = new System.Drawing.Point(164, 3);
+            this.btnValidation.Name = "btnValidation";
+            this.btnValidation.Size = new System.Drawing.Size(67, 31);
+            this.btnValidation.TabIndex = 0;
+            this.btnValidation.Text = "validate";
+            this.btnValidation.UseVisualStyleBackColor = true;
+            this.btnValidation.Click += new System.EventHandler(this.btnValidation_Click);
+            // 
+            // dgvTacCalibrationDataView
+            // 
+            this.dgvTacCalibrationDataView.AllowUserToAddRows = false;
+            this.dgvTacCalibrationDataView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTacCalibrationDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTacCalibrationDataView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvTacCalibrationDataView.Location = new System.Drawing.Point(0, 37);
+            this.dgvTacCalibrationDataView.Name = "dgvTacCalibrationDataView";
+            this.dgvTacCalibrationDataView.ReadOnly = true;
+            this.dgvTacCalibrationDataView.Size = new System.Drawing.Size(347, 256);
+            this.dgvTacCalibrationDataView.TabIndex = 2;
+            // 
+            // cmbTacSelector
+            // 
+            this.cmbTacSelector.FormattingEnabled = true;
+            this.cmbTacSelector.Location = new System.Drawing.Point(12, 10);
+            this.cmbTacSelector.Name = "cmbTacSelector";
+            this.cmbTacSelector.Size = new System.Drawing.Size(146, 21);
+            this.cmbTacSelector.TabIndex = 3;
+            // 
+            // dsModuleStructure
+            // 
+            this.dsModuleStructure.DataSetName = "dsModuleStructure2";
+            this.dsModuleStructure.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // crudOptions1
             // 
@@ -45,32 +82,7 @@
             this.crudOptions1.Name = "crudOptions1";
             this.crudOptions1.Size = new System.Drawing.Size(347, 37);
             this.crudOptions1.TabIndex = 0;
-            // 
-            // btnValidation
-            // 
-            this.btnValidation.Location = new System.Drawing.Point(164, 3);
-            this.btnValidation.Name = "btnValidation";
-            this.btnValidation.Size = new System.Drawing.Size(67, 31);
-            this.btnValidation.TabIndex = 0;
-            this.btnValidation.Text = "validate";
-            this.btnValidation.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 37);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(347, 256);
-            this.dataGridView1.TabIndex = 2;
-            // 
-            // cmbTacSelector
-            // 
-            this.cmbTacSelector.FormattingEnabled = true;
-            this.cmbTacSelector.Location = new System.Drawing.Point(12, 10);
-            this.cmbTacSelector.Name = "cmbTacSelector";
-            this.cmbTacSelector.Size = new System.Drawing.Size(146, 21);
-            this.cmbTacSelector.TabIndex = 3;
+            this.crudOptions1.AddClickHandler += new System.EventHandler(this.crudOptions_AddClickHandler);
             // 
             // optionTacCalibration
             // 
@@ -78,12 +90,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnValidation);
             this.Controls.Add(this.cmbTacSelector);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvTacCalibrationDataView);
             this.Controls.Add(this.crudOptions1);
             this.Name = "optionTacCalibration";
             this.Size = new System.Drawing.Size(347, 293);
             this.Tag = "Tac calibration";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTacCalibrationDataView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsModuleStructure)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -91,8 +104,9 @@
         #endregion
 
         private Utils.crudOptions crudOptions1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvTacCalibrationDataView;
         private System.Windows.Forms.Button btnValidation;
         private System.Windows.Forms.ComboBox cmbTacSelector;
+        private DataSets.dsModuleStructure2 dsModuleStructure;
     }
 }
