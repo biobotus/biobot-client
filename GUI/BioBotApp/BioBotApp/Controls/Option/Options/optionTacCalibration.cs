@@ -77,15 +77,11 @@ namespace BioBotApp.Controls.Option.Options
 
             double[] tacSample = dsModuleStructure.dtTacCalibrationData.AsEnumerable().Select(r => r.Field<double>("tac_sample")).ToArray();
             double[] opticalDesityValue = dsModuleStructure.dtTacCalibrationData.AsEnumerable().Select(r => r.Field<double>("optical_density")).ToArray();
-            tacSample.ToList().ForEach(i=>Math.Log(i));
+            
 
-            tacSample = tacSample.Select(d => Math.Log(d)).ToArray();
+            opticalDesityValue = opticalDesityValue.Select(d => Math.Log(d)).ToArray();
 
-            foreach (double d in tacSample)
-            {
-                Console.WriteLine(d);
-            }
-            Matrix.Matrix res = Matrix.Matrix.PolyFit(tacSample, opticalDesityValue, 5);
+            Matrix.Matrix res = Matrix.Matrix.PolyFit(tacSample, opticalDesityValue, 3);
 
             Console.WriteLine(res);
         }
