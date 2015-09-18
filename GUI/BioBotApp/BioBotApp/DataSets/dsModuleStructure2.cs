@@ -1,18 +1,21 @@
 ﻿namespace BioBotApp.DataSets
 {
 }
-namespace BioBotApp.DataSets {
-    
-    
-    public partial class dsModuleStructure2 {
+namespace BioBotApp.DataSets
+{
+
+
+    public partial class dsModuleStructure2
+    {
+
         partial class dtStepCompositeDataTable
         {
         }
-    
+
         partial class dtModuleTypeDataTable
         {
         }
-    
+
         partial class dtModuleTypeLabwareParameterTypeDataTable
         {
         }
