@@ -68,5 +68,40 @@ namespace BioBotApp.Controls.Option.Options
             return row;
         }
 
+        private void crudOptions_AddClickHandler(object sender, EventArgs e)
+        {
+            /*
+            DataSets.dsModuleStructure2.dtLabwareTypeLabwareParameterTypeRow labwareParameterType =
+                dsModuleStructureGUI.dtLabwareTypeLabwareParameterType.NewdtLabwareTypeLabwareParameterTypeRow();
+            DataSets.dsModuleStructure2.dtLabwareTypeRow labwareRow = getSelectedLabwareTypeRow();
+            */
+
+            abstractDialog dialog = new abstractDialog("Action type", "Add");
+
+            namedInputTextBox description = new namedInputTextBox("Description");
+            dialog.addNamedInputTextBox(description);
+
+            namedComboBox cbActionValueTupe = new namedComboBox();
+
+            cbActionValueTupe.DataSource = bsLabwareParameterType;
+            cbActionValueTupe.DisplayMember = "description";
+
+            dialog.addControl(cbActionValueTupe);
+
+            dialog.ShowDialog();
+
+            if (dialog.DialogResult.Equals(DialogResult.OK))
+            {
+                DataSets.dsModuleStructure2.dtActionTypeRow row;
+
+                row = dsModuleStructureGUI.dtActionType.NewdtActionTypeRow();
+                row.description = description.getInputTextValue();
+                dsModuleStructureGUI.dtActionType.AdddtActionTypeRow(row);
+                //updateRow(row);
+            }
+
+
+        }
+
     }
 }
