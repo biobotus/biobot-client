@@ -221,7 +221,6 @@
     <Compile Include="Controls\Tools\ModuleTypeSelectionEventArgs.cs" />
     <Compile Include="DataSets\dsModuleStructure2.cs">
       <DependentUpon>dsModuleStructure2.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DataSets\dsModuleStructure21.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -234,6 +233,7 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Library\Matrix.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\Communication\asyncSerialCallbackEventArgs.cs" />
@@ -256,6 +256,7 @@
     <Compile Include="Controls\TCPConsole\ctrlConsole.Designer.cs">
       <DependentUpon>ctrlConsole.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils\TAC\TacCalibration.cs" />
     <Compile Include="Utils\TCP\TCPClient.cs" />
     <Compile Include="Utils\TCP\TCPClientAsyncResultEventArgs.cs" />
     <EmbeddedResource Include="Controls\Deck\ctrlDeck.resx">
@@ -355,7 +356,7 @@
     <None Include="DataSets\dsModuleStructure2.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <SubType>Designer</SubType>
-      <LastGenOutput>dsModuleStructure21.Designer.cs</LastGenOutput>
+      <LastGenOutput>dsModuleStructure2.Designer.cs</LastGenOutput>
     </None>
     <None Include="DataSets\dsModuleStructure2.xss">
       <DependentUpon>dsModuleStructure2.xsd</DependentUpon>
