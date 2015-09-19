@@ -165,6 +165,12 @@
     <Compile Include="Controls\Option\Options\optionTacCalibration.Designer.cs">
       <DependentUpon>optionTacCalibration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Option\Options\optionTacSampleCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionTacSampleCtrl.Designer.cs">
+      <DependentUpon>optionTacSampleCtrl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Steps\Parameter controls\ctrlCommand.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -308,6 +314,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Option\Options\optionTacCalibration.resx">
       <DependentUpon>optionTacCalibration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Option\Options\optionTacSampleCtrl.resx">
+      <DependentUpon>optionTacSampleCtrl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Protocol\ctrlProtocolsView.resx">
       <DependentUpon>ctrlProtocolsView.cs</DependentUpon>

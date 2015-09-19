@@ -34,15 +34,18 @@ namespace BioBotApp.Controls.Option.Options
 
         private void crudOptions_AddClickHandler(object sender, EventArgs e)
         {
-            abstractDialog dialog = new abstractDialog("Action type", "Add");
+            abstractDialog dialog = new abstractDialog("Action type", "Add an optical density");
 
             namedInputTextBox density = new namedInputTextBox("Optical density");
+            namedInputTextBox sample = new namedInputTextBox("Tac value","0");
+            optionTacSampleCtrl sampleCtrl = new optionTacSampleCtrl(sample);
+
             dialog.addNamedInputTextBox(density);
-            namedInputTextBox sample = new namedInputTextBox("Tac value");
             dialog.addNamedInputTextBox(sample);
-
+            dialog.addControl(sampleCtrl);
+            
             dialog.ShowDialog();
-
+            
             if (dialog.DialogResult.Equals(DialogResult.OK))
             {
                 double opticalDensity = 0.0;
@@ -56,12 +59,14 @@ namespace BioBotApp.Controls.Option.Options
 
                 if (!double.TryParse(density.getInputTextValue(), out opticalDensity))
                 {
-                    MessageBox.Show("The optical density value cannot be parsed");
+                    MessageBox.Show("The optical density value cannot be parsed", "Input error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 if (!double.TryParse(sample.getInputTextValue(), out tacSample))
                 {
-                    MessageBox.Show("The tac semple value cannot be parsed");
+                    MessageBox.Show("The tac semple value cannot be parsed","Input error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -74,16 +79,22 @@ namespace BioBotApp.Controls.Option.Options
         private void btnValidation_Click(object sender, EventArgs e)
         {
             int rowCount = dsModuleStructure.dtTacCalibrationData.Rows.Count;
-
-            double[] tacSample = dsModuleStructure.dtTacCalibrationData.AsEnumerable().Select(r => r.Field<double>("tac_sample")).ToArray();
-            double[] opticalDesityValue = dsModuleStructure.dtTacCalibrationData.AsEnumerable().Select(r => r.Field<double>("optical_density")).ToArray();
+            if(rowCount>1)
+            { 
+                double[] tacSample = dsModuleStructure.dtTacCalibrationData.AsEnumerable().Select(r => r.Field<double>("tac_sample")).ToArray();
+                double[] opticalDesityValue = dsModuleStructure.dtTacCalibrationData.AsEnumerable().Select(r => r.Field<double>("optical_density")).ToArray();
             
 
-            opticalDesityValue = opticalDesityValue.Select(d => Math.Log(d)).ToArray();
+                opticalDesityValue = opticalDesityValue.Select(d => Math.Log(d)).ToArray();
 
-            Matrix.Matrix res = Matrix.Matrix.PolyFit(tacSample, opticalDesityValue, 3);
-
-            Console.WriteLine(res);
+                Matrix.Matrix res = Matrix.Matrix.PolyFit(tacSample, opticalDesityValue, 3);
+                Console.WriteLine(res);
+            }
+            else
+            {
+                MessageBox.Show("Not enough values to calibrate", "Validation error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
