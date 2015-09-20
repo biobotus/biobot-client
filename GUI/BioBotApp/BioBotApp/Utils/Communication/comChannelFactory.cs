@@ -6,18 +6,17 @@ using System.Threading.Tasks;
 
 namespace BioBotApp.Utils.Communication
 {
-    class ComChannelFactory
+    public class ComChannelFactory
     {
-
-        public static CustomSerial getGCodeSerial()
+        public enum CustomSerialChan { gCodeSerial, canSerial};
+        public static CustomSerial getSerialChannel(CustomSerialChan chan)
         {
-            if (gCodeSerialChannel == null)
+            if (!serialChanDict.ContainsKey(chan))
             {
-                gCodeSerialChannel = new CustomSerial();
+                serialChanDict[chan] = new CustomSerial();
             }
-            return gCodeSerialChannel;
+            return serialChanDict[chan];
         }
-
-        private static CustomSerial gCodeSerialChannel;
+        private static Dictionary<CustomSerialChan, CustomSerial> serialChanDict = new Dictionary<CustomSerialChan, CustomSerial>();
     }
 }

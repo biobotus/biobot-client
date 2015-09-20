@@ -37,7 +37,7 @@ namespace BioBotApp.Controls.Option.Options
         {
            
             Console.Out.WriteLine(text);
-            CustomSerial movementSerial = ComChannelFactory.getGCodeSerial();
+            CustomSerial movementSerial = ComChannelFactory.getSerialChannel(ComChannelFactory.CustomSerialChan.gCodeSerial);
             movementSerial.configure("COM3", "115200", "8", "One", "None");
             movementSerial.Open();
             //movementSerial.WriteLine(text);

@@ -12,9 +12,11 @@ using BioBotApp.Utils.Communication;
 
 namespace BioBotApp.Controls.Option.Options
 {
+    
     public partial class optionCustomSerial : UserControl
     {
-        public optionCustomSerial(string tag, string lblTestTxt)
+        private CustomSerial serialChan;
+        public optionCustomSerial(string tag, string lblTestTxt, ComChannelFactory.CustomSerialChan chan)
         {
             InitializeComponent();
 
@@ -26,6 +28,8 @@ namespace BioBotApp.Controls.Option.Options
             this.cmbParity.SelectedIndex = 2;
             this.cmbStop.SelectedIndex = 0;
             this.lblTest.Text = lblTestTxt;
+
+            this.serialChan = ComChannelFactory.getSerialChannel(chan);
         }
 
         private void txtDataBits_Validating(object sender, CancelEventArgs e)
@@ -61,19 +65,16 @@ namespace BioBotApp.Controls.Option.Options
         }
 
         private void btnSendTest_Click(object sender, EventArgs e)
-        {
-            CustomSerial gcodeChan = ComChannelFactory.getGCodeSerial();
-            
-
-            if (!gcodeChan.IsOpen)
+        {   
+            if (!serialChan.IsOpen)
             {
-                gcodeChan.Open();
+                serialChan.Open();
             }
 
-            if (gcodeChan.IsOpen)
+            if (serialChan.IsOpen)
             {
                 txtConsole.Text += txtTest.Text + Environment.NewLine;
-                gcodeChan.WriteLine(txtTest.Text);
+                serialChan.WriteLine(txtTest.Text);
             }
             else
             {
@@ -83,35 +84,33 @@ namespace BioBotApp.Controls.Option.Options
 
         private void btnValidate_Click(object sender, EventArgs e)
         {
-            CustomSerial gcodeChan = ComChannelFactory.getGCodeSerial();
-            if (gcodeChan.IsOpen)
+            if (serialChan.IsOpen)
             {
-                gcodeChan.Close();
+                serialChan.Close();
             }
-            this.ConfigureSerialPort(gcodeChan);
+            this.ConfigureSerialPort(serialChan);
         }
 
-        private void ConfigureSerialPort(CustomSerial gcodeChan)
+        private void ConfigureSerialPort(CustomSerial serialChan)
         {
             string portName = cmbPortName.SelectedItem.ToString();
             string baudRate = txtBaudeRate.Text;
             string dataBits = txtDataBits.Text;
             string stopBits = cmbStop.SelectedItem.ToString();
             string parityBits = cmbParity.SelectedItem.ToString();
-            gcodeChan.configure(portName, baudRate, dataBits, stopBits, parityBits);
+            serialChan.configure(portName, baudRate, dataBits, stopBits, parityBits);
         }
 
         private void btnConnect_Click(object sender, EventArgs e)
         {
-            CustomSerial gcodeChan = ComChannelFactory.getGCodeSerial();
-            if (gcodeChan.IsOpen)
+            if (serialChan.IsOpen)
             {
                 // on devrait jamais venir ici
             }
 
-            gcodeChan.Open();
+            serialChan.Open();
 
-            if (gcodeChan.IsOpen)
+            if (serialChan.IsOpen)
             {
                 this.btnConnect.Enabled = false;
             }

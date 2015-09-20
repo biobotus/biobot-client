@@ -7,7 +7,7 @@ using System.IO.Ports;
 
 namespace BioBotApp.Utils.Communication
 {
-    class CustomSerial : SerialPort
+    public class CustomSerial : SerialPort
     {
         public CustomSerial()
         {

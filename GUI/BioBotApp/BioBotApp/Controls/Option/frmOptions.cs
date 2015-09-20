@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BioBotApp.Controls.Option.Options;
 using System.Configuration;
+using BioBotApp.Utils.Communication;
 
 namespace BioBotApp.Controls.Option
 {
@@ -50,11 +51,11 @@ namespace BioBotApp.Controls.Option
             }
             else if (e.Node.Name.Equals("nodeGCode"))
             {
-                setOptionControl(new optionCustomSerial("Serial port : Gcode", "test gcode"));
+                setOptionControl(new optionCustomSerial("Serial port : Gcode", "test gcode", ComChannelFactory.CustomSerialChan.gCodeSerial));
             }
             else if (e.Node.Name.Equals("nodeCan"))
             {
-                setOptionControl(new optionCustomSerial("Serial port : CAN", "test can"));
+                setOptionControl(new optionCustomSerial("Serial port : CAN", "test can", ComChannelFactory.CustomSerialChan.canSerial));
             }
             else if (e.Node.Name.Equals("nodeLabwareTypesLabwareParameterTypes"))
             {
