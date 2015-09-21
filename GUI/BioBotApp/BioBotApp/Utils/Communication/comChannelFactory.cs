@@ -13,7 +13,7 @@ namespace BioBotApp.Utils.Communication
         {
             if (!serialChanDict.ContainsKey(chan))
             {
-                serialChanDict[chan] = new CustomSerial();
+                serialChanDict[chan] = new CustomSerial(chan.ToString());
             }
             return serialChanDict[chan];
         }

@@ -9,9 +9,10 @@ namespace BioBotApp.Utils.Communication
 {
     public class CustomSerial : SerialPort
     {
-        public CustomSerial()
+        private string serialName;
+        public CustomSerial(string name)
         {
-
+            serialName = name;
         }
 
         public bool configure(string portName, int baudRate, int dataBits, StopBits stopBits, Parity parityBits, Handshake handshake, bool useRts)
@@ -29,6 +30,18 @@ namespace BioBotApp.Utils.Communication
             this.Parity =  parityBits;
             this.Handshake = handshake;
             this.RtsEnable = useRts;
+
+            //@Todo find another way to stroe those data (custom xml?) or to test against setting existance
+            // I dislike this solution because we need to create the settings manually at design
+            // and lose a bit of versatility (and Reusability)
+            Properties.SerialComunication.Default[serialName + "StopBits"] = this.StopBits;
+            Properties.SerialComunication.Default[serialName + "BaudRate"] = this.BaudRate;
+            Properties.SerialComunication.Default[serialName + "DataBits"] = this.DataBits;
+            Properties.SerialComunication.Default[serialName + "PortName"] = this.PortName;
+            Properties.SerialComunication.Default[serialName + "Parity"] = this.Parity;
+            Properties.SerialComunication.Default[serialName + "Handshake"] = this.Handshake;
+            Properties.SerialComunication.Default[serialName + "RtsEnable"] = this.RtsEnable;
+            Properties.SerialComunication.Default.Save();
 
             isConfigured = true;
             return true;

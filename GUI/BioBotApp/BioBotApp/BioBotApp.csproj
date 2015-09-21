@@ -248,6 +248,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\SerialComunication.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>SerialComunication.settings</DependentUpon>
+    </Compile>
     <Compile Include="Utils\Communication\asyncSerialCallbackEventArgs.cs" />
     <Compile Include="Utils\Communication\ComChannelFactory.cs" />
     <Compile Include="Utils\Communication\CustomSerial.cs">
@@ -378,6 +383,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Properties\SerialComunication.settings" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
