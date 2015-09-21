@@ -16,7 +16,7 @@ namespace BioBotApp.Controls.Option.Options
     public partial class optionCustomSerial : UserControl
     {
         private CustomSerial serialChan;
-        public optionCustomSerial(string tag, string lblTestTxt, ComChannelFactory.CustomSerialChan chan)
+        public optionCustomSerial(string tag, ComChannelFactory.CustomSerialChan chan)
         {
             InitializeComponent();
 
@@ -25,10 +25,7 @@ namespace BioBotApp.Controls.Option.Options
             string[] ports = SerialPort.GetPortNames();
             this.cmbPortName.Items.AddRange(ports);
             this.cmbPortName.SelectedIndex = 0;
-            this.cmbParity.SelectedIndex = 2;
-            this.cmbStop.SelectedIndex = 0;
-            this.lblTest.Text = lblTestTxt;
-
+            this.cmbParity.SelectedValue = Parity.None;
             this.serialChan = ComChannelFactory.getSerialChannel(chan);
         }
 
@@ -94,11 +91,16 @@ namespace BioBotApp.Controls.Option.Options
         private void ConfigureSerialPort(CustomSerial serialChan)
         {
             string portName = cmbPortName.SelectedItem.ToString();
-            string baudRate = txtBaudeRate.Text;
-            string dataBits = txtDataBits.Text;
-            string stopBits = cmbStop.SelectedItem.ToString();
-            string parityBits = cmbParity.SelectedItem.ToString();
-            serialChan.configure(portName, baudRate, dataBits, stopBits, parityBits);
+            int baudRate = 0;
+            int.TryParse(txtBaudeRate.Text, out baudRate);
+            int dataBits = 0;
+            int.TryParse(txtDataBits.Text, out dataBits);
+            StopBits stopBits = cmbStop.getStopBitsValue();
+            Parity parityBits = cmbParity.getParityBitsValue();
+            Handshake handshake = cmbHandshake.getHandshakeValue();
+            bool rtsUse = cbRtsEnable.Checked;
+
+            serialChan.configure(portName, baudRate, dataBits, stopBits, parityBits, handshake, rtsUse);
         }
 
         private void btnConnect_Click(object sender, EventArgs e)
@@ -118,6 +120,11 @@ namespace BioBotApp.Controls.Option.Options
             {
                 this.btnConnect.Enabled = true;
             }
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

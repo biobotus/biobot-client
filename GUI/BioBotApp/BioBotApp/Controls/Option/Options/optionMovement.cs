@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO.Ports;
 using BioBotApp.Utils.Communication;
 
 namespace BioBotApp.Controls.Option.Options
@@ -38,7 +39,8 @@ namespace BioBotApp.Controls.Option.Options
            
             Console.Out.WriteLine(text);
             CustomSerial movementSerial = ComChannelFactory.getSerialChannel(ComChannelFactory.CustomSerialChan.gCodeSerial);
-            movementSerial.configure("COM3", "115200", "8", "One", "None");
+            //Ceci ne devrait pas etre utilise, on devrait passe par la fenetre de configuration
+            movementSerial.configure("COM3", 115200, 8, StopBits.One, Parity.None, Handshake.None, false);
             movementSerial.Open();
             //movementSerial.WriteLine(text);
             movementSerial.Write("M105\n");

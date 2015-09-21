@@ -14,29 +14,21 @@ namespace BioBotApp.Utils.Communication
 
         }
 
-        public bool configure(string portName, string baudRate, string dataBits, string stopBits, string parityBits)
+        public bool configure(string portName, int baudRate, int dataBits, StopBits stopBits, Parity parityBits, Handshake handshake, bool useRts)
         {
             isConfigured = false;
             if (this.IsOpen == true)
             {
                 this.Close();
             }
-            try
-            {
-                this.StopBits = (StopBits)Enum.Parse(typeof(StopBits), stopBits, true);
-                this.BaudRate = int.Parse(baudRate);
-                this.DataBits = int.Parse(dataBits);
-                this.PortName = portName;
-                this.Parity = (Parity)Enum.Parse(typeof(Parity), parityBits);
-                
-                
-            }
-            catch (Exception ex)
-            {
-                //TODO gestion des exceptions?
-                Console.WriteLine(ex.ToString());
-                return false;
-            }
+
+            this.StopBits = stopBits;
+            this.BaudRate = baudRate;
+            this.DataBits = dataBits;
+            this.PortName = portName;
+            this.Parity =  parityBits;
+            this.Handshake = handshake;
+            this.RtsEnable = useRts;
 
             isConfigured = true;
             return true;

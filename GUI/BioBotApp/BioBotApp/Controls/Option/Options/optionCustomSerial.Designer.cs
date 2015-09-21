@@ -29,16 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(optionCustomSerial));
             this.cmbPortName = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.cmbStop = new System.Windows.Forms.ComboBox();
-            this.cmbParity = new System.Windows.Forms.ComboBox();
             this.txtBaudeRate = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.lblTest = new System.Windows.Forms.Label();
             this.txtTest = new System.Windows.Forms.TextBox();
             this.btnSendTest = new System.Windows.Forms.Button();
             this.txtDataBits = new System.Windows.Forms.TextBox();
@@ -46,12 +44,18 @@
             this.btnValidate = new System.Windows.Forms.Button();
             this.txtConsole = new System.Windows.Forms.TextBox();
             this.btnConnect = new System.Windows.Forms.Button();
+            this.cmbStop = new BioBotApp.Controls.Utils.stopBitComboBox();
+            this.cmbParity = new BioBotApp.Controls.Utils.parityBitComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbHandshake = new BioBotApp.Controls.Utils.handshakeComboBox();
+            this.cbRtsEnable = new System.Windows.Forms.CheckBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbPortName
             // 
-            this.cmbPortName.Location = new System.Drawing.Point(109, 9);
+            this.cmbPortName.Location = new System.Drawing.Point(138, 9);
             this.cmbPortName.Name = "cmbPortName";
             this.cmbPortName.Size = new System.Drawing.Size(121, 21);
             this.cmbPortName.TabIndex = 0;
@@ -59,39 +63,15 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 12);
+            this.label2.Location = new System.Drawing.Point(45, 13);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Port name";
             // 
-            // cmbStop
-            // 
-            this.cmbStop.Items.AddRange(new object[] {
-            "One",
-            "OnePointFive",
-            "Two"});
-            this.cmbStop.Location = new System.Drawing.Point(109, 63);
-            this.cmbStop.Name = "cmbStop";
-            this.cmbStop.Size = new System.Drawing.Size(121, 21);
-            this.cmbStop.TabIndex = 3;
-            // 
-            // cmbParity
-            // 
-            this.cmbParity.Items.AddRange(new object[] {
-            "Even",
-            "Mark",
-            "None",
-            "Odd",
-            "Space"});
-            this.cmbParity.Location = new System.Drawing.Point(109, 90);
-            this.cmbParity.Name = "cmbParity";
-            this.cmbParity.Size = new System.Drawing.Size(121, 21);
-            this.cmbParity.TabIndex = 4;
-            // 
             // txtBaudeRate
             // 
-            this.txtBaudeRate.Location = new System.Drawing.Point(109, 118);
+            this.txtBaudeRate.Location = new System.Drawing.Point(138, 62);
             this.txtBaudeRate.Name = "txtBaudeRate";
             this.txtBaudeRate.Size = new System.Drawing.Size(121, 20);
             this.txtBaudeRate.TabIndex = 5;
@@ -102,7 +82,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 39);
+            this.label3.Location = new System.Drawing.Point(45, 39);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 6;
@@ -111,7 +91,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 63);
+            this.label4.Location = new System.Drawing.Point(45, 119);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 13);
             this.label4.TabIndex = 7;
@@ -120,7 +100,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 93);
+            this.label5.Location = new System.Drawing.Point(45, 92);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 13);
             this.label5.TabIndex = 8;
@@ -129,30 +109,23 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 121);
+            this.label6.Location = new System.Drawing.Point(45, 65);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 13);
             this.label6.TabIndex = 9;
             this.label6.Text = "Baud rate";
-            // 
-            // lblTest
-            // 
-            this.lblTest.AutoSize = true;
-            this.lblTest.Location = new System.Drawing.Point(16, 149);
-            this.lblTest.Name = "lblTest";
-            this.lblTest.Size = new System.Drawing.Size(0, 13);
-            this.lblTest.TabIndex = 11;
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // txtTest
             // 
-            this.txtTest.Location = new System.Drawing.Point(20, 281);
+            this.txtTest.Location = new System.Drawing.Point(19, 336);
             this.txtTest.Name = "txtTest";
             this.txtTest.Size = new System.Drawing.Size(192, 20);
             this.txtTest.TabIndex = 12;
             // 
             // btnSendTest
             // 
-            this.btnSendTest.Location = new System.Drawing.Point(218, 278);
+            this.btnSendTest.Location = new System.Drawing.Point(217, 333);
             this.btnSendTest.Name = "btnSendTest";
             this.btnSendTest.Size = new System.Drawing.Size(63, 23);
             this.btnSendTest.TabIndex = 13;
@@ -162,7 +135,7 @@
             // 
             // txtDataBits
             // 
-            this.txtDataBits.Location = new System.Drawing.Point(109, 36);
+            this.txtDataBits.Location = new System.Drawing.Point(138, 36);
             this.txtDataBits.Name = "txtDataBits";
             this.txtDataBits.Size = new System.Drawing.Size(121, 20);
             this.txtDataBits.TabIndex = 14;
@@ -176,7 +149,7 @@
             // 
             // btnValidate
             // 
-            this.btnValidate.Location = new System.Drawing.Point(19, 144);
+            this.btnValidate.Location = new System.Drawing.Point(18, 199);
             this.btnValidate.Name = "btnValidate";
             this.btnValidate.Size = new System.Drawing.Size(75, 23);
             this.btnValidate.TabIndex = 15;
@@ -186,7 +159,7 @@
             // 
             // txtConsole
             // 
-            this.txtConsole.Location = new System.Drawing.Point(20, 173);
+            this.txtConsole.Location = new System.Drawing.Point(19, 228);
             this.txtConsole.Multiline = true;
             this.txtConsole.Name = "txtConsole";
             this.txtConsole.Size = new System.Drawing.Size(192, 93);
@@ -194,7 +167,7 @@
             // 
             // btnConnect
             // 
-            this.btnConnect.Location = new System.Drawing.Point(137, 144);
+            this.btnConnect.Location = new System.Drawing.Point(136, 199);
             this.btnConnect.Name = "btnConnect";
             this.btnConnect.Size = new System.Drawing.Size(75, 23);
             this.btnConnect.TabIndex = 17;
@@ -202,28 +175,94 @@
             this.btnConnect.UseVisualStyleBackColor = true;
             this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
+            // cmbStop
+            // 
+            this.cmbStop.DataSource = ((object)(resources.GetObject("cmbStop.DataSource")));
+            this.cmbStop.DisplayMember = "Item1";
+            this.cmbStop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbStop.FormattingEnabled = true;
+            this.cmbStop.Location = new System.Drawing.Point(138, 116);
+            this.cmbStop.Name = "cmbStop";
+            this.cmbStop.Size = new System.Drawing.Size(121, 21);
+            this.cmbStop.TabIndex = 18;
+            // 
+            // cmbParity
+            // 
+            this.cmbParity.DataSource = ((object)(resources.GetObject("cmbParity.DataSource")));
+            this.cmbParity.DisplayMember = "Item1";
+            this.cmbParity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbParity.FormattingEnabled = true;
+            this.cmbParity.Location = new System.Drawing.Point(138, 89);
+            this.cmbParity.Name = "cmbParity";
+            this.cmbParity.Size = new System.Drawing.Size(121, 21);
+            this.cmbParity.TabIndex = 19;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(45, 147);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(62, 13);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Handshake";
+            // 
+            // cmbHandshake
+            // 
+            this.cmbHandshake.DataSource = ((object)(resources.GetObject("cmbHandshake.DataSource")));
+            this.cmbHandshake.DisplayMember = "Item1";
+            this.cmbHandshake.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbHandshake.FormattingEnabled = true;
+            this.cmbHandshake.Location = new System.Drawing.Point(138, 144);
+            this.cmbHandshake.Name = "cmbHandshake";
+            this.cmbHandshake.Size = new System.Drawing.Size(121, 21);
+            this.cmbHandshake.TabIndex = 21;
+            // 
+            // cbRtsEnable
+            // 
+            this.cbRtsEnable.AutoSize = true;
+            this.cbRtsEnable.Location = new System.Drawing.Point(179, 171);
+            this.cbRtsEnable.Name = "cbRtsEnable";
+            this.cbRtsEnable.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cbRtsEnable.Size = new System.Drawing.Size(32, 17);
+            this.cbRtsEnable.TabIndex = 23;
+            this.cbRtsEnable.Text = "  ";
+            this.cbRtsEnable.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.label7.Location = new System.Drawing.Point(48, 174);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(70, 13);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "Rts enable    ";
+            // 
             // optionCustomSerial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.cbRtsEnable);
+            this.Controls.Add(this.cmbHandshake);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cmbParity);
+            this.Controls.Add(this.cmbStop);
             this.Controls.Add(this.btnConnect);
             this.Controls.Add(this.txtConsole);
             this.Controls.Add(this.btnValidate);
             this.Controls.Add(this.txtDataBits);
             this.Controls.Add(this.btnSendTest);
             this.Controls.Add(this.txtTest);
-            this.Controls.Add(this.lblTest);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtBaudeRate);
-            this.Controls.Add(this.cmbParity);
-            this.Controls.Add(this.cmbStop);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbPortName);
             this.Name = "optionCustomSerial";
-            this.Size = new System.Drawing.Size(304, 335);
+            this.Size = new System.Drawing.Size(303, 380);
             this.Tag = "Custom";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
@@ -235,14 +274,11 @@
 
         private System.Windows.Forms.ComboBox cmbPortName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cmbStop;
-        private System.Windows.Forms.ComboBox cmbParity;
         private System.Windows.Forms.TextBox txtBaudeRate;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lblTest;
         private System.Windows.Forms.TextBox txtTest;
         private System.Windows.Forms.Button btnSendTest;
         private System.Windows.Forms.TextBox txtDataBits;
@@ -250,5 +286,11 @@
         private System.Windows.Forms.Button btnValidate;
         private System.Windows.Forms.TextBox txtConsole;
         private System.Windows.Forms.Button btnConnect;
+        private Utils.stopBitComboBox cmbStop;
+        private Utils.parityBitComboBox cmbParity;
+        private System.Windows.Forms.Label label1;
+        private Utils.handshakeComboBox cmbHandshake;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.CheckBox cbRtsEnable;
     }
 }
