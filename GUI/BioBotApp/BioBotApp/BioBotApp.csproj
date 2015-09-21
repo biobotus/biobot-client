@@ -81,6 +81,12 @@
     <Compile Include="Controls\Option\Options\abstractDialog.Designer.cs">
       <DependentUpon>abstractDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Option\Options\namedComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Option\Options\namedComboBox.Designer.cs">
+      <DependentUpon>namedComboBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Option\Options\namedInputTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -260,6 +266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Option\Options\abstractDialog.resx">
       <DependentUpon>abstractDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Option\Options\namedComboBox.resx">
+      <DependentUpon>namedComboBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Option\Options\namedInputTextBox.resx">
       <DependentUpon>namedInputTextBox.cs</DependentUpon>

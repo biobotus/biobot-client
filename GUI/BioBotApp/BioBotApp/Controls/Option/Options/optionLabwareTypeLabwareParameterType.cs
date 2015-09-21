@@ -78,13 +78,13 @@ namespace BioBotApp.Controls.Option.Options
 
             abstractDialog dialog = new abstractDialog("Action type", "Add");
 
-            namedInputTextBox description = new namedInputTextBox("Description");
+            namedInputTextBox description = new namedInputTextBox("Description: ");
             dialog.addNamedInputTextBox(description);
 
-            namedComboBox cbActionValueTupe = new namedComboBox();
+            namedComboBox cbActionValueTupe = new namedComboBox("Labware parameter: ");
 
-            cbActionValueTupe.DataSource = bsLabwareParameterType;
-            cbActionValueTupe.DisplayMember = "description";
+            cbActionValueTupe.getComboBox().DataSource = bsLabwareParameterType;
+            cbActionValueTupe.getComboBox().DisplayMember = "description";
 
             dialog.addControl(cbActionValueTupe);
 
