@@ -30,7 +30,7 @@ namespace BioBotApp.Utils.Communication
             this.Parity =  parityBits;
             this.Handshake = handshake;
             this.RtsEnable = useRts;
-
+            
             //@Todo find another way to stroe those data (custom xml?) or to test against setting existance
             // I dislike this solution because we need to create the settings manually at design
             // and lose a bit of versatility (and Reusability)
@@ -57,7 +57,6 @@ namespace BioBotApp.Utils.Communication
             {
                 try
                 {
-                    // Genere parfois des exceptions que je ne comprend pas sur de mauvais arguments 
                     base.Open();
                     return this.IsOpen;
                 }

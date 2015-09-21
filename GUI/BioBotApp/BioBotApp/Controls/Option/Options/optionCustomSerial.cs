@@ -81,11 +81,8 @@ namespace BioBotApp.Controls.Option.Options
 
         private void btnValidate_Click(object sender, EventArgs e)
         {
-            if (serialChan.IsOpen)
-            {
-                serialChan.Close();
-            }
             this.ConfigureSerialPort(serialChan);
+            serialChan.Open();
         }
 
         private void ConfigureSerialPort(CustomSerial serialChan)
@@ -103,28 +100,5 @@ namespace BioBotApp.Controls.Option.Options
             serialChan.configure(portName, baudRate, dataBits, stopBits, parityBits, handshake, rtsUse);
         }
 
-        private void btnConnect_Click(object sender, EventArgs e)
-        {
-            if (serialChan.IsOpen)
-            {
-                // on devrait jamais venir ici
-            }
-
-            serialChan.Open();
-
-            if (serialChan.IsOpen)
-            {
-                this.btnConnect.Enabled = false;
-            }
-            else
-            {
-                this.btnConnect.Enabled = true;
-            }
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

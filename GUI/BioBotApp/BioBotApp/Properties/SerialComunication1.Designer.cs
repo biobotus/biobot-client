@@ -49,7 +49,7 @@ namespace BioBotApp.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("COM1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("COM3")]
         public string gCodeSerialPortName {
             get {
                 return ((string)(this["gCodeSerialPortName"]));
@@ -104,6 +104,90 @@ namespace BioBotApp.Properties {
             }
             set {
                 this["gCodeSerialRtsEnable"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int canSerialBaudRate {
+            get {
+                return ((int)(this["canSerialBaudRate"]));
+            }
+            set {
+                this["canSerialBaudRate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int canSerialDataBits {
+            get {
+                return ((int)(this["canSerialDataBits"]));
+            }
+            set {
+                this["canSerialDataBits"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("COM6")]
+        public string canSerialPortName {
+            get {
+                return ((string)(this["canSerialPortName"]));
+            }
+            set {
+                this["canSerialPortName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("None")]
+        public global::System.IO.Ports.Parity canSerialParity {
+            get {
+                return ((global::System.IO.Ports.Parity)(this["canSerialParity"]));
+            }
+            set {
+                this["canSerialParity"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("One")]
+        public global::System.IO.Ports.StopBits canSerialStopBits {
+            get {
+                return ((global::System.IO.Ports.StopBits)(this["canSerialStopBits"]));
+            }
+            set {
+                this["canSerialStopBits"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("None")]
+        public global::System.IO.Ports.Handshake canSerialHandshake {
+            get {
+                return ((global::System.IO.Ports.Handshake)(this["canSerialHandshake"]));
+            }
+            set {
+                this["canSerialHandshake"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool canSerialRtsEnable {
+            get {
+                return ((bool)(this["canSerialRtsEnable"]));
+            }
+            set {
+                this["canSerialRtsEnable"] = value;
             }
         }
     }

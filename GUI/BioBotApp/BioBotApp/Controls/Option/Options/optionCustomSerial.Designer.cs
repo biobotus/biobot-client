@@ -43,7 +43,6 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnValidate = new System.Windows.Forms.Button();
             this.txtConsole = new System.Windows.Forms.TextBox();
-            this.btnConnect = new System.Windows.Forms.Button();
             this.cmbStop = new BioBotApp.Controls.Utils.stopBitComboBox();
             this.cmbParity = new BioBotApp.Controls.Utils.parityBitComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -114,7 +113,6 @@
             this.label6.Size = new System.Drawing.Size(53, 13);
             this.label6.TabIndex = 9;
             this.label6.Text = "Baud rate";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // txtTest
             // 
@@ -149,7 +147,7 @@
             // 
             // btnValidate
             // 
-            this.btnValidate.Location = new System.Drawing.Point(18, 199);
+            this.btnValidate.Location = new System.Drawing.Point(184, 194);
             this.btnValidate.Name = "btnValidate";
             this.btnValidate.Size = new System.Drawing.Size(75, 23);
             this.btnValidate.TabIndex = 15;
@@ -165,22 +163,13 @@
             this.txtConsole.Size = new System.Drawing.Size(192, 93);
             this.txtConsole.TabIndex = 16;
             // 
-            // btnConnect
-            // 
-            this.btnConnect.Location = new System.Drawing.Point(136, 199);
-            this.btnConnect.Name = "btnConnect";
-            this.btnConnect.Size = new System.Drawing.Size(75, 23);
-            this.btnConnect.TabIndex = 17;
-            this.btnConnect.Text = "Connect";
-            this.btnConnect.UseVisualStyleBackColor = true;
-            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
-            // 
             // cmbStop
             // 
             this.cmbStop.DataSource = ((object)(resources.GetObject("cmbStop.DataSource")));
             this.cmbStop.DisplayMember = "Item1";
             this.cmbStop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbStop.FormattingEnabled = true;
+
             this.cmbStop.Location = new System.Drawing.Point(138, 116);
             this.cmbStop.Name = "cmbStop";
             this.cmbStop.Size = new System.Drawing.Size(121, 21);
@@ -192,6 +181,7 @@
             this.cmbParity.DisplayMember = "Item1";
             this.cmbParity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbParity.FormattingEnabled = true;
+
             this.cmbParity.Location = new System.Drawing.Point(138, 89);
             this.cmbParity.Name = "cmbParity";
             this.cmbParity.Size = new System.Drawing.Size(121, 21);
@@ -212,6 +202,7 @@
             this.cmbHandshake.DisplayMember = "Item1";
             this.cmbHandshake.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbHandshake.FormattingEnabled = true;
+
             this.cmbHandshake.Location = new System.Drawing.Point(138, 144);
             this.cmbHandshake.Name = "cmbHandshake";
             this.cmbHandshake.Size = new System.Drawing.Size(121, 21);
@@ -248,7 +239,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbParity);
             this.Controls.Add(this.cmbStop);
-            this.Controls.Add(this.btnConnect);
             this.Controls.Add(this.txtConsole);
             this.Controls.Add(this.btnValidate);
             this.Controls.Add(this.txtDataBits);
@@ -285,7 +275,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Button btnValidate;
         private System.Windows.Forms.TextBox txtConsole;
-        private System.Windows.Forms.Button btnConnect;
         private Utils.stopBitComboBox cmbStop;
         private Utils.parityBitComboBox cmbParity;
         private System.Windows.Forms.Label label1;
