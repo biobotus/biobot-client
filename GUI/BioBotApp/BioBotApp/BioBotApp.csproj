@@ -213,6 +213,24 @@
       <DependentUpon>ctrlTools.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\Tools\ModuleTypeSelectionEventArgs.cs" />
+    <Compile Include="Controls\Utils\handshakeComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Utils\handshakeComboBox.Designer.cs">
+      <DependentUpon>handshakeComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Utils\parityBitComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Utils\parityBitComboBox.Designer.cs">
+      <DependentUpon>parityBitComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Utils\stopBitComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Utils\stopBitComboBox.Designer.cs">
+      <DependentUpon>stopBitComboBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataSets\dsModuleStructure2.cs">
       <DependentUpon>dsModuleStructure2.xsd</DependentUpon>
       <SubType>Component</SubType>
