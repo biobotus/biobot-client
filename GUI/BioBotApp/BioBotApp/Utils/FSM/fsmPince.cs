@@ -16,7 +16,7 @@ namespace BioBotApp.Utils.FSM
 
         }
 
-        public static void executeAction(DataSets.dsModuleStructure2.dtActionValueRow row)
+        public void executeAction(DataSets.dsModuleStructure2.dtActionValueRow row)
         {
             if (row.dtActionTypeRow.pk_id == DBManager.ActionTypes.OPEN)
             {
