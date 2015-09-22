@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.crudOptionsProtocol = new BioBotApp.Controls.Utils.crudOptions();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.pkidDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fkmoduleidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,14 +46,12 @@
             this.bs_dtStepLeafBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ta_StepLeaf = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taStepLeaf();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.crudOptionsStep = new BioBotApp.Controls.Utils.crudOptions();
             this.taStepComposite = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taStepComposite();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.pkidDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fkmoduletypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.crudOptionsActionType = new BioBotApp.Controls.Utils.crudOptions();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pkidDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,6 +64,9 @@
             this.taModule1 = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taModule();
             this.taActionValue1 = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taActionValue();
             this.button1 = new System.Windows.Forms.Button();
+            this.crudOptionsActionType = new BioBotApp.Controls.Utils.crudOptions();
+            this.crudOptionsStep = new BioBotApp.Controls.Utils.crudOptions();
+            this.crudOptionsProtocol = new BioBotApp.Controls.Utils.crudOptions();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ModuleStepComposite)).BeginInit();
@@ -95,19 +95,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Protocol";
-            // 
-            // crudOptionsProtocol
-            // 
-            this.crudOptionsProtocol.ButtonRefreshVisible = false;
-            this.crudOptionsProtocol.LayoutLeftToRight = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.crudOptionsProtocol.Location = new System.Drawing.Point(84, 16);
-            this.crudOptionsProtocol.MinimumSize = new System.Drawing.Size(37, 37);
-            this.crudOptionsProtocol.Name = "crudOptionsProtocol";
-            this.crudOptionsProtocol.Size = new System.Drawing.Size(121, 37);
-            this.crudOptionsProtocol.TabIndex = 1;
-            this.crudOptionsProtocol.AddClickHandler += new System.EventHandler(this.crudOptionsProto_AddClickHandler);
-            this.crudOptionsProtocol.DeleteClickHandler += new System.EventHandler(this.crudOptionsProto_DeleteClickHandler);
-            this.crudOptionsProtocol.ModifyClickHandler += new System.EventHandler(this.crudOptionsProto_ModifyClickHandler);
             // 
             // dataGridView2
             // 
@@ -246,19 +233,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Steps";
             // 
-            // crudOptionsStep
-            // 
-            this.crudOptionsStep.ButtonRefreshVisible = false;
-            this.crudOptionsStep.LayoutLeftToRight = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.crudOptionsStep.Location = new System.Drawing.Point(111, 12);
-            this.crudOptionsStep.MinimumSize = new System.Drawing.Size(37, 37);
-            this.crudOptionsStep.Name = "crudOptionsStep";
-            this.crudOptionsStep.Size = new System.Drawing.Size(118, 41);
-            this.crudOptionsStep.TabIndex = 0;
-            this.crudOptionsStep.AddClickHandler += new System.EventHandler(this.crudOptionsStep_AddClickHandler);
-            this.crudOptionsStep.DeleteClickHandler += new System.EventHandler(this.crudOptionsStep_DeleteClickHandler);
-            this.crudOptionsStep.ModifyClickHandler += new System.EventHandler(this.crudOptionsStep_ModifyClickHandler);
-            // 
             // taStepComposite
             // 
             this.taStepComposite.ClearBeforeFill = true;
@@ -317,19 +291,6 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Action Value";
             // 
-            // crudOptionsActionType
-            // 
-            this.crudOptionsActionType.ButtonRefreshVisible = false;
-            this.crudOptionsActionType.LayoutLeftToRight = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.crudOptionsActionType.Location = new System.Drawing.Point(111, 12);
-            this.crudOptionsActionType.MinimumSize = new System.Drawing.Size(37, 37);
-            this.crudOptionsActionType.Name = "crudOptionsActionType";
-            this.crudOptionsActionType.Size = new System.Drawing.Size(118, 41);
-            this.crudOptionsActionType.TabIndex = 0;
-            this.crudOptionsActionType.AddClickHandler += new System.EventHandler(this.crudOptionsStep_AddClickHandler);
-            this.crudOptionsActionType.DeleteClickHandler += new System.EventHandler(this.crudOptionsStep_DeleteClickHandler);
-            this.crudOptionsActionType.ModifyClickHandler += new System.EventHandler(this.crudOptionsStep_ModifyClickHandler);
-            // 
             // dataGridView4
             // 
             this.dataGridView4.AllowUserToAddRows = false;
@@ -338,12 +299,12 @@
             this.dataGridView4.AutoGenerateColumns = false;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn2,
             this.pkidDataGridViewTextBoxColumn2,
             this.fkstepleafidDataGridViewTextBoxColumn,
             this.fkactiontypeDataGridViewTextBoxColumn,
             this.fkactionvaluetypeDataGridViewTextBoxColumn,
-            this.descriptionDataGridViewTextBoxColumn2});
+            this.descriptionDataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn2});
             this.dataGridView4.DataSource = this.StepLeafActionValue;
             this.dataGridView4.Location = new System.Drawing.Point(6, 63);
             this.dataGridView4.MultiSelect = false;
@@ -425,6 +386,45 @@
             this.button1.Text = "Play";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // crudOptionsActionType
+            // 
+            this.crudOptionsActionType.ButtonRefreshVisible = false;
+            this.crudOptionsActionType.LayoutLeftToRight = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.crudOptionsActionType.Location = new System.Drawing.Point(111, 12);
+            this.crudOptionsActionType.MinimumSize = new System.Drawing.Size(37, 37);
+            this.crudOptionsActionType.Name = "crudOptionsActionType";
+            this.crudOptionsActionType.Size = new System.Drawing.Size(118, 41);
+            this.crudOptionsActionType.TabIndex = 0;
+            this.crudOptionsActionType.AddClickHandler += new System.EventHandler(this.crudOptionsAction_AddClickHandler);
+            this.crudOptionsActionType.DeleteClickHandler += new System.EventHandler(this.crudOptionsAction_DeleteClickHandler);
+            this.crudOptionsActionType.ModifyClickHandler += new System.EventHandler(this.crudOptionsAction_ModifyClickHandler);
+            // 
+            // crudOptionsStep
+            // 
+            this.crudOptionsStep.ButtonRefreshVisible = false;
+            this.crudOptionsStep.LayoutLeftToRight = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.crudOptionsStep.Location = new System.Drawing.Point(111, 12);
+            this.crudOptionsStep.MinimumSize = new System.Drawing.Size(37, 37);
+            this.crudOptionsStep.Name = "crudOptionsStep";
+            this.crudOptionsStep.Size = new System.Drawing.Size(118, 41);
+            this.crudOptionsStep.TabIndex = 0;
+            this.crudOptionsStep.AddClickHandler += new System.EventHandler(this.crudOptionsStep_AddClickHandler);
+            this.crudOptionsStep.DeleteClickHandler += new System.EventHandler(this.crudOptionsStep_DeleteClickHandler);
+            this.crudOptionsStep.ModifyClickHandler += new System.EventHandler(this.crudOptionsStep_ModifyClickHandler);
+            // 
+            // crudOptionsProtocol
+            // 
+            this.crudOptionsProtocol.ButtonRefreshVisible = false;
+            this.crudOptionsProtocol.LayoutLeftToRight = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.crudOptionsProtocol.Location = new System.Drawing.Point(84, 16);
+            this.crudOptionsProtocol.MinimumSize = new System.Drawing.Size(37, 37);
+            this.crudOptionsProtocol.Name = "crudOptionsProtocol";
+            this.crudOptionsProtocol.Size = new System.Drawing.Size(121, 37);
+            this.crudOptionsProtocol.TabIndex = 1;
+            this.crudOptionsProtocol.AddClickHandler += new System.EventHandler(this.crudOptionsProto_AddClickHandler);
+            this.crudOptionsProtocol.DeleteClickHandler += new System.EventHandler(this.crudOptionsProto_DeleteClickHandler);
+            this.crudOptionsProtocol.ModifyClickHandler += new System.EventHandler(this.crudOptionsProto_ModifyClickHandler);
+            // 
             // optionProtocol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -435,7 +435,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Name = "optionProtocol";
-            this.Size = new System.Drawing.Size(930, 426);
+            this.Size = new System.Drawing.Size(930, 461);
             this.Tag = "Protocol";
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
