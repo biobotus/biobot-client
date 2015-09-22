@@ -9,11 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BioBotApp.Controls.Option.Options;
 using System.Configuration;
+using PCAN;
 
 namespace BioBotApp.Controls.Option
 {
     public partial class frmOptions : Form
     {
+        ctrCanConnector canCom = new ctrCanConnector();
         public frmOptions(DataSets.dsModuleStructure2 dsModuleStructure)
         {
             InitializeComponent();
@@ -54,7 +56,7 @@ namespace BioBotApp.Controls.Option
             }
             else if (e.Node.Name.Equals("nodeCan"))
             {
-                setOptionControl(new optionCustomSerial("Serial port : CAN", "test can"));
+                setOptionControl(canCom);
             }
             else if (e.Node.Name.Equals("nodeLabwareTypesLabwareParameterTypes"))
             {
@@ -76,6 +78,11 @@ namespace BioBotApp.Controls.Option
             {
               //  setOptionControl(new optionActionValueType());
             }
+        }
+
+        public void setDataSet(DataSets.dsModuleStructure2 dsModuleStructure)
+        {
+            this.dsModuleStructure = dsModuleStructure;
         }
 
         /// <summary>

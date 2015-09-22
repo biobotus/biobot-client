@@ -35,11 +35,17 @@ namespace BioBotApp.Controls.Steps.Parameter_controls
         {
             inputBox = new namedInputTextBox(actionType.description);
             layoutModuleParametersStop.Controls.Add(inputBox);
+            actionTypeInputBoxDict.Add(actionType, inputBox);
         }
 
         public String getValue()
         {
             return inputBox.getInputTextValue();
+        }
+
+        public Dictionary<dsModuleStructure2.dtActionTypeRow, namedInputTextBox> getActionTypesValues()
+        {
+            return this.actionTypeInputBoxDict;
         }
 
         public Boolean isInitialized()

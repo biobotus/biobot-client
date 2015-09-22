@@ -127,7 +127,6 @@ C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.
 C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\bin\Debug\BioBotApp.exe
 C:\Users\David\Documents\biobot git\GUI\BioBotApp\BioBotApp\bin\Debug\BioBotApp.pdb
 C:\Users\David\Documents\workspace\vs2015\biobot\GUI\BioBotApp\BioBotApp\bin\Debug\BioBotApp.exe.config
-C:\Users\David\Documents\workspace\vs2015\biobot\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.csprojResolveAssemblyReference.cache
 C:\Users\David\Documents\workspace\vs2015\biobot\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Deck.ctrlDeck.resources
 C:\Users\David\Documents\workspace\vs2015\biobot\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Labware.ctrlLabware.resources
 C:\Users\David\Documents\workspace\vs2015\biobot\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Option.Options.abstractDialog.resources
@@ -161,3 +160,6 @@ C:\Users\David\Documents\workspace\vs2015\biobot\GUI\BioBotApp\BioBotApp\bin\Deb
 C:\Users\David\Documents\workspace\vs2015\biobot\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Option.Options.namedComboBox.resources
 C:\Users\David\Documents\workspace\vs2015\biobot\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.exe
 C:\Users\David\Documents\workspace\vs2015\biobot\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.pdb
+C:\Users\David\Documents\workspace\vs2015\biobot\GUI\BioBotApp\BioBotApp\obj\Debug\PCAN.ctrCanConnector.resources
+C:\Users\David\Documents\workspace\vs2015\biobot\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.frmCompMain.resources
+C:\Users\David\Documents\workspace\vs2015\biobot\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.csprojResolveAssemblyReference.cache

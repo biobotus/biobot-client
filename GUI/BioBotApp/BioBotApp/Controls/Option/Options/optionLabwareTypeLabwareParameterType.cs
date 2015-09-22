@@ -92,16 +92,58 @@ namespace BioBotApp.Controls.Option.Options
 
             if (dialog.DialogResult.Equals(DialogResult.OK))
             {
-                DataSets.dsModuleStructure2.dtActionTypeRow row;
+                DataSets.dsModuleStructure2.dtLabwareTypeLabwareParameterTypeRow row = dsModuleStructureGUI.dtLabwareTypeLabwareParameterType.NewdtLabwareTypeLabwareParameterTypeRow();
+                DataSets.dsModuleStructure2.dtLabwareParameterTypeRow dtLabwareParameterTypeRow = getSelectedLabwareParameterTypeRow();
+                DataSets.dsModuleStructure2.dtLabwareTypeRow dtLabwareTypeRow = getSelectedLabwareTypeRow();
 
-                row = dsModuleStructureGUI.dtActionType.NewdtActionTypeRow();
-                row.description = description.getInputTextValue();
-                dsModuleStructureGUI.dtActionType.AdddtActionTypeRow(row);
-                //updateRow(row);
+                if(dtLabwareParameterTypeRow == null)
+                {
+                    return;
+                }
+
+                if(dtLabwareTypeRow == null)
+                {
+                    return;
+                }
+
+                row.fk_labware_parameter_type_id = dtLabwareParameterTypeRow.pk_id;
+                row.fk_labware_type_id = dtLabwareTypeRow.pk_id;
+                row.value = description.getInputTextValue();
+
+                dsModuleStructureGUI.dtLabwareTypeLabwareParameterType.AdddtLabwareTypeLabwareParameterTypeRow(row);
+                updateRow(row);
             }
 
 
         }
+        public DataSets.dsModuleStructure2.dtLabwareParameterTypeRow getSelectedLabwareParameterTypeRow()
+        {
+            DataSets.dsModuleStructure2.dtLabwareParameterTypeRow row;
 
+            if (bsLabwareParameterType.Current == null)
+            {
+                return null;
+            }
+
+            DataRowView rowView = bsLabwareParameterType.Current as DataRowView;
+            row = rowView.Row as DataSets.dsModuleStructure2.dtLabwareParameterTypeRow;
+            return row;
+        }
+
+        public void updateRow(DataSets.dsModuleStructure2.dtLabwareTypeLabwareParameterTypeRow updateRow)
+        {
+            try
+            {
+                taLabwareTypeLabwareParameterType.Update(updateRow);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Invalid action type, try again !",
+                    "Error !",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                dsModuleStructureGUI.RejectChanges();
+            }
+        }
     }
 }
