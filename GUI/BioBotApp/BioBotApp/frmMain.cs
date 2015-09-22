@@ -157,8 +157,27 @@ namespace BioBotApp
 
         private void playToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SingleChannelPipette.sendInstruction(0x01, '\u00ff');
+            
+            fsmMovement movement = new fsmMovement();
+            foreach (DataSets.dsModuleStructure2.dtActionValueRow row in this.dsModuleStructure.dtActionValue)
+            {
+                if(row.dtStepLeafRow.dtStepCompositeRow.dtModuleRow.dtModuleTypeRow.pk_id == 7)
+                {
+                    movement.move(row);
+                }
+                else if(row.dtStepLeafRow.dtStepCompositeRow.dtModuleRow.dtModuleTypeRow.pk_id == 8)
+                {
+                    fsmSingleChannelPipette.executeAction(row);
+                }
+
+                //fsmPince.executeAction(row);
+            }
+            
+           // SingleChannelPipette.sendInstruction(0x00, '\u0001');
+            
             /*
+            SingleChannelPipette.sendInstruction(0x01, '\u00ff');
+
             foreach (DataSets.dsModuleStructure2.dtActionValueRow row in this.dsModuleStructure.dtActionValue)
             {
                 fsmPince.executeAction(row);

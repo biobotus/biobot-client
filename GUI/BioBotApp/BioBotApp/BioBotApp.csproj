@@ -284,7 +284,9 @@
     <Compile Include="Controls\TCPConsole\ctrlConsole.Designer.cs">
       <DependentUpon>ctrlConsole.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils\FSM\fsmMovement.cs" />
     <Compile Include="Utils\FSM\fsmPince.cs" />
+    <Compile Include="Utils\FSM\fsmSingleChannelPipette.cs" />
     <Compile Include="Utils\TCP\TCPClient.cs" />
     <Compile Include="Utils\TCP\TCPClientAsyncResultEventArgs.cs" />
     <EmbeddedResource Include="Controls\Deck\ctrlDeck.resx">

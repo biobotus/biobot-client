@@ -229,7 +229,7 @@ namespace BioBotApp.Controls.Steps
                                         actionValue.fk_action_type = kvpActionType.Key.pk_id;
                                         actionValue.fk_action_value_type = kvp.Key.dtActionValueTypeRow.pk_id;
                                         actionValue.fk_step_leaf_id = stepLeafRow.pk_id;
-                                        actionValue.description = kvp.Value.getValue();
+                                        actionValue.description = kvpActionType.Value.getInputTextValue();
                                         _dsModuleStructure.dtActionValue.AdddtActionValueRow(actionValue);
                                         updateRow(actionValue);
                                     }
