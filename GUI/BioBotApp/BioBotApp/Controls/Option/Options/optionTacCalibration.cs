@@ -18,7 +18,7 @@ namespace BioBotApp.Controls.Option.Options
             InitializeComponent();
         }
 
-        public optionTacCalibration(DataSets.dsModuleStructure2 dsModuleStruct):this()
+        public optionTacCalibration(DataSets.dsModuleStructure2 dsModuleStruct, string tacModel):this()
         {
             this.dsModuleStructure = dsModuleStruct;
             DataView dv = dsModuleStructure.dtModule.DefaultView;
@@ -27,7 +27,15 @@ namespace BioBotApp.Controls.Option.Options
             dgvTacCalibrationDataView.DataSource = dv2;
             dgvTacCalibrationDataView.Columns["fk_module_id"].Visible = false;
 
-            cmbTacSelector.DataSource = dv;
+            var res = (
+                from module in dsModuleStructure.dtModule.AsEnumerable()
+                join DataRowView module_type in dsModuleStructure.dtModuleType.AsDataView() 
+                on module["fk_module_type"] equals module_type["pk_id"]
+                where (string)module_type["description"] == tacModel
+                select new { pk_id = module.Field<String>("pk_id"), type = module_type.Row.Field<String>("description") }
+             ).ToArray();
+
+            cmbTacSelector.DataSource = res;
             cmbTacSelector.ValueMember = "pk_id";
             cmbTacSelector.DisplayMember = "pk_id";
         }
@@ -92,7 +100,7 @@ namespace BioBotApp.Controls.Option.Options
             }
             else
             {
-                MessageBox.Show("Not enough values to calibrate", "Validation error",
+                MessageBox.Show("Not enough values to calibrate (5 minimum)", "Validation error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

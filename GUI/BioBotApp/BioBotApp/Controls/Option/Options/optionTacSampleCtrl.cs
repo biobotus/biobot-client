@@ -91,7 +91,11 @@ namespace BioBotApp.Controls.Option.Options
         /// </summary>
         void pullTurbidoValue()
         {
+            // @TODO we may coinsider a class sending message to the tac
             // here we send the request for the right TAC throught the serial/can
+            // ID SUB_MODULE COMMANDE _ _ _ _ _ 
+            byte[] turbidityRequest = { 0x00 , 0x01, 0x10, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF };
+
             //@TODO here for test purpose to be change by a call to the serial interface
             onTurbidoValueReceived();
         }
