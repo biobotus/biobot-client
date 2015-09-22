@@ -19,5 +19,9 @@ namespace BioBotApp.Controls.Protocol
             InitializeComponent();
         }
 
+        private void tlvProtocol_DragDrop(object sender, DragEventArgs e)
+        {
+
+        }
     }
 }
