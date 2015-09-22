@@ -111,6 +111,12 @@
     <Compile Include="Controls\Option\Options\optionLabwareParameterType.Designer.cs">
       <DependentUpon>optionLabwareParameterType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Option\Options\optionModuleTypeLabwareParameterType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionModuleTypeLabwareParameterType.Designer.cs">
+      <DependentUpon>optionModuleTypeLabwareParameterType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Option\Options\optionLabwareTypeLabwareParameterType.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -298,6 +304,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Option\Options\optionLabwareParameterType.resx">
       <DependentUpon>optionLabwareParameterType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Option\Options\optionModuleTypeLabwareParameterType.resx">
+      <DependentUpon>optionModuleTypeLabwareParameterType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Option\Options\optionLabwareTypeLabwareParameterType.resx">
       <DependentUpon>optionLabwareTypeLabwareParameterType.cs</DependentUpon>
