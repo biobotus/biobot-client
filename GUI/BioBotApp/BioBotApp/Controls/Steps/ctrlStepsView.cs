@@ -254,7 +254,6 @@ namespace BioBotApp.Controls.Steps
                     tlvSteps.Nodes.Add(treeNode);
                 }
             }
-
         }
 
         public void setSelectedModule(DataSets.dsModuleStructure2.dtModuleTypeRow moduleTypeRow, DataSets.dsModuleStructure2.dtActionTypeDataTable dtActionType)
@@ -339,6 +338,32 @@ namespace BioBotApp.Controls.Steps
                     MessageBoxIcon.Error);
                 _dsModuleStructure.RejectChanges();
             }
+        }
+
+        private void tlvSteps_MouseDown(object sender, MouseEventArgs e)
+        {
+            /*
+            if(tlvSteps.SelectedNode == null)
+            {
+                return;
+            }
+            tlvSteps.DoDragDrop(tlvSteps.SelectedNode, DragDropEffects.Move);
+            */
+        }
+
+        private void tlvSteps_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Move;
+        }
+
+        private void tlvSteps_DragDrop(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Move;
+        }
+
+        private void tlvSteps_ItemDrag(object sender, ItemDragEventArgs e)
+        {
+            DoDragDrop(e.Item, DragDropEffects.Move);
         }
     }
 }

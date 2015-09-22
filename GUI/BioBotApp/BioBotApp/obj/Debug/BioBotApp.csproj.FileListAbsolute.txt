@@ -201,3 +201,4 @@ C:\Users\majl1801\Documents\biobot\GUI\BioBotApp\BioBotApp\bin\Debug\BioBotApp.e
 C:\Users\majl1801\Documents\biobot\GUI\BioBotApp\BioBotApp\bin\Debug\BioBotApp.pdb
 C:\Users\majl1801\Documents\biobot\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.exe
 C:\Users\majl1801\Documents\biobot\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.pdb
+C:\Users\David\Documents\workspace\vs2015\biobot\GUI\BioBotApp\BioBotApp\obj\Debug\BioBotApp.Controls.Option.Options.optionModuleTypeLabwareParameterType.resources

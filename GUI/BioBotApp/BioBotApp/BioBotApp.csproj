@@ -177,6 +177,7 @@
     <Compile Include="Controls\Steps\Parameter controls\ctrlCommand.Designer.cs">
       <DependentUpon>ctrlCommand.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Steps\Parameter controls\ProtocolNode.cs" />
     <Compile Include="Controls\Steps\Parameter controls\ProtocolTreeView.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -278,6 +279,7 @@
     <Compile Include="Controls\TCPConsole\ctrlConsole.Designer.cs">
       <DependentUpon>ctrlConsole.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils\FSM\fsmMainProtocol.cs" />
     <Compile Include="Utils\FSM\fsmMovement.cs" />
     <Compile Include="Utils\FSM\fsmPince.cs" />
     <Compile Include="Utils\FSM\fsmSingleChannelPipette.cs" />
