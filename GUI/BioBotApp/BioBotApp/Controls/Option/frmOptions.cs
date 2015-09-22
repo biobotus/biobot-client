@@ -74,7 +74,8 @@ namespace BioBotApp.Controls.Option
             }
             else if (e.Node.Name.Equals("nodeJoypad"))
             {
-                setOptionControl(new optionJoypad(dsModuleStructure));
+                this.
+                setOptionControl(new optionJoypad("Joypad","Joypad"));
             }
             else
             {

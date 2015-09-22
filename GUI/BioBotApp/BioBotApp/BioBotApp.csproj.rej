@@ -1,0 +1,23 @@
+diff a/GUI/BioBotApp/BioBotApp/BioBotApp.csproj b/GUI/BioBotApp/BioBotApp/BioBotApp.csproj	(rejected hunks)
+@@ -396,6 +396,21 @@
+   <ItemGroup>
+     <None Include="Resources\arrow_refresh.png" />
+   </ItemGroup>
++  <ItemGroup>
++    <None Include="Resources\Haut.png" />
++  </ItemGroup>
++  <ItemGroup>
++    <None Include="Resources\Bas.png" />
++  </ItemGroup>
++  <ItemGroup>
++    <None Include="Resources\Gauche.png" />
++  </ItemGroup>
++  <ItemGroup>
++    <None Include="Resources\Ref.png" />
++  </ItemGroup>
++  <ItemGroup>
++    <None Include="Resources\Droite.png" />
++  </ItemGroup>
+   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+        Other similar extension points exist, see Microsoft.Common.targets.

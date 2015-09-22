@@ -42,6 +42,14 @@ namespace BioBotApp.Controls.Option.Options
             this.dsModuleStructure = dsModuleStructure;
         }
 
+        public optionJoypad(string tag, string lblTestTxt)
+        {
+            InitializeComponent();
+
+            this.Tag = tag;
+            this.lblTestTxt = lblTestTxt;
+        }
+
         double xcoor;
         double ycoor;
         double z1coor;
@@ -50,6 +58,8 @@ namespace BioBotApp.Controls.Option.Options
         Double varCoor=0;
         string GCode;
         private dsModuleStructure2 dsModuleStructure;
+        private string v;
+        private string lblTestTxt;
 
         private void button1_ControlAdded(object sender, ControlEventArgs e)
         {
@@ -82,11 +92,6 @@ namespace BioBotApp.Controls.Option.Options
             z3coor = GetValue("z3");
             ycoor = ycoor - 1;
             setupGCode(xcoor,ycoor,z1coor,z2coor,z3coor);
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -506,12 +511,26 @@ namespace BioBotApp.Controls.Option.Options
 
         private void textBox6_KeyPressed(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+         (e.KeyChar != '.'))
+            {
                 e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar==(char)Keys.Enter)
+            {
+                varCoor = double.Parse(textBox6.Text);
+                textBox6.Select(0, 0);
+            }
         }
+
         private void textBox6_TextChanged(object sender, EventArgs e)
-        { 
-         varCoor = double.Parse(textBox6.Text);
+        {
+
         }
     }
 }

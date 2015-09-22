@@ -214,7 +214,7 @@ namespace BioBotApp.Controls.Option.Options
             // 
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 351);
+            this.splitter1.Size = new System.Drawing.Size(3, 376);
             this.splitter1.TabIndex = 17;
             this.splitter1.TabStop = false;
             // 
@@ -487,10 +487,12 @@ namespace BioBotApp.Controls.Option.Options
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(41, 29);
+            this.textBox6.MaxLength = 5;
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(84, 20);
             this.textBox6.TabIndex = 14;
             this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            this.textBox6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox6_KeyPressed);
             // 
             // groupBox3
             // 
@@ -528,10 +530,9 @@ namespace BioBotApp.Controls.Option.Options
             // 
             // buttonZ3Minus3
             // 
-            this.buttonZ3Minus3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonZ3Minus3.BackColor = System.Drawing.SystemColors.Control;
             this.buttonZ3Minus3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonZ3Minus3.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonZ3Minus3.Image = global::BioBotApp.Properties.Resources.Haut;
             this.buttonZ3Minus3.Location = new System.Drawing.Point(124, 285);
             this.buttonZ3Minus3.Margin = new System.Windows.Forms.Padding(30);
             this.buttonZ3Minus3.Name = "buttonZ3Minus3";
@@ -568,10 +569,9 @@ namespace BioBotApp.Controls.Option.Options
             // 
             // buttonZ2Minus3
             // 
-            this.buttonZ2Minus3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonZ2Minus3.BackColor = System.Drawing.SystemColors.Control;
             this.buttonZ2Minus3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonZ2Minus3.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonZ2Minus3.Image = global::BioBotApp.Properties.Resources.Haut;
             this.buttonZ2Minus3.Location = new System.Drawing.Point(68, 285);
             this.buttonZ2Minus3.Margin = new System.Windows.Forms.Padding(30);
             this.buttonZ2Minus3.Name = "buttonZ2Minus3";
@@ -608,10 +608,9 @@ namespace BioBotApp.Controls.Option.Options
             // 
             // buttonZ1Minus3
             // 
-            this.buttonZ1Minus3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonZ1Minus3.BackColor = System.Drawing.SystemColors.Control;
             this.buttonZ1Minus3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonZ1Minus3.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonZ1Minus3.Image = global::BioBotApp.Properties.Resources.Haut;
             this.buttonZ1Minus3.Location = new System.Drawing.Point(18, 285);
             this.buttonZ1Minus3.Margin = new System.Windows.Forms.Padding(30);
             this.buttonZ1Minus3.Name = "buttonZ1Minus3";
@@ -662,8 +661,9 @@ namespace BioBotApp.Controls.Option.Options
             // optionJoypad
             // 
             this.AccessibleName = "";
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScroll = true;
+            this.AutoScrollMinSize = new System.Drawing.Size(716, 351);
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = global::BioBotApp.Properties.Resources.Ref;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -705,9 +705,10 @@ namespace BioBotApp.Controls.Option.Options
             this.Controls.Add(this.buttonYPlus);
             this.Controls.Add(this.Home);
             this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Name = "optionJoypad";
-            this.Size = new System.Drawing.Size(697, 351);
+            this.Size = new System.Drawing.Size(764, 376);
+            this.Tag = "Joypad";
             this.Load += new System.EventHandler(this.optionJoypad_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -771,9 +772,9 @@ namespace BioBotApp.Controls.Option.Options
         private Button buttonZ3Plus2;
         private Label z3coord;
         public Double newCoord;
+
         public  double GetValue(string x)
         {
-
             switch (x)
             {
                 case "x":
@@ -794,6 +795,7 @@ namespace BioBotApp.Controls.Option.Options
             }
             return newCoord;
         }
+
         private Label z2coord;
         private Label z1coord;
         private Label ycoord;
