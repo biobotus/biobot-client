@@ -74,15 +74,14 @@ namespace BioBotApp.Controls.Option
             {
                 setOptionControl(new optionMovement(dsModuleStructure));
             }
-<<<<<<< HEAD
             else if (e.Node.Name.Equals("nodeProtocol"))
             {
                 setOptionControl(new optionProtocol(dsModuleStructure));
-=======
+            }
             else if (e.Node.Name.Equals("nodeModuleTypeLabwareParameterType"))
             {
                 setOptionControl(new optionModuleTypeLabwareParameterType(dsModuleStructure));
->>>>>>> 963be7c05d1b56f36f540f7d91a3fbc651c0b05c
+
             }
             else
             {

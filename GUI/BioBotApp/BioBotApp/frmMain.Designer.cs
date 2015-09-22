@@ -139,14 +139,14 @@
             // parametersToolStripMenuItem
             // 
             this.parametersToolStripMenuItem.Name = "parametersToolStripMenuItem";
-            this.parametersToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.parametersToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.parametersToolStripMenuItem.Text = "&Options";
             this.parametersToolStripMenuItem.Click += new System.EventHandler(this.parametersToolStripMenuItem_Click);
             // 
             // playToolStripMenuItem
             // 
             this.playToolStripMenuItem.Name = "playToolStripMenuItem";
-            this.playToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.playToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.playToolStripMenuItem.Text = "Play";
             this.playToolStripMenuItem.Click += new System.EventHandler(this.playToolStripMenuItem_Click);
             // 
@@ -190,9 +190,9 @@
             // 
             this.ctrlDeck.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlDeck.Location = new System.Drawing.Point(0, 0);
-            this.ctrlDeck.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctrlDeck.Margin = new System.Windows.Forms.Padding(4);
             this.ctrlDeck.Name = "ctrlDeck";
-            this.ctrlDeck.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.ctrlDeck.Padding = new System.Windows.Forms.Padding(3);
             this.ctrlDeck.Size = new System.Drawing.Size(442, 292);
             this.ctrlDeck.TabIndex = 0;
             // 
@@ -219,7 +219,7 @@
             // 
             this.ctrlConsole.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlConsole.Location = new System.Drawing.Point(0, 0);
-            this.ctrlConsole.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctrlConsole.Margin = new System.Windows.Forms.Padding(4);
             this.ctrlConsole.Name = "ctrlConsole";
             this.ctrlConsole.Size = new System.Drawing.Size(442, 220);
             this.ctrlConsole.TabIndex = 0;
@@ -267,7 +267,7 @@
             this.ctrlTools.BackColor = System.Drawing.Color.Transparent;
             this.ctrlTools.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlTools.Location = new System.Drawing.Point(0, 0);
-            this.ctrlTools.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctrlTools.Margin = new System.Windows.Forms.Padding(4);
             this.ctrlTools.Name = "ctrlTools";
             this.ctrlTools.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.ctrlTools.Size = new System.Drawing.Size(200, 314);
@@ -297,9 +297,9 @@
             // 
             this.ctrlLabware.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlLabware.Location = new System.Drawing.Point(0, 0);
-            this.ctrlLabware.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctrlLabware.Margin = new System.Windows.Forms.Padding(4);
             this.ctrlLabware.Name = "ctrlLabware";
-            this.ctrlLabware.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.ctrlLabware.Padding = new System.Windows.Forms.Padding(3);
             this.ctrlLabware.Size = new System.Drawing.Size(200, 198);
             this.ctrlLabware.TabIndex = 0;
             // 
@@ -325,7 +325,7 @@
             // 
             this.ctrlSteps.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlSteps.Location = new System.Drawing.Point(0, 0);
-            this.ctrlSteps.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctrlSteps.Margin = new System.Windows.Forms.Padding(4);
             this.ctrlSteps.Name = "ctrlSteps";
             this.ctrlSteps.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.ctrlSteps.Size = new System.Drawing.Size(200, 515);
@@ -353,9 +353,9 @@
             // 
             this.ctrlProtocolsView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlProtocolsView.Location = new System.Drawing.Point(0, 0);
-            this.ctrlProtocolsView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctrlProtocolsView.Margin = new System.Windows.Forms.Padding(4);
             this.ctrlProtocolsView.Name = "ctrlProtocolsView";
-            this.ctrlProtocolsView.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.ctrlProtocolsView.Padding = new System.Windows.Forms.Padding(3);
             this.ctrlProtocolsView.Size = new System.Drawing.Size(206, 515);
             this.ctrlProtocolsView.TabIndex = 8;
             // 
@@ -458,7 +458,7 @@
             this.Controls.Add(this.statusStrip2);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMain";
-            this.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.Padding = new System.Windows.Forms.Padding(3);
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.bsModuleStructure)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtActionTypeBindingSource)).EndInit();

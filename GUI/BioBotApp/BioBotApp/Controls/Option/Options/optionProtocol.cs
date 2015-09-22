@@ -287,7 +287,7 @@ namespace BioBotApp.Controls.Option.Options
                 return null;
             }
             
-            DataRowView rowView = bs_dtStepLeafBindingSource.Current as DataRowView;
+            DataRowView rowView = StepLeafStepComposite.Current as DataRowView;
             row = rowView.Row as DataSets.dsModuleStructure2.dtStepLeafRow;
             return row;
         }

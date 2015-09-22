@@ -40,11 +40,7 @@
             this.bsLabwareParameterType = new System.Windows.Forms.BindingSource(this.components);
             this.valueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsLabwareTypedtLabwareTypeLabwareParameterType = new System.Windows.Forms.BindingSource(this.components);
-<<<<<<< HEAD
-            this.crudOptions1 = new BioBotApp.Controls.Utils.crudOptions();
-=======
             this.crudOptions = new BioBotApp.Controls.Utils.crudOptions();
->>>>>>> 963be7c05d1b56f36f540f7d91a3fbc651c0b05c
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.taLabwareTypeLabwareParameterType = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taLabwareTypeLabwareParameterType();
@@ -166,19 +162,6 @@
             // 
             this.bsLabwareTypedtLabwareTypeLabwareParameterType.DataMember = "dtLabwareType_dtLabwareTypeLabwareParameterType";
             this.bsLabwareTypedtLabwareTypeLabwareParameterType.DataSource = this.bsLabwareType;
-<<<<<<< HEAD
-            // 
-            // crudOptions1
-            // 
-            this.crudOptions1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.crudOptions1.LayoutLeftToRight = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.crudOptions1.Location = new System.Drawing.Point(2, 15);
-            this.crudOptions1.Margin = new System.Windows.Forms.Padding(2);
-            this.crudOptions1.MinimumSize = new System.Drawing.Size(28, 30);
-            this.crudOptions1.Name = "crudOptions1";
-            this.crudOptions1.Size = new System.Drawing.Size(261, 30);
-            this.crudOptions1.TabIndex = 3;
-=======
             // 
             // crudOptions
             // 
@@ -190,7 +173,6 @@
             this.crudOptions.Size = new System.Drawing.Size(347, 37);
             this.crudOptions.TabIndex = 3;
             this.crudOptions.AddClickHandler += new System.EventHandler(this.crudOptions_AddClickHandler);
->>>>>>> 963be7c05d1b56f36f540f7d91a3fbc651c0b05c
             // 
             // groupBox1
             // 
