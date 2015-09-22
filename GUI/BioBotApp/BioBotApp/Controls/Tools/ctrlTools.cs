@@ -58,5 +58,10 @@ namespace BioBotApp.Controls.Tools_controls
                 selectedNode = null;
             }
         }
+
+        private void dataGridView1_DragLeave(object sender, EventArgs e)
+        {
+
+        }
     }
 }

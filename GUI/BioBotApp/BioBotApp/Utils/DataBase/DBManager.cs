@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace BioBotApp.Utils.DataBase
 {
-    class DBManager
+    public class DBManager
     {
+        public class ActionTypes
+        {
+            public const int OPEN = 11;
+            public const int CLOSE = 13;
+            public const int DELAY_MS = 7;
+
+        }
+        
     }
 }

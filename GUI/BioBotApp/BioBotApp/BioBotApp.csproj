@@ -81,6 +81,12 @@
     <Compile Include="Controls\Option\Options\abstractDialog.Designer.cs">
       <DependentUpon>abstractDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Option\Options\namedComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Option\Options\namedComboBox.Designer.cs">
+      <DependentUpon>namedComboBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Option\Options\namedInputTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -104,6 +110,12 @@
     </Compile>
     <Compile Include="Controls\Option\Options\optionLabwareParameterType.Designer.cs">
       <DependentUpon>optionLabwareParameterType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionModuleTypeLabwareParameterType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionModuleTypeLabwareParameterType.Designer.cs">
+      <DependentUpon>optionModuleTypeLabwareParameterType.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\Option\Options\optionLabwareTypeLabwareParameterType.cs">
       <SubType>UserControl</SubType>
@@ -227,6 +239,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsModuleStructure2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="frmCompMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCompMain.Designer.cs">
+      <DependentUpon>frmCompMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,6 +259,17 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Utils\Communication\JSONParser.cs" />
+    <Compile Include="Utils\Communication\pcan\CANDevice.cs" />
+    <Compile Include="Utils\Communication\pcan\ctrCanConnector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Utils\Communication\pcan\ctrCanConnector.designer.cs">
+      <DependentUpon>ctrCanConnector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\Communication\pcan\Dynamixel\DynamixelCom.cs" />
+    <Compile Include="Utils\Communication\pcan\PCANBasic.cs" />
+    <Compile Include="Utils\Communication\pcan\PCANCom.cs" />
+    <Compile Include="Utils\Communication\pcan\SingleChannelPipette\SingleChannelPipette.cs" />
     <Compile Include="Utils\DataBase\DBManager.cs" />
     <Compile Include="Utils\Form\ApplicationExeptionHandlers.cs" />
     <Compile Include="Controls\Utils\crudOptions.cs">
@@ -255,6 +284,7 @@
     <Compile Include="Controls\TCPConsole\ctrlConsole.Designer.cs">
       <DependentUpon>ctrlConsole.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils\FSM\fsmPince.cs" />
     <Compile Include="Utils\TCP\TCPClient.cs" />
     <Compile Include="Utils\TCP\TCPClientAsyncResultEventArgs.cs" />
     <EmbeddedResource Include="Controls\Deck\ctrlDeck.resx">
@@ -265,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Option\Options\abstractDialog.resx">
       <DependentUpon>abstractDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Option\Options\namedComboBox.resx">
+      <DependentUpon>namedComboBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Option\Options\namedInputTextBox.resx">
       <DependentUpon>namedInputTextBox.cs</DependentUpon>
@@ -277,6 +310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Option\Options\optionLabwareParameterType.resx">
       <DependentUpon>optionLabwareParameterType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Option\Options\optionModuleTypeLabwareParameterType.resx">
+      <DependentUpon>optionModuleTypeLabwareParameterType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Option\Options\optionLabwareTypeLabwareParameterType.resx">
       <DependentUpon>optionLabwareTypeLabwareParameterType.cs</DependentUpon>
@@ -329,6 +365,9 @@
     <EmbeddedResource Include="Controls\Tools\ctrlTools.resx">
       <DependentUpon>ctrlTools.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCompMain.resx">
+      <DependentUpon>frmCompMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -347,6 +386,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\TCPConsole\ctrlConsole.resx">
       <DependentUpon>ctrlConsole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utils\Communication\pcan\ctrCanConnector.resx">
+      <DependentUpon>ctrCanConnector.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DataSets\dsModuleStructure2.xsc">
       <DependentUpon>dsModuleStructure2.xsd</DependentUpon>
@@ -407,6 +449,7 @@
   <ItemGroup>
     <None Include="Resources\arrow_refresh.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

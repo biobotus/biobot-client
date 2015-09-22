@@ -10,21 +10,21 @@ using System.Windows.Forms;
 
 namespace BioBotApp.Controls.Option.Options
 {
-    public partial class optionLabwareTypeLabwareParameterType : UserControl
+    public partial class optionModuleTypeLabwareParameterType : UserControl
     {
-        public optionLabwareTypeLabwareParameterType()
+        public optionModuleTypeLabwareParameterType()
         {
             InitializeComponent();
         }
 
-        public optionLabwareTypeLabwareParameterType(DataSets.dsModuleStructure2 dsModuleStructure)
+        public optionModuleTypeLabwareParameterType(DataSets.dsModuleStructure2 dsModuleStructure)
             :this()
         {
             this.dsModuleStructureGUI = dsModuleStructure;
-            this.bsLabwareType.DataSource = dsModuleStructureGUI;
-            this.bsLabwareParameterType.DataSource = dsModuleStructureGUI;
-            this.bsLabwareTypedtLabwareTypeLabwareParameterType.DataMember = "dtLabwareType_dtLabwareTypeLabwareParameterType";
-            this.bsLabwareTypedtLabwareTypeLabwareParameterType.DataSource = this.bsLabwareType;
+            this.bsModuleType.DataSource = dsModuleStructureGUI;
+            bsLabwareParameterType.DataSource = dsModuleStructureGUI;
+            this.bsModuleTypedtModuleTypeLabwareParameterType.DataMember = "dtModuleType_dtModuleTypeLabwareParameterType";
+            this.bsModuleTypedtModuleTypeLabwareParameterType.DataSource = this.bsModuleType;
             /*
             this.dsLabwareStructureGUI = dtLabwareStructure;
             this.dsModuleStructureGUI = dsModuleStructure;
@@ -46,7 +46,7 @@ namespace BioBotApp.Controls.Option.Options
 
         private void bsLabwareType_CurrentChanged(object sender, EventArgs e)
         {
-            DataSets.dsModuleStructure2.dtLabwareTypeRow row = getSelectedLabwareTypeRow();
+            DataSets.dsModuleStructure2.dtModuleTypeRow row = getSelectedModuleType();
             if(row == null)
             {
                 return;
@@ -54,17 +54,17 @@ namespace BioBotApp.Controls.Option.Options
             
         }
 
-        public DataSets.dsModuleStructure2.dtLabwareTypeRow getSelectedLabwareTypeRow()
+        public DataSets.dsModuleStructure2.dtModuleTypeRow getSelectedModuleType()
         {
-            DataSets.dsModuleStructure2.dtLabwareTypeRow row;
+            DataSets.dsModuleStructure2.dtModuleTypeRow row;
 
-            if (bsLabwareType.Current == null)
+            if (bsModuleType.Current == null)
             {
                 return null;
             }
 
-            DataRowView rowView = bsLabwareType.Current as DataRowView;
-            row = rowView.Row as DataSets.dsModuleStructure2.dtLabwareTypeRow;
+            DataRowView rowView = bsModuleType.Current as DataRowView;
+            row = rowView.Row as DataSets.dsModuleStructure2.dtModuleTypeRow;
             return row;
         }
 
@@ -92,25 +92,25 @@ namespace BioBotApp.Controls.Option.Options
 
             if (dialog.DialogResult.Equals(DialogResult.OK))
             {
-                DataSets.dsModuleStructure2.dtLabwareTypeLabwareParameterTypeRow row = dsModuleStructureGUI.dtLabwareTypeLabwareParameterType.NewdtLabwareTypeLabwareParameterTypeRow();
+                DataSets.dsModuleStructure2.dtModuleTypeLabwareParameterTypeRow row = dsModuleStructureGUI.dtModuleTypeLabwareParameterType.NewdtModuleTypeLabwareParameterTypeRow();
                 DataSets.dsModuleStructure2.dtLabwareParameterTypeRow dtLabwareParameterTypeRow = getSelectedLabwareParameterTypeRow();
-                DataSets.dsModuleStructure2.dtLabwareTypeRow dtLabwareTypeRow = getSelectedLabwareTypeRow();
+                DataSets.dsModuleStructure2.dtModuleTypeRow dtModuleTypeRow = getSelectedModuleType();
 
                 if(dtLabwareParameterTypeRow == null)
                 {
                     return;
                 }
 
-                if(dtLabwareTypeRow == null)
+                if(dtModuleTypeRow == null)
                 {
                     return;
                 }
 
                 row.fk_labware_parameter_type_id = dtLabwareParameterTypeRow.pk_id;
-                row.fk_labware_type_id = dtLabwareTypeRow.pk_id;
+                row.fk_module_type_id = dtModuleTypeRow.pk_id;
                 row.value = description.getInputTextValue();
 
-                dsModuleStructureGUI.dtLabwareTypeLabwareParameterType.AdddtLabwareTypeLabwareParameterTypeRow(row);
+                dsModuleStructureGUI.dtModuleTypeLabwareParameterType.AdddtModuleTypeLabwareParameterTypeRow(row);
                 updateRow(row);
             }
 
@@ -130,11 +130,11 @@ namespace BioBotApp.Controls.Option.Options
             return row;
         }
 
-        public void updateRow(DataSets.dsModuleStructure2.dtLabwareTypeLabwareParameterTypeRow updateRow)
+        public void updateRow(DataSets.dsModuleStructure2.dtModuleTypeLabwareParameterTypeRow updateRow)
         {
             try
             {
-                taLabwareTypeLabwareParameterType.Update(updateRow);
+                taModuleTypeLabwareParameterTypeTableAdapte.Update(updateRow);
             }
             catch (Exception ex)
             {

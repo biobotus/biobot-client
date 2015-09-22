@@ -8522,8 +8522,8 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters {
             this._commandCollection = new global::System.Data.Odbc.OdbcCommand[1];
             this._commandCollection[0] = new global::System.Data.Odbc.OdbcCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT \"pk_id\", \"fk_step_leaf_id\", \"fk_action_type\", \"fk_action_value_type\", \"des" +
-                "cription\" FROM \"biobot\".\"bbt_action_value\"";
+            this._commandCollection[0].CommandText = "SELECT pk_id, fk_step_leaf_id, fk_action_type, fk_action_value_type, description\r" +
+                "\nFROM   biobot.bbt_action_value\r\nORDER BY pk_id";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
