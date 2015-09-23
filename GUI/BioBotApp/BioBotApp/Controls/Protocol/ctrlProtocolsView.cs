@@ -108,7 +108,7 @@ namespace BioBotApp.Controls.Protocol
 
         public void executeAction(TreeNode treeNode)
         {
-            if(treeNode is StepCompositeNode)
+            if(treeNode is StepCompositeNode || treeNode is TreeNode)
             {
                 foreach(TreeNode childNodes in treeNode.Nodes)
                 {
