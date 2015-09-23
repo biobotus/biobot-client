@@ -32,14 +32,13 @@ namespace BioBotApp.Controls.Deck
 
         private void panel1_DragDrop(object sender, DragEventArgs e)
         {
-            
-
-            abstractDialog dialog = new abstractDialog("New Module", "Type Info");
+            string entry = e.Data.GetData(DataFormats.Text).ToString();
+            abstractDialog dialog = new abstractDialog("New Module" + entry, "Type Info");
             namedInputTextBox xCoord = new namedInputTextBox("X :  ");
             namedInputTextBox yCoord = new namedInputTextBox("Y :  ");
             ComboBox rotation = new ComboBox();
             angle = new int[] { 0, 90, 180, 270 };
-            rotation.DataSource =angle;
+            rotation.DataSource = angle;
             rotation.Text="Rotation :  ";
             rotation.DropDownStyle = ComboBoxStyle.DropDown;
             dialog.addNamedInputTextBox(xCoord);
@@ -68,12 +67,32 @@ namespace BioBotApp.Controls.Deck
 
         private void panel1_DragEnter(object sender, DragEventArgs e)
         {
-            e.Effect = DragDropEffects.Copy;
 
-            //if (e.Data.GetDataPresent(DataFormats.))
 
-            //else
-            //    e.Effect = DragDropEffects.None;
+            if (e.Data.GetDataPresent(DataFormats.Text))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+
+            string entry = e.Data.GetData(DataFormats.Text).ToString();
+            abstractDialog dialog = new abstractDialog("New Module" + entry, "Type Info");
+            namedInputTextBox xCoord = new namedInputTextBox("X :  ");
+            namedInputTextBox yCoord = new namedInputTextBox("Y :  ");
+
+            ComboBox rotation = new ComboBox();
+            angle = new int[] { 0, 90, 180, 270 };
+            rotation.DataSource = angle;
+            rotation.Text = "Rotation :  ";
+            rotation.DropDownStyle = ComboBoxStyle.DropDown;
+            dialog.addNamedInputTextBox(xCoord);
+            dialog.addNamedInputTextBox(yCoord);
+            dialog.addControl(rotation);
+
+            dialog.ShowDialog();
         }
     }
 }
