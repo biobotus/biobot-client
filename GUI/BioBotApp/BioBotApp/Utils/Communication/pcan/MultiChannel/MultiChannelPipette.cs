@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BioBotApp.Utils.Communication.pcan.SingleChannelPipette
+namespace BioBotApp.Utils.Communication.pcan.MultiChannelPipette
 {
-    class SingleChannelPipette
+    class MultiChannelPipette
     {
         public static void sendInstruction(byte direction, Int16 volume)
         {
@@ -17,8 +17,8 @@ namespace BioBotApp.Utils.Communication.pcan.SingleChannelPipette
             CANMsg.DATA[4] = (byte)(volume >> 8);
             CANMsg.DATA[5] = (byte)(volume);
             CANMsg.DATA[6] = direction;
-            CANMsg.ID = CANDevice.HARDWARE_FILTER_SINGLE_CHANNEL_PIPETTE;
-            
+            CANMsg.ID = CANDevice.HARDWARE_FILTER_MUTLI_CHANNEL_PIPETTE;
+
             PCANCom.Instance.send(CANMsg);
             Console.WriteLine(" ");
             Console.WriteLine("---------------------------------------");

@@ -171,6 +171,12 @@
     <Compile Include="Controls\Option\Options\optionMovement.Designer.cs">
       <DependentUpon>optionMovement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Option\Options\optionProtocol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionProtocol.Designer.cs">
+      <DependentUpon>optionProtocol.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Steps\Parameter controls\ctrlCommand.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -262,9 +268,11 @@
       <DependentUpon>ctrCanConnector.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\Communication\pcan\Dynamixel\DynamixelCom.cs" />
+    <Compile Include="Utils\Communication\pcan\MultiChannel\MultiChannelPipette.cs" />
     <Compile Include="Utils\Communication\pcan\PCANBasic.cs" />
     <Compile Include="Utils\Communication\pcan\PCANCom.cs" />
     <Compile Include="Utils\Communication\pcan\SingleChannelPipette\SingleChannelPipette.cs" />
+    <Compile Include="Utils\Communication\pcan\TAC\TacComm.cs" />
     <Compile Include="Utils\DataBase\DBManager.cs" />
     <Compile Include="Utils\Form\ApplicationExeptionHandlers.cs" />
     <Compile Include="Controls\Utils\crudOptions.cs">
@@ -281,8 +289,10 @@
     </Compile>
     <Compile Include="Utils\FSM\fsmMainProtocol.cs" />
     <Compile Include="Utils\FSM\fsmMovement.cs" />
+    <Compile Include="Utils\FSM\fsmMultiChannelPipette.cs" />
     <Compile Include="Utils\FSM\fsmPince.cs" />
     <Compile Include="Utils\FSM\fsmSingleChannelPipette.cs" />
+    <Compile Include="Utils\FSM\fsmTAC.cs" />
     <Compile Include="Utils\TCP\TCPClient.cs" />
     <Compile Include="Utils\TCP\TCPClientAsyncResultEventArgs.cs" />
     <EmbeddedResource Include="Controls\Deck\ctrlDeck.resx">
@@ -338,6 +348,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Option\Options\optionMovement.resx">
       <DependentUpon>optionMovement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Option\Options\optionProtocol.resx">
+      <DependentUpon>optionProtocol.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Protocol\ctrlProtocolsView.resx">
       <DependentUpon>ctrlProtocolsView.cs</DependentUpon>

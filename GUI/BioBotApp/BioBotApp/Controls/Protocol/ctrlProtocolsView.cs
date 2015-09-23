@@ -132,5 +132,10 @@ namespace BioBotApp.Controls.Protocol
                
             }
         }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            tlvProtocol.Nodes.Clear();
+        }
     }
 }
