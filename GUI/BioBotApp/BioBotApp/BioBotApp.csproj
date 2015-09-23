@@ -265,6 +265,7 @@
     <Compile Include="Utils\Communication\pcan\PCANBasic.cs" />
     <Compile Include="Utils\Communication\pcan\PCANCom.cs" />
     <Compile Include="Utils\Communication\pcan\SingleChannelPipette\SingleChannelPipette.cs" />
+    <Compile Include="Utils\Communication\pcan\TAC\TacComm.cs" />
     <Compile Include="Utils\DataBase\DBManager.cs" />
     <Compile Include="Utils\Form\ApplicationExeptionHandlers.cs" />
     <Compile Include="Controls\Utils\crudOptions.cs">
@@ -283,6 +284,7 @@
     <Compile Include="Utils\FSM\fsmMovement.cs" />
     <Compile Include="Utils\FSM\fsmPince.cs" />
     <Compile Include="Utils\FSM\fsmSingleChannelPipette.cs" />
+    <Compile Include="Utils\FSM\fsmTAC.cs" />
     <Compile Include="Utils\TCP\TCPClient.cs" />
     <Compile Include="Utils\TCP\TCPClientAsyncResultEventArgs.cs" />
     <EmbeddedResource Include="Controls\Deck\ctrlDeck.resx">
