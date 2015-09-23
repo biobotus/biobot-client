@@ -11,7 +11,7 @@ using System.IO.Ports;
 
 namespace BioBotApp.Controls.Utils
 {
-    public partial class stopBitComboBox : ComboBox
+    public partial class ctrlStopbit : UserControl
     {
         Dictionary<string, StopBits> stopBitValues = new Dictionary<string, StopBits>
         {
@@ -19,17 +19,21 @@ namespace BioBotApp.Controls.Utils
             { "OnePointFive", StopBits.OnePointFive },
             {"Two", StopBits.Two }
         };
-        public stopBitComboBox()
+
+        public ctrlStopbit()
         {
             InitializeComponent();
-            this.DataSource = stopBitValues.Keys.ToList();
-            this.DisplayMember = "Item1";
-            this.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            this.cmbStopbit.DataSource = new BindingSource(stopBitValues, null);
+            this.cmbStopbit.DisplayMember = "Key";
+            this.cmbStopbit.ValueMember = "Value";
         }
 
-        public StopBits getStopBitsValue()
-        {
-            return stopBitValues[this.SelectedValue.ToString()];
-        }
+
+    public StopBits selectedValue
+    {
+        get { return (StopBits)this.cmbStopbit.SelectedValue; }
+        set { this.cmbStopbit.SelectedValue = value; }
     }
+}
 }

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.IO.Ports;
 namespace BioBotApp.Controls.Utils
 {
-    public partial class handshakeComboBox : ComboBox
+    public partial class ctrlHandshake : UserControl
     {
         Dictionary<string, Handshake> handshakeValues = new Dictionary<string, Handshake>
         {
@@ -19,17 +19,22 @@ namespace BioBotApp.Controls.Utils
             { "RequestToSendXOnXOff", Handshake.RequestToSendXOnXOff},
             { "XOnXOff", Handshake.XOnXOff},
         };
-        public handshakeComboBox()
+
+        public ctrlHandshake()
         {
             InitializeComponent();
-            this.DataSource = handshakeValues.Keys.ToList();
-            this.DisplayMember = "Item1";
-            this.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            this.cmbHandshake.DataSource = new BindingSource(handshakeValues, null);
+            this.cmbHandshake.DisplayMember = "Key";
+            this.cmbHandshake.ValueMember = "Value";
         }
 
-        public Handshake getHandshakeValue()
+
+        public Handshake selectedValue
         {
-            return handshakeValues[this.SelectedValue.ToString()];
+            get { return (Handshake)this.cmbHandshake.SelectedValue; }
+            set { this.cmbHandshake.SelectedValue = value; }
         }
+
     }
 }

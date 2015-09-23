@@ -22,11 +22,22 @@ namespace BioBotApp.Controls.Option.Options
 
             this.Tag = tag;
 
+            this.serialChan = ComChannelFactory.getSerialChannel(chan);
+
             string[] ports = SerialPort.GetPortNames();
             this.cmbPortName.Items.AddRange(ports);
-            this.cmbPortName.SelectedIndex = 0;
-            this.cmbParity.SelectedValue = Parity.None;
-            this.serialChan = ComChannelFactory.getSerialChannel(chan);
+
+            cmbPortName.Text = serialChan.PortName;
+
+            txtBaudeRate.Text = serialChan.BaudRate.ToString();
+            txtDataBits.Text = serialChan.DataBits.ToString();
+
+            ctrlStopbit1.selectedValue = serialChan.StopBits;
+            ctrlParity1.selectedValue = serialChan.Parity;
+            ctrlHandshake1.selectedValue = serialChan.Handshake;
+
+            cbRtsEnable.Checked = serialChan.RtsEnable;
+            
         }
 
         private void txtDataBits_Validating(object sender, CancelEventArgs e)
@@ -87,18 +98,20 @@ namespace BioBotApp.Controls.Option.Options
 
         private void ConfigureSerialPort(CustomSerial serialChan)
         {
-            string portName = cmbPortName.SelectedItem.ToString();
-            int baudRate = 0;
-            int.TryParse(txtBaudeRate.Text, out baudRate);
-            int dataBits = 0;
-            int.TryParse(txtDataBits.Text, out dataBits);
-            StopBits stopBits = cmbStop.getStopBitsValue();
-            Parity parityBits = cmbParity.getParityBitsValue();
-            Handshake handshake = cmbHandshake.getHandshakeValue();
-            bool rtsUse = cbRtsEnable.Checked;
+            if(cmbPortName.SelectedItem.ToString() != "")
+            { 
+                string portName = cmbPortName.SelectedItem.ToString();
+                int baudRate = 0;
+                int.TryParse(txtBaudeRate.Text, out baudRate);
+                int dataBits = 0;
+                int.TryParse(txtDataBits.Text, out dataBits);
+                StopBits stopBits = ctrlStopbit1.selectedValue;
+                Parity parityBits = ctrlParity1.selectedValue;
+                Handshake handshake = ctrlHandshake1.selectedValue;
+                bool rtsUse = cbRtsEnable.Checked;
 
-            serialChan.configure(portName, baudRate, dataBits, stopBits, parityBits, handshake, rtsUse);
+                serialChan.configure(portName, baudRate, dataBits, stopBits, parityBits, handshake, rtsUse);
+            }
         }
-
     }
 }

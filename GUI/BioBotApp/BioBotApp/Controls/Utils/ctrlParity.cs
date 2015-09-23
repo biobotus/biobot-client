@@ -8,9 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.Ports;
+
 namespace BioBotApp.Controls.Utils
 {
-    public partial class parityBitComboBox : ComboBox
+    public partial class ctrlParity : UserControl
     {
         Dictionary<string, Parity> parityBitValues = new Dictionary<string, Parity>
         {
@@ -21,17 +22,20 @@ namespace BioBotApp.Controls.Utils
             {"Space", Parity.Space }
         };
 
-        public parityBitComboBox()
+        public ctrlParity()
         {
             InitializeComponent();
-            this.DataSource = parityBitValues.Keys.ToList();
-            this.DisplayMember = "Item1";
-            this.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            this.cmbParity.DataSource = new BindingSource(parityBitValues, null);
+            this.cmbParity.DisplayMember = "Key";
+            this.cmbParity.ValueMember = "Value";
         }
 
-        public Parity getParityBitsValue()
+
+        public Parity selectedValue
         {
-            return parityBitValues[this.SelectedValue.ToString()];
+            get { return (Parity)this.cmbParity.SelectedValue; }
+            set { this.cmbParity.SelectedValue = value; }
         }
     }
 }
