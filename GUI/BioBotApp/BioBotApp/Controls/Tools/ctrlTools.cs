@@ -71,7 +71,9 @@ namespace BioBotApp.Controls.Tools_controls
 
         private void dataGridView1_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
         {
-            dataGridView1.DoDragDrop(dataGridView1.Rows[e.RowIndex],DragDropEffects.Move);
+            dataGridView1.DoDragDrop(dataGridView1.Name, DragDropEffects.Move);
         }
     }
 }
+
+//Rows[e.RowIndex]

@@ -97,14 +97,14 @@ namespace BioBotApp.Controls.Option.Options
 
         private void button1_Click(object sender, EventArgs e)
         {
-            double position = ycoor-0.1;
-            move("Y", position);
+            ycoor -= 1;
+            move("Y", ycoor);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            double position = ycoor-1;
-            move("Y", position);
+            ycoor -= 10;
+            move("Y", ycoor);
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -117,34 +117,34 @@ namespace BioBotApp.Controls.Option.Options
 
         private void button9_Click(object sender, EventArgs e)
         {
-            double position = xcoor + 1;
-            move("X", position);
+            xcoor += 10;
+            move("X", xcoor);
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            if (varCoor != 0)
+            if (edtMoveValue.Text.Length != 0)
             {
-                double position = xcoor + varCoor;
-                move("X", position);
+                Int16 value = Convert.ToInt16(edtMoveValue.Text);
+                xcoor += value;
+                move("X", xcoor);
             }
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
-            double position = xcoor - 0.1;
-            move("X", position);
+            xcoor -= 1;
+            move("X", xcoor);
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
-            double position = xcoor - 1;
-            move("X", position);
+            xcoor -= 10;
+            move("X", xcoor);
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            //double position = ycoor + 1;
 
             ycoor += 1;
             move("Y", ycoor);
@@ -172,19 +172,21 @@ namespace BioBotApp.Controls.Option.Options
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (varCoor != 0)
+            if (edtMoveValue.Text.Length != 0)
             {
-                double position = ycoor - varCoor;
-                move("Y", position);
+                Int16 value = Convert.ToInt16(edtMoveValue.Text);
+                ycoor -= value;
+                move("Y", ycoor);
             }
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
-            if (varCoor != 0)
+            if (edtMoveValue.Text.Length != 0)
             {
-                double position = xcoor - varCoor;
-                move("X", position);
+                Int16 value = Convert.ToInt16(edtMoveValue.Text);
+                xcoor -= value;
+                move("X", xcoor);
             }
         }
 
@@ -206,127 +208,134 @@ namespace BioBotApp.Controls.Option.Options
 
         private void button44_Click(object sender, EventArgs e)
         {
-            if (varCoor != 0)
+            if (edtMoveValue.Text.Length != 0)
             {
-                double position = z3coor + varCoor;
-                move("Z3", position);
+                Int16 value = Convert.ToInt16(edtMoveValue.Text);
+                z3coor += value;
+                move("Z3", z3coor);
             }
         }
 
         private void button45_Click(object sender, EventArgs e)
         {
-            double position = z3coor + 1;
-            move("Z3", position);
+            z3coor += 10;
+            move("Z3", z3coor);
         }
 
         private void button46_Click(object sender, EventArgs e)
         {
-            double position = z3coor + 0.1;
-            move("Z3", position);
+            z3coor += 1;
+            move("Z3", z3coor);
         }
 
         private void button38_Click(object sender, EventArgs e)
         {
-            if (varCoor != 0)
+            if (edtMoveValue.Text.Length != 0)
             {
-                double position = z2coor + varCoor;
-                move("Z2", position);
+                Int16 value = Convert.ToInt16(edtMoveValue.Text);
+                z2coor += value;
+                move("Z2", z2coor);
             }
         }
 
         private void button39_Click(object sender, EventArgs e)
         {
-            double position = z2coor + 1;
-            move("Z2", position);
+            z2coor += 10;
+            move("Z2", z2coor);
         }
 
         private void button40_Click(object sender, EventArgs e)
         {
-            double position = z2coor + 0.1;
-            move("Z2", position);
+            z2coor += 1;
+            move("Z2", z2coor);
         }
 
         private void button15_Click(object sender, EventArgs e)
         {
-            if (varCoor != 0)
+            if (edtMoveValue.Text.Length != 0)
             {
-                double position = z1coor + varCoor;
-                move("Z1", position);
+                Int16 value = Convert.ToInt16(edtMoveValue.Text);
+                z1coor += value;
+                move("Z1", z1coor);
             }
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
-            double position = z1coor + 1;
-            move("Z1", position);
+            z1coor += 10;
+            move("Z1", z1coor);
         }
 
         private void button17_Click(object sender, EventArgs e)
         {
-            double position = z1coor + 0.1;
-            move("Z1", position);
+            z1coor += 1;
+            move("Z1", z1coor);
         }
 
         private void button41_Click(object sender, EventArgs e)
         {
-            double position = z3coor - 0.1;
-            move("Z3", position);
+            z3coor -= 1;
+            move("Z3", z3coor);
         }
 
         private void button42_Click(object sender, EventArgs e)
         {
-            double position = z3coor - 1;
-            move("Z3", position);
+            z3coor -= 10;
+            move("Z3", z3coor);
         }
 
         private void button43_Click(object sender, EventArgs e)
         {
-            if (varCoor != 0)
+            if (edtMoveValue.Text.Length != 0)
             {
-                double position = z3coor - varCoor;
-                move("Z3", position);
+                Int16 value = Convert.ToInt16(edtMoveValue.Text);
+                z3coor -= value;
+                move("Z3", z3coor);
             }
         }
 
         private void button35_Click(object sender, EventArgs e)
         {
-            double position = z2coor - 0.1;
-            move("Z2", position);
+            z2coor -= 1;
+            move("Z2", z2coor);
         }
 
         private void button36_Click(object sender, EventArgs e)
         {
-            double position = z2coor - 1;
-            move("Z2", position);
+            z2coor -= 10;
+            move("Z2", z2coor);
         }
 
         private void button37_Click(object sender, EventArgs e)
         {
-            if (varCoor != 0)
+            if (edtMoveValue.Text.Length != 0)
             {
-                double position = z2coor - varCoor;
-                move("Z2", position);
+                Int16 value = Convert.ToInt16(edtMoveValue.Text);
+                z2coor -= value;
+                move("Z2", z2coor);
             }
         }
 
         private void button32_Click(object sender, EventArgs e)
         {
-            double position = z1coor - 0.1;
-            move("Z1", position);
+            z1coor -= 1;
+            move("Z1", z1coor);
         }
 
         private void button33_Click(object sender, EventArgs e)
         {
-            double position = z1coor - 1;
-            move("Z1", position);
+            z1coor -= 10;
+            move("Z1", z1coor);
         }
 
         private void button34_Click(object sender, EventArgs e)
         {
-            if (varCoor != 0)
+            
+            if (edtMoveValue.Text.Length != 0)
             {
-                double position = z1coor - varCoor;
-                move("Z1", position);
+                Int16 value = Convert.ToInt16(edtMoveValue.Text);
+                z1coor -= value;
+                move("Z1", z1coor);
             }
         }
 
@@ -438,6 +447,16 @@ namespace BioBotApp.Controls.Option.Options
         private void btnHomeZ1_Click(object sender, EventArgs e)
         {
             ComChannelFactory.getGCodeSerial().WriteLine("HZ1");
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            ComChannelFactory.getGCodeSerial().WriteLine("HY");
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            ComChannelFactory.getGCodeSerial().WriteLine("HX");
         }
     }
 }
