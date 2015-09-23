@@ -15,17 +15,19 @@ namespace BioBotApp.Utils.FSM
         private const int MC1_5                     = 6;
         private const int TOOL_HOLDER               = 7;
         private const int SNGLE_CHANNEL_PIPETTE     = 8;
-
+        private const int MULTI_CHANNEL_PIPETTE     = 9;
 
         fsmMovement movement;
         fsmPince pince;
         fsmSingleChannelPipette singleChannePipette;
+        fsmMultiChannelPipette multiChannelPipette;
 
         public fsmMainProtocol()
         {
             movement = new fsmMovement();
             pince = new fsmPince();
             singleChannePipette = new fsmSingleChannelPipette();
+            multiChannelPipette = new fsmMultiChannelPipette();
         }
 
         public void executeAction(DataSets.dsModuleStructure2.dtActionValueRow action)
@@ -38,6 +40,14 @@ namespace BioBotApp.Utils.FSM
             else if(moduleTypeId == PINCE)
             {
                 pince.executeAction(action);
+            }
+            else if(moduleTypeId == SNGLE_CHANNEL_PIPETTE)
+            {
+                singleChannePipette.executeAction(action);
+            }
+            else if (moduleTypeId == MULTI_CHANNEL_PIPETTE)
+            {
+                multiChannelPipette.executeAction(action);
             }
         }
     }

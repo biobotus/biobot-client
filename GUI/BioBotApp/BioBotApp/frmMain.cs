@@ -157,7 +157,7 @@ namespace BioBotApp
 
         private void playToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            /*
             fsmMovement movement = new fsmMovement();
             foreach (DataSets.dsModuleStructure2.dtActionValueRow row in this.dsModuleStructure.dtActionValue)
             {
@@ -172,7 +172,7 @@ namespace BioBotApp
 
                 //fsmPince.executeAction(row);
             }
-            
+            */
            // SingleChannelPipette.sendInstruction(0x00, '\u0001');
             
             /*

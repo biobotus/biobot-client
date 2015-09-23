@@ -36,6 +36,7 @@
             this.btnStop = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dsModuleStructure = new BioBotApp.DataSets.dsModuleStructure2();
+            this.btnReset = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dsModuleStructure)).BeginInit();
@@ -80,6 +81,7 @@
             this.flowLayoutPanel1.Controls.Add(this.btnStart);
             this.flowLayoutPanel1.Controls.Add(this.btnStop);
             this.flowLayoutPanel1.Controls.Add(this.btnAdd);
+            this.flowLayoutPanel1.Controls.Add(this.btnReset);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(4, 355);
@@ -125,6 +127,17 @@
             this.dsModuleStructure.DataSetName = "dsModuleStructure2";
             this.dsModuleStructure.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(260, 5);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(112, 35);
+            this.btnReset.TabIndex = 3;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // ctrlProtocolsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -153,5 +166,6 @@
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Button btnAdd;
         private DataSets.dsModuleStructure2 dsModuleStructure;
+        private System.Windows.Forms.Button btnReset;
     }
 }

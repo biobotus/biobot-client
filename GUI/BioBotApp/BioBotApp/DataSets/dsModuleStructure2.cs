@@ -32,3 +32,12 @@ namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters
     public partial class taActionType {
     }
 }
+
+namespace BioBotApp.DataSets.dsModuleStructure2TableAdapters
+{
+
+
+    public partial class taActionType
+    {
+    }
+}

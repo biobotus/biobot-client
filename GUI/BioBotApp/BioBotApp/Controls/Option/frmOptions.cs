@@ -25,8 +25,8 @@ namespace BioBotApp.Controls.Option
         private void tlvOptions_AfterSelect(object sender, TreeViewEventArgs e)
         {
             //TODO: create a more generic way to identify the clicked node
-           
-            if(e.Node.Name.Equals("nodeDB"))
+
+            if (e.Node.Name.Equals("nodeDB"))
             {
                 setOptionControl(new optionDBConnection());
             }
@@ -74,13 +74,18 @@ namespace BioBotApp.Controls.Option
             {
                 setOptionControl(new optionMovement(dsModuleStructure));
             }
+            else if (e.Node.Name.Equals("nodeProtocol"))
+            {
+                setOptionControl(new optionProtocol(dsModuleStructure));
+            }
             else if (e.Node.Name.Equals("nodeModuleTypeLabwareParameterType"))
             {
                 setOptionControl(new optionModuleTypeLabwareParameterType(dsModuleStructure));
+
             }
             else
             {
-              //  setOptionControl(new optionActionValueType());
+                //  setOptionControl(new optionActionValueType());
             }
         }
 
