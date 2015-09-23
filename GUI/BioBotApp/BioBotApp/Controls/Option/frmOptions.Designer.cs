@@ -52,6 +52,7 @@
             treeNode11});
             System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Movement");
             System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Protocol");
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Joypad");
             this.panel1 = new System.Windows.Forms.Panel();
             this.tlvOptions = new System.Windows.Forms.TreeView();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -72,7 +73,7 @@
             this.panel1.Controls.Add(this.tlvOptions);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel1.Margin = new System.Windows.Forms.Padding(1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(150, 257);
             this.panel1.TabIndex = 0;
@@ -81,7 +82,7 @@
             // 
             this.tlvOptions.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlvOptions.Location = new System.Drawing.Point(0, 0);
-            this.tlvOptions.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tlvOptions.Margin = new System.Windows.Forms.Padding(1);
             this.tlvOptions.Name = "tlvOptions";
             treeNode1.Name = "nodeActionTypes";
             treeNode1.Tag = "actionTypes";
@@ -116,11 +117,15 @@
             treeNode13.Text = "Movement";
             treeNode14.Name = "nodeProtocol";
             treeNode14.Text = "Protocol";
+            treeNode15.Name = "nodeJoypad";
+            treeNode15.Tag = "Joypad";
+            treeNode15.Text = "Joypad";
             this.tlvOptions.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode9,
             treeNode12,
             treeNode13,
-            treeNode14});
+            treeNode14,
+            treeNode15});
             this.tlvOptions.Size = new System.Drawing.Size(150, 257);
             this.tlvOptions.TabIndex = 0;
             this.tlvOptions.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tlvOptions_AfterSelect);
@@ -207,7 +212,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "frmOptions";
             this.Text = "Options";
             this.panel1.ResumeLayout(false);
