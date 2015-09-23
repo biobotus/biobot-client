@@ -83,6 +83,11 @@ namespace BioBotApp.Controls.Option
                 setOptionControl(new optionModuleTypeLabwareParameterType(dsModuleStructure));
 
             }
+            else if (e.Node.Name.Equals("nodeJoypad"))
+            {
+                setOptionControl(new optionJoypad());
+
+            }
             else
             {
                 //  setOptionControl(new optionActionValueType());

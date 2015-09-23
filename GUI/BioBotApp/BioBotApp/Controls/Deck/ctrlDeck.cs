@@ -48,10 +48,10 @@ namespace BioBotApp.Controls.Deck
 
             dialog.ShowDialog();
 
-            if(e.Data.GetData(typeof(DataSets.dsModuleStructure2.dtModuleRow)))
-            {
+            //if(e.Data.GetData(typeof(DataSets.dsModuleStructure2.dtModuleRow)))
+            //{
                 
-            }
+            //}
 
             //if (dialog.DialogResult.Equals(DialogResult.OK))
             //{
