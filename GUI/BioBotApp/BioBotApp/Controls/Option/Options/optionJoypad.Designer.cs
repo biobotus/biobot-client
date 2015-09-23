@@ -120,6 +120,8 @@ namespace BioBotApp.Controls.Option.Options
             this.btnHomeZ3 = new System.Windows.Forms.Button();
             this.btnHomeZ2 = new System.Windows.Forms.Button();
             this.btnHomeZ1 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dsModuleStructure1)).BeginInit();
@@ -702,6 +704,26 @@ namespace BioBotApp.Controls.Option.Options
             this.btnHomeZ1.UseVisualStyleBackColor = true;
             this.btnHomeZ1.Click += new System.EventHandler(this.btnHomeZ1_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(479, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(28, 23);
+            this.button1.TabIndex = 44;
+            this.button1.Text = "H";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(269, 162);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(28, 23);
+            this.button2.TabIndex = 45;
+            this.button2.Text = "H";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // optionJoypad
             // 
             this.AccessibleName = "";
@@ -710,6 +732,8 @@ namespace BioBotApp.Controls.Option.Options
             this.AutoScrollMinSize = new System.Drawing.Size(716, 351);
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnHomeZ1);
             this.Controls.Add(this.btnHomeZ2);
             this.Controls.Add(this.btnHomeZ3);
@@ -854,5 +878,7 @@ namespace BioBotApp.Controls.Option.Options
         private Button btnHomeZ3;
         private Button btnHomeZ2;
         private Button btnHomeZ1;
+        private Button button1;
+        private Button button2;
     }
 }
