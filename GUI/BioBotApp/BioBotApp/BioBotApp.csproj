@@ -183,12 +183,6 @@
     <Compile Include="Controls\Option\Options\optionProtocol.Designer.cs">
       <DependentUpon>optionProtocol.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Option\Options\UserControl1.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\Option\Options\UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controls\Steps\Parameter controls\ctrlCommand.cs">
       <SubType>UserControl</SubType>
     </Compile>
