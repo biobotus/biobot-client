@@ -11,8 +11,8 @@ namespace BioBotApp.Utils.FSM
 {
     class fsmSingleChannelPipette
     {
-        private const int PIPETTE = 0x24;
-        private const int DISPENSE = 0x25;
+        private const int PIPETTE = 24;
+        private const int DISPENSE = 25;
         AutoResetEvent wait = new AutoResetEvent(false);
 
         public fsmSingleChannelPipette()
@@ -27,13 +27,13 @@ namespace BioBotApp.Utils.FSM
 
         public void executeAction(DataSets.dsModuleStructure2.dtActionValueRow row)
         {
-            if(row.dtActionValueTypeRow.pk_id == PIPETTE)
+            if(row.dtActionTypeRow.pk_id == PIPETTE)
             {
-                SingleChannelPipette.sendInstruction(0x00, Convert.ToChar(row.description));
+                SingleChannelPipette.sendInstruction(0x00, Convert.ToInt16(row.description));
             }
-            else if (row.dtActionValueTypeRow.pk_id == DISPENSE)
+            else if (row.dtActionTypeRow.pk_id == DISPENSE)
             {
-                SingleChannelPipette.sendInstruction(0x01, Convert.ToChar(row.description));
+                SingleChannelPipette.sendInstruction(0x01, Convert.ToInt16(row.description));
             }
 
             wait.Reset();

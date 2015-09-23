@@ -423,7 +423,7 @@ namespace BioBotApp.Controls.Option.Options
         {
             try
             {
-                this.taActionValue1.FillBy(this.dsModuleStructureGUI.dtActionValue);
+                this.taActionValue1.Fill(this.dsModuleStructureGUI.dtActionValue);
             }
             catch (System.Exception ex)
             {
