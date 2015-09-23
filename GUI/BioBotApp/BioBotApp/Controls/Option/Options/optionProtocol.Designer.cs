@@ -39,9 +39,6 @@
             this.dsModuleStructureGUI = new BioBotApp.DataSets.dsModuleStructure2();
             this.dtStepCompositeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pkidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fk_step_composite = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StepLeafStepComposite = new System.Windows.Forms.BindingSource(this.components);
             this.bs_dtStepLeafBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ta_StepLeaf = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taStepLeaf();
@@ -49,21 +46,31 @@
             this.taStepComposite = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taStepComposite();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.pkidDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fkmoduletypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pkidDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fkstepleafidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fkactiontypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fkactionvaluetypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtActionTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dtActionValueTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.StepLeafActionValue = new System.Windows.Forms.BindingSource(this.components);
             this.dtActionValueBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.taModule1 = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taModule();
             this.taActionValue1 = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taActionValue();
             this.button1 = new System.Windows.Forms.Button();
+            this.taActionType = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taActionType();
+            this.taActionValueType = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taActionValueType();
+            this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
+            this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.pkidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fk_step_composite = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.index = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pkidDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fkstepleafidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.fkactiontypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.fkactionvaluetypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pkidDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fkmoduletypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.crudOptionsActionType = new BioBotApp.Controls.Utils.crudOptions();
             this.crudOptionsStep = new BioBotApp.Controls.Utils.crudOptions();
             this.crudOptionsProtocol = new BioBotApp.Controls.Utils.crudOptions();
@@ -81,8 +88,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtActionTypeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtActionValueTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StepLeafActionValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtActionValueBindingSource)).BeginInit();
+            this.fillByToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -183,30 +193,6 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.Tag = "Protocol";
             // 
-            // pkidDataGridViewTextBoxColumn
-            // 
-            this.pkidDataGridViewTextBoxColumn.DataPropertyName = "pk_id";
-            this.pkidDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.pkidDataGridViewTextBoxColumn.Name = "pkidDataGridViewTextBoxColumn";
-            this.pkidDataGridViewTextBoxColumn.ReadOnly = true;
-            this.pkidDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // fk_step_composite
-            // 
-            this.fk_step_composite.DataPropertyName = "fk_step_composite";
-            this.fk_step_composite.HeaderText = "fk_step_composite";
-            this.fk_step_composite.Name = "fk_step_composite";
-            this.fk_step_composite.ReadOnly = true;
-            this.fk_step_composite.Visible = false;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // StepLeafStepComposite
             // 
             this.StepLeafStepComposite.DataMember = "dtStepComposite_dtStepLeaf";
@@ -266,27 +252,13 @@
             this.dataGridView3.Size = new System.Drawing.Size(199, 341);
             this.dataGridView3.TabIndex = 0;
             // 
-            // pkidDataGridViewTextBoxColumn3
-            // 
-            this.pkidDataGridViewTextBoxColumn3.DataPropertyName = "pk_id";
-            this.pkidDataGridViewTextBoxColumn3.HeaderText = "pk_id";
-            this.pkidDataGridViewTextBoxColumn3.Name = "pkidDataGridViewTextBoxColumn3";
-            this.pkidDataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // fkmoduletypeDataGridViewTextBoxColumn
-            // 
-            this.fkmoduletypeDataGridViewTextBoxColumn.DataPropertyName = "fk_module_type";
-            this.fkmoduletypeDataGridViewTextBoxColumn.HeaderText = "fk_module_type";
-            this.fkmoduletypeDataGridViewTextBoxColumn.Name = "fkmoduletypeDataGridViewTextBoxColumn";
-            this.fkmoduletypeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.crudOptionsActionType);
             this.groupBox4.Controls.Add(this.dataGridView4);
             this.groupBox4.Location = new System.Drawing.Point(684, 7);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(235, 366);
+            this.groupBox4.Size = new System.Drawing.Size(251, 366);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Action Value";
@@ -299,6 +271,7 @@
             this.dataGridView4.AutoGenerateColumns = false;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.index,
             this.pkidDataGridViewTextBoxColumn2,
             this.fkstepleafidDataGridViewTextBoxColumn,
             this.fkactiontypeDataGridViewTextBoxColumn,
@@ -316,48 +289,15 @@
             this.dataGridView4.TabIndex = 0;
             this.dataGridView4.Tag = "Protocol";
             // 
-            // dataGridViewTextBoxColumn2
+            // dtActionTypeBindingSource
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "fk_step_composite";
-            this.dataGridViewTextBoxColumn2.HeaderText = "fk_step_composite";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Visible = false;
+            this.dtActionTypeBindingSource.DataMember = "dtActionType";
+            this.dtActionTypeBindingSource.DataSource = this.dsModuleStructureGUI;
             // 
-            // pkidDataGridViewTextBoxColumn2
+            // dtActionValueTypeBindingSource
             // 
-            this.pkidDataGridViewTextBoxColumn2.DataPropertyName = "pk_id";
-            this.pkidDataGridViewTextBoxColumn2.HeaderText = "pk_id";
-            this.pkidDataGridViewTextBoxColumn2.Name = "pkidDataGridViewTextBoxColumn2";
-            this.pkidDataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // fkstepleafidDataGridViewTextBoxColumn
-            // 
-            this.fkstepleafidDataGridViewTextBoxColumn.DataPropertyName = "fk_step_leaf_id";
-            this.fkstepleafidDataGridViewTextBoxColumn.HeaderText = "fk_step_leaf_id";
-            this.fkstepleafidDataGridViewTextBoxColumn.Name = "fkstepleafidDataGridViewTextBoxColumn";
-            this.fkstepleafidDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fkactiontypeDataGridViewTextBoxColumn
-            // 
-            this.fkactiontypeDataGridViewTextBoxColumn.DataPropertyName = "fk_action_type";
-            this.fkactiontypeDataGridViewTextBoxColumn.HeaderText = "fk_action_type";
-            this.fkactiontypeDataGridViewTextBoxColumn.Name = "fkactiontypeDataGridViewTextBoxColumn";
-            this.fkactiontypeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fkactionvaluetypeDataGridViewTextBoxColumn
-            // 
-            this.fkactionvaluetypeDataGridViewTextBoxColumn.DataPropertyName = "fk_action_value_type";
-            this.fkactionvaluetypeDataGridViewTextBoxColumn.HeaderText = "fk_action_value_type";
-            this.fkactionvaluetypeDataGridViewTextBoxColumn.Name = "fkactionvaluetypeDataGridViewTextBoxColumn";
-            this.fkactionvaluetypeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descriptionDataGridViewTextBoxColumn2
-            // 
-            this.descriptionDataGridViewTextBoxColumn2.DataPropertyName = "description";
-            this.descriptionDataGridViewTextBoxColumn2.HeaderText = "description";
-            this.descriptionDataGridViewTextBoxColumn2.Name = "descriptionDataGridViewTextBoxColumn2";
-            this.descriptionDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dtActionValueTypeBindingSource.DataMember = "dtActionValueType";
+            this.dtActionValueTypeBindingSource.DataSource = this.dsModuleStructureGUI;
             // 
             // StepLeafActionValue
             // 
@@ -379,12 +319,146 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(795, 379);
+            this.button1.Location = new System.Drawing.Point(824, 399);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
             this.button1.Text = "Play";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // taActionType
+            // 
+            this.taActionType.ClearBeforeFill = true;
+            // 
+            // taActionValueType
+            // 
+            this.taActionValueType.ClearBeforeFill = true;
+            // 
+            // fillByToolStrip
+            // 
+            this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fillByToolStripButton});
+            this.fillByToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.fillByToolStrip.Name = "fillByToolStrip";
+            this.fillByToolStrip.Size = new System.Drawing.Size(935, 25);
+            this.fillByToolStrip.TabIndex = 3;
+            this.fillByToolStrip.Text = "fillByToolStrip";
+            // 
+            // fillByToolStripButton
+            // 
+            this.fillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillByToolStripButton.Name = "fillByToolStripButton";
+            this.fillByToolStripButton.Size = new System.Drawing.Size(39, 22);
+            this.fillByToolStripButton.Text = "FillBy";
+            this.fillByToolStripButton.Visible = false;
+            this.fillByToolStripButton.Click += new System.EventHandler(this.fillByToolStripButton_Click);
+            // 
+            // pkidDataGridViewTextBoxColumn
+            // 
+            this.pkidDataGridViewTextBoxColumn.DataPropertyName = "pk_id";
+            this.pkidDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.pkidDataGridViewTextBoxColumn.Name = "pkidDataGridViewTextBoxColumn";
+            this.pkidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pkidDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // fk_step_composite
+            // 
+            this.fk_step_composite.DataPropertyName = "fk_step_composite";
+            this.fk_step_composite.HeaderText = "fk_step_composite";
+            this.fk_step_composite.Name = "fk_step_composite";
+            this.fk_step_composite.ReadOnly = true;
+            this.fk_step_composite.Visible = false;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Step Name";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // index
+            // 
+            this.index.DataPropertyName = "index";
+            this.index.FillWeight = 25F;
+            this.index.HeaderText = "index";
+            this.index.Name = "index";
+            this.index.ReadOnly = true;
+            this.index.Width = 40;
+            // 
+            // pkidDataGridViewTextBoxColumn2
+            // 
+            this.pkidDataGridViewTextBoxColumn2.DataPropertyName = "pk_id";
+            this.pkidDataGridViewTextBoxColumn2.FillWeight = 25F;
+            this.pkidDataGridViewTextBoxColumn2.HeaderText = "ID";
+            this.pkidDataGridViewTextBoxColumn2.Name = "pkidDataGridViewTextBoxColumn2";
+            this.pkidDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.pkidDataGridViewTextBoxColumn2.Width = 40;
+            // 
+            // fkstepleafidDataGridViewTextBoxColumn
+            // 
+            this.fkstepleafidDataGridViewTextBoxColumn.DataPropertyName = "fk_step_leaf_id";
+            this.fkstepleafidDataGridViewTextBoxColumn.DataSource = this.bs_dtStepLeafBindingSource;
+            this.fkstepleafidDataGridViewTextBoxColumn.DisplayMember = "description";
+            this.fkstepleafidDataGridViewTextBoxColumn.HeaderText = "Step Name";
+            this.fkstepleafidDataGridViewTextBoxColumn.Name = "fkstepleafidDataGridViewTextBoxColumn";
+            this.fkstepleafidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fkstepleafidDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.fkstepleafidDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.fkstepleafidDataGridViewTextBoxColumn.ValueMember = "pk_id";
+            // 
+            // fkactiontypeDataGridViewTextBoxColumn
+            // 
+            this.fkactiontypeDataGridViewTextBoxColumn.DataPropertyName = "fk_action_type";
+            this.fkactiontypeDataGridViewTextBoxColumn.DataSource = this.dtActionTypeBindingSource;
+            this.fkactiontypeDataGridViewTextBoxColumn.DisplayMember = "description";
+            this.fkactiontypeDataGridViewTextBoxColumn.HeaderText = "Action Type";
+            this.fkactiontypeDataGridViewTextBoxColumn.Name = "fkactiontypeDataGridViewTextBoxColumn";
+            this.fkactiontypeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fkactiontypeDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.fkactiontypeDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.fkactiontypeDataGridViewTextBoxColumn.ValueMember = "pk_id";
+            // 
+            // fkactionvaluetypeDataGridViewTextBoxColumn
+            // 
+            this.fkactionvaluetypeDataGridViewTextBoxColumn.DataPropertyName = "fk_action_value_type";
+            this.fkactionvaluetypeDataGridViewTextBoxColumn.DataSource = this.dtActionValueTypeBindingSource;
+            this.fkactionvaluetypeDataGridViewTextBoxColumn.DisplayMember = "description";
+            this.fkactionvaluetypeDataGridViewTextBoxColumn.HeaderText = "Action Value";
+            this.fkactionvaluetypeDataGridViewTextBoxColumn.Name = "fkactionvaluetypeDataGridViewTextBoxColumn";
+            this.fkactionvaluetypeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fkactionvaluetypeDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.fkactionvaluetypeDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.fkactionvaluetypeDataGridViewTextBoxColumn.ValueMember = "pk_id";
+            // 
+            // descriptionDataGridViewTextBoxColumn2
+            // 
+            this.descriptionDataGridViewTextBoxColumn2.DataPropertyName = "description";
+            this.descriptionDataGridViewTextBoxColumn2.HeaderText = "Value";
+            this.descriptionDataGridViewTextBoxColumn2.Name = "descriptionDataGridViewTextBoxColumn2";
+            this.descriptionDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "fk_step_composite";
+            this.dataGridViewTextBoxColumn2.HeaderText = "fk_step_composite";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Visible = false;
+            // 
+            // pkidDataGridViewTextBoxColumn3
+            // 
+            this.pkidDataGridViewTextBoxColumn3.DataPropertyName = "pk_id";
+            this.pkidDataGridViewTextBoxColumn3.HeaderText = "ID";
+            this.pkidDataGridViewTextBoxColumn3.Name = "pkidDataGridViewTextBoxColumn3";
+            this.pkidDataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // fkmoduletypeDataGridViewTextBoxColumn
+            // 
+            this.fkmoduletypeDataGridViewTextBoxColumn.DataPropertyName = "fk_module_type";
+            this.fkmoduletypeDataGridViewTextBoxColumn.HeaderText = "Module Type";
+            this.fkmoduletypeDataGridViewTextBoxColumn.Name = "fkmoduletypeDataGridViewTextBoxColumn";
+            this.fkmoduletypeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // crudOptionsActionType
             // 
@@ -429,13 +503,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.fillByToolStrip);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Name = "optionProtocol";
-            this.Size = new System.Drawing.Size(930, 461);
+            this.Size = new System.Drawing.Size(935, 461);
             this.Tag = "Protocol";
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -451,9 +526,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtActionTypeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtActionValueTypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.StepLeafActionValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtActionValueBindingSource)).EndInit();
+            this.fillByToolStrip.ResumeLayout(false);
+            this.fillByToolStrip.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -477,9 +557,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pkidDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn fkmoduleidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pkidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fk_step_composite;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource StepLeafStepComposite;
         private Utils.crudOptions crudOptionsProtocol;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -487,20 +564,30 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private Utils.crudOptions crudOptionsActionType;
         private System.Windows.Forms.DataGridView dataGridView4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataSets.dsModuleStructure2TableAdapters.taModule taModule1;
         private DataSets.dsModuleStructure2TableAdapters.taActionValue taActionValue1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pkidDataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fkmoduletypeDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource dtModuleBindingSource;
         private System.Windows.Forms.BindingSource dtActionValueBindingSource;
         private System.Windows.Forms.BindingSource StepLeafActionValue;
         private System.Windows.Forms.BindingSource ModuleStepComposite;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pkidDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fkstepleafidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fkactiontypeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fkactionvaluetypeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.BindingSource dtActionTypeBindingSource;
+        private System.Windows.Forms.BindingSource dtActionValueTypeBindingSource;
+        private DataSets.dsModuleStructure2TableAdapters.taActionType taActionType;
+        private DataSets.dsModuleStructure2TableAdapters.taActionValueType taActionValueType;
+        private System.Windows.Forms.ToolStrip fillByToolStrip;
+        private System.Windows.Forms.ToolStripButton fillByToolStripButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pkidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fk_step_composite;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn index;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pkidDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewComboBoxColumn fkstepleafidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn fkactiontypeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn fkactionvaluetypeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pkidDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fkmoduletypeDataGridViewTextBoxColumn;
     }
 }

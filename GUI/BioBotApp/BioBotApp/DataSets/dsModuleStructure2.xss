@@ -17,7 +17,7 @@
     <Shape ID="DesignTable:dtLabwareTypeLabwareParameterType" ZOrder="20" X="106" Y="702" Height="158" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="99" />
     <Shape ID="DesignTable:dtStepLeaf" ZOrder="3" X="997" Y="426" Height="158" Width="261" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="99" />
     <Shape ID="DesignTable:dtStepComposite" ZOrder="9" X="878" Y="712" Height="181" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="122" />
-    <Shape ID="DesignTable:dtActionValue" ZOrder="5" X="1442" Y="570" Height="191" Width="242" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
+    <Shape ID="DesignTable:dtActionValue" ZOrder="5" X="1442" Y="570" Height="210" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
   </Shapes>
   <Connectors>
     <Connector ID="DesignRelation:dtModuleTypeActionType_dtModuleType" ZOrder="17" LineWidth="11">

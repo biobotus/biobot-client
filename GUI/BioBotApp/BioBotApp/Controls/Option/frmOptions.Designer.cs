@@ -51,7 +51,7 @@
             treeNode10,
             treeNode11});
             System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Movement");
-            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Protocol");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Protocol");
             this.panel1 = new System.Windows.Forms.Panel();
             this.tlvOptions = new System.Windows.Forms.TreeView();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -72,16 +72,16 @@
             this.panel1.Controls.Add(this.tlvOptions);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(225, 395);
+            this.panel1.Size = new System.Drawing.Size(150, 257);
             this.panel1.TabIndex = 0;
             // 
             // tlvOptions
             // 
             this.tlvOptions.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlvOptions.Location = new System.Drawing.Point(0, 0);
-            this.tlvOptions.Margin = new System.Windows.Forms.Padding(2);
+            this.tlvOptions.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.tlvOptions.Name = "tlvOptions";
             treeNode1.Name = "nodeActionTypes";
             treeNode1.Tag = "actionTypes";
@@ -114,14 +114,14 @@
             treeNode12.Text = "Communication";
             treeNode13.Name = "nodeMovement";
             treeNode13.Text = "Movement";
-            treeNode26.Name = "nodeProtocol";
-            treeNode26.Text = "Protocol";
+            treeNode14.Name = "nodeProtocol";
+            treeNode14.Text = "Protocol";
             this.tlvOptions.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode9,
             treeNode12,
             treeNode13,
-            treeNode26});
-            this.tlvOptions.Size = new System.Drawing.Size(225, 395);
+            treeNode14});
+            this.tlvOptions.Size = new System.Drawing.Size(150, 257);
             this.tlvOptions.TabIndex = 0;
             this.tlvOptions.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tlvOptions_AfterSelect);
             // 
@@ -129,10 +129,10 @@
             // 
             this.panel2.Controls.Add(this.lblTitle);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(228, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Location = new System.Drawing.Point(152, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(534, 58);
+            this.panel2.Size = new System.Drawing.Size(356, 38);
             this.panel2.TabIndex = 1;
             // 
             // lblTitle
@@ -140,11 +140,10 @@
             this.lblTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(0, 0);
-            this.lblTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblTitle.Size = new System.Drawing.Size(534, 58);
-
+            this.lblTitle.Size = new System.Drawing.Size(356, 38);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Title";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -153,10 +152,10 @@
             // 
             this.mainPanel.AutoSize = true;
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(228, 58);
-            this.mainPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.mainPanel.Location = new System.Drawing.Point(152, 38);
+            this.mainPanel.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(534, 285);
+            this.mainPanel.Size = new System.Drawing.Size(356, 185);
             this.mainPanel.TabIndex = 2;
             this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
             // 
@@ -167,10 +166,10 @@
             // 
             // splitter1
             // 
-            this.splitter1.Location = new System.Drawing.Point(225, 0);
-            this.splitter1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.splitter1.Location = new System.Drawing.Point(150, 0);
+            this.splitter1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 395);
+            this.splitter1.Size = new System.Drawing.Size(2, 257);
             this.splitter1.TabIndex = 3;
             this.splitter1.TabStop = false;
             // 
@@ -178,10 +177,10 @@
             // 
             this.panel3.Controls.Add(this.btnClose);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(228, 343);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel3.Location = new System.Drawing.Point(152, 223);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(534, 52);
+            this.panel3.Size = new System.Drawing.Size(356, 34);
             this.panel3.TabIndex = 0;
             // 
             // btnClose
@@ -189,25 +188,26 @@
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnClose.Location = new System.Drawing.Point(436, 8);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnClose.Location = new System.Drawing.Point(291, 5);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(84, 38);
+            this.btnClose.Size = new System.Drawing.Size(56, 25);
             this.btnClose.TabIndex = 0;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             // 
             // frmOptions
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(762, 395);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(508, 257);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Name = "frmOptions";
             this.Text = "Options";
             this.panel1.ResumeLayout(false);
