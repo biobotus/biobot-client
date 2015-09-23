@@ -109,8 +109,8 @@ namespace BioBotApp.Controls.Option.Options
 
         private void button8_Click(object sender, EventArgs e)
         {
-            double position = xcoor + 0.1;
-            move("X", position);
+            xcoor += 1;
+            move("X", xcoor);
         }
 
       
@@ -144,8 +144,10 @@ namespace BioBotApp.Controls.Option.Options
 
         private void button5_Click(object sender, EventArgs e)
         {
-            double position = ycoor + 0.1;
-            move("Y", position);
+            //double position = ycoor + 1;
+
+            ycoor += 1;
+            move("Y", ycoor);
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -188,16 +190,17 @@ namespace BioBotApp.Controls.Option.Options
 
         private void button6_Click(object sender, EventArgs e)
         {
-            double position = ycoor + 1;
-            move("Y", position);
+            ycoor += 10;
+            move("Y", ycoor);
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            if (varCoor != 0)
+            if (edtMoveValue.Text.Length != 0)
             {
-                double position = ycoor + varCoor;
-                move("Y", position);
+                Int16 value = Convert.ToInt16(edtMoveValue.Text);
+                ycoor += value;
+                move("Y", ycoor);
             }
         }
 
@@ -398,8 +401,8 @@ namespace BioBotApp.Controls.Option.Options
             }
             if (e.KeyChar == (char)Keys.Enter)
             {
-                varCoor = double.Parse(textBox6.Text);
-                textBox6.Select(0, 0);
+                varCoor = double.Parse(edtMoveValue.Text);
+                edtMoveValue.Select(0, 0);
             }
         }
 
@@ -420,6 +423,21 @@ namespace BioBotApp.Controls.Option.Options
             labelZ1.Text = "Z1 :   " + z1coor;
             labelZ2.Text = "Z2 :   " + z2coor;
             labelZ3.Text = "Z3 :   " + z3coor;
+        }
+
+        private void btnHomeZ3_Click(object sender, EventArgs e)
+        {
+            ComChannelFactory.getGCodeSerial().WriteLine("HZ3");
+        }
+
+        private void btnHomeZ2_Click(object sender, EventArgs e)
+        {
+            ComChannelFactory.getGCodeSerial().WriteLine("HZ2");
+        }
+
+        private void btnHomeZ1_Click(object sender, EventArgs e)
+        {
+            ComChannelFactory.getGCodeSerial().WriteLine("HZ1");
         }
     }
 }

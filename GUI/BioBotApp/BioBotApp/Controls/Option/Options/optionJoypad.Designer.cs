@@ -100,7 +100,7 @@ namespace BioBotApp.Controls.Option.Options
             this.buttonXPlus = new System.Windows.Forms.Button();
             this.buttonXMinus3 = new System.Windows.Forms.Button();
             this.buttonZ1Plus3 = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.edtMoveValue = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.buttonZ3Plus2 = new System.Windows.Forms.Button();
             this.buttonZ3Minus = new System.Windows.Forms.Button();
@@ -117,6 +117,9 @@ namespace BioBotApp.Controls.Option.Options
             this.dsModuleStructure1 = new BioBotApp.DataSets.dsModuleStructure2();
             this.taModule1 = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taModule();
             this.bs1 = new System.Windows.Forms.BindingSource(this.components);
+            this.btnHomeZ3 = new System.Windows.Forms.Button();
+            this.btnHomeZ2 = new System.Windows.Forms.Button();
+            this.btnHomeZ1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dsModuleStructure1)).BeginInit();
@@ -489,19 +492,19 @@ namespace BioBotApp.Controls.Option.Options
             this.buttonZ1Plus3.UseVisualStyleBackColor = true;
             this.buttonZ1Plus3.Click += new System.EventHandler(this.button15_Click);
             // 
-            // textBox6
+            // edtMoveValue
             // 
-            this.textBox6.Location = new System.Drawing.Point(41, 29);
-            this.textBox6.MaxLength = 5;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(84, 20);
-            this.textBox6.TabIndex = 14;
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
-            this.textBox6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox6_KeyPressed);
+            this.edtMoveValue.Location = new System.Drawing.Point(41, 29);
+            this.edtMoveValue.MaxLength = 5;
+            this.edtMoveValue.Name = "edtMoveValue";
+            this.edtMoveValue.Size = new System.Drawing.Size(84, 20);
+            this.edtMoveValue.TabIndex = 14;
+            this.edtMoveValue.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            this.edtMoveValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox6_KeyPressed);
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBox6);
+            this.groupBox3.Controls.Add(this.edtMoveValue);
             this.groupBox3.Location = new System.Drawing.Point(243, 232);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(151, 71);
@@ -669,6 +672,36 @@ namespace BioBotApp.Controls.Option.Options
             this.bs1.DataMember = "dtModule";
             this.bs1.DataSource = this.dsModuleStructure1;
             // 
+            // btnHomeZ3
+            // 
+            this.btnHomeZ3.Location = new System.Drawing.Point(124, 3);
+            this.btnHomeZ3.Name = "btnHomeZ3";
+            this.btnHomeZ3.Size = new System.Drawing.Size(28, 23);
+            this.btnHomeZ3.TabIndex = 41;
+            this.btnHomeZ3.Text = "H";
+            this.btnHomeZ3.UseVisualStyleBackColor = true;
+            this.btnHomeZ3.Click += new System.EventHandler(this.btnHomeZ3_Click);
+            // 
+            // btnHomeZ2
+            // 
+            this.btnHomeZ2.Location = new System.Drawing.Point(68, 3);
+            this.btnHomeZ2.Name = "btnHomeZ2";
+            this.btnHomeZ2.Size = new System.Drawing.Size(28, 23);
+            this.btnHomeZ2.TabIndex = 42;
+            this.btnHomeZ2.Text = "H";
+            this.btnHomeZ2.UseVisualStyleBackColor = true;
+            this.btnHomeZ2.Click += new System.EventHandler(this.btnHomeZ2_Click);
+            // 
+            // btnHomeZ1
+            // 
+            this.btnHomeZ1.Location = new System.Drawing.Point(18, 3);
+            this.btnHomeZ1.Name = "btnHomeZ1";
+            this.btnHomeZ1.Size = new System.Drawing.Size(28, 23);
+            this.btnHomeZ1.TabIndex = 43;
+            this.btnHomeZ1.Text = "H";
+            this.btnHomeZ1.UseVisualStyleBackColor = true;
+            this.btnHomeZ1.Click += new System.EventHandler(this.btnHomeZ1_Click);
+            // 
             // optionJoypad
             // 
             this.AccessibleName = "";
@@ -677,6 +710,9 @@ namespace BioBotApp.Controls.Option.Options
             this.AutoScrollMinSize = new System.Drawing.Size(716, 351);
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.btnHomeZ1);
+            this.Controls.Add(this.btnHomeZ2);
+            this.Controls.Add(this.btnHomeZ3);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.buttonZ3Minus);
@@ -779,7 +815,7 @@ namespace BioBotApp.Controls.Option.Options
         private Button buttonXPlus;
         private Button buttonXMinus3;
         private Button buttonZ1Plus3;
-        private TextBox textBox6;
+        private TextBox edtMoveValue;
         private GroupBox groupBox3;
         private Button buttonZ3Plus2;
         private Label z3coord;
@@ -815,5 +851,8 @@ namespace BioBotApp.Controls.Option.Options
         private DataSets.dsModuleStructure2 dsModuleStructure1;
         private BindingSource bs1;
         private DataSets.dsModuleStructure2TableAdapters.taModule taModule1;
+        private Button btnHomeZ3;
+        private Button btnHomeZ2;
+        private Button btnHomeZ1;
     }
 }
