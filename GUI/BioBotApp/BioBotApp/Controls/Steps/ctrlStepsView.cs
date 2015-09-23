@@ -49,20 +49,24 @@ namespace BioBotApp.Controls.Steps
 
         public void initTree()
         {
-
+            tlvSteps.Nodes.Clear();
+            Boolean add = false;
             foreach(DataSets.dsModuleStructure2.dtStepCompositeRow stepCompositeRow in _dsModuleStructure.dtStepComposite)
             {
-                if(stepCompositeRow == null)
+                add = true;
+                if (stepCompositeRow == null)
                 {
-                    return;
+                    add = false;
                 }
 
                 if(!stepCompositeRow.Isfk_step_parent_idNull())
                 {
-                    return;
+                    add = false;
                 }
-
-                addNodes(stepCompositeRow,null);
+                if (add)
+                {
+                    addNodes(stepCompositeRow, null);
+                }
             }
             
         }
@@ -70,45 +74,36 @@ namespace BioBotApp.Controls.Steps
         public void addNodes(DataSets.dsModuleStructure2.dtStepCompositeRow row, TreeNode parentNode)
         {
             TreeNode treeNode = new StepCompositeNode(row);
-            
-            if(parentNode == null)
-            {
-                tlvSteps.Nodes.Add(treeNode);
-            }
-            else
-            {
-                parentNode.Nodes.Add(treeNode);
-            }
+            DataSets.dsModuleStructure2.dtModuleRow module = getSelectedModuleRow();
 
-            foreach (DataSets.dsModuleStructure2.dtStepCompositeRow childRows in row.GetdtStepCompositeRows())
+            if(row.dtModuleRow.fk_module_type == module.fk_module_type)
             {
-                addNodes(childRows, treeNode);
-            }
+                if (parentNode == null)
+                {
+                    tlvSteps.Nodes.Add(treeNode);
+                }
+                else
+                {
+                    parentNode.Nodes.Add(treeNode);
+                }
 
-            foreach (DataSets.dsModuleStructure2.dtStepLeafRow stepLeafRow in row.GetdtStepLeafRows())
-            {
-                TreeNode stepLeafNode = new StepLeafNode(stepLeafRow);
-                treeNode.Nodes.Add(stepLeafNode);
+                foreach (DataSets.dsModuleStructure2.dtStepCompositeRow childRows in row.GetdtStepCompositeRows())
+                {
+                    addNodes(childRows, treeNode);
+                }
+
+                foreach (DataSets.dsModuleStructure2.dtStepLeafRow stepLeafRow in row.GetdtStepLeafRows())
+                {
+                    TreeNode stepLeafNode = new StepLeafNode(stepLeafRow);
+                    treeNode.Nodes.Add(stepLeafNode);
+                }
             }
         }
 
         void _bsModuleType_CurrentChanged(object sender, EventArgs e)
         {
+            initTree();
         }
-        /*
-        public DataSets.dsModuleStructure2.dtModuleRow getSelectedModuleRow()
-        {
-            DataSets.dsModuleStructure2.dtModuleRow moduleRow;
-            DataRowView rowView = _bsModuleType.Current as DataRowView;
-            if (rowView == null)
-            {
-                return null;
-            }
-
-            moduleRow = rowView.Row as DataSets.dsModuleStructure2.dtModuleRow;
-
-            return moduleRow;
-        }*/
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
