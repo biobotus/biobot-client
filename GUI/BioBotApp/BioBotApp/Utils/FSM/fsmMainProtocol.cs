@@ -39,6 +39,10 @@ namespace BioBotApp.Utils.FSM
             {
                 pince.executeAction(action);
             }
+            else if(moduleTypeId == SNGLE_CHANNEL_PIPETTE)
+            {
+                singleChannePipette.executeAction(action);
+            }
         }
     }
 }
