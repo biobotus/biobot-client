@@ -99,7 +99,7 @@
             // 
             this.groupBox1.Controls.Add(this.crudOptionsProtocol);
             this.groupBox1.Controls.Add(this.dataGridView2);
-            this.groupBox1.Location = new System.Drawing.Point(226, 7);
+            this.groupBox1.Location = new System.Drawing.Point(229, 26);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(211, 366);
             this.groupBox1.TabIndex = 0;
@@ -249,7 +249,7 @@
             // 
             this.groupBox2.Controls.Add(this.crudOptionsStep);
             this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(443, 7);
+            this.groupBox2.Location = new System.Drawing.Point(446, 26);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(235, 366);
             this.groupBox2.TabIndex = 1;
@@ -276,7 +276,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dataGridView3);
-            this.groupBox3.Location = new System.Drawing.Point(9, 7);
+            this.groupBox3.Location = new System.Drawing.Point(12, 26);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(211, 366);
             this.groupBox3.TabIndex = 0;
@@ -320,9 +320,9 @@
             // 
             this.groupBox4.Controls.Add(this.crudOptionsActionType);
             this.groupBox4.Controls.Add(this.dataGridView4);
-            this.groupBox4.Location = new System.Drawing.Point(684, 7);
+            this.groupBox4.Location = new System.Drawing.Point(687, 26);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(610, 366);
+            this.groupBox4.Size = new System.Drawing.Size(500, 366);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Action Value";
@@ -362,7 +362,7 @@
             this.dataGridView4.ReadOnly = true;
             this.dataGridView4.RowHeadersVisible = false;
             this.dataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView4.Size = new System.Drawing.Size(535, 297);
+            this.dataGridView4.Size = new System.Drawing.Size(485, 297);
             this.dataGridView4.TabIndex = 0;
             this.dataGridView4.Tag = "Protocol";
             // 
@@ -465,12 +465,13 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(824, 399);
+            this.button1.Location = new System.Drawing.Point(1030, 398);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
             this.button1.Text = "Play";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
             // 
             // taActionType
             // 

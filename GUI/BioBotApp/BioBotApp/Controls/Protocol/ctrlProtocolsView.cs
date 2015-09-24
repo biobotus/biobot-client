@@ -10,9 +10,12 @@ using System.Windows.Forms;
 using BioBotApp.Controls.Steps;
 using BioBotApp.Controls.Steps.Parameter_controls;
 using BioBotApp.Utils.FSM;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace BioBotApp.Controls.Protocol
 {
+    
     public partial class ctrlProtocolsView : UserControl
     {
         fsmMainProtocol mainProtocol; 
@@ -141,6 +144,40 @@ namespace BioBotApp.Controls.Protocol
         private void btnDelete_Click(object sender, EventArgs e)
         {
             tlvProtocol.Nodes.Remove(tlvProtocol.SelectedNode);
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            SaveTree(tlvProtocol, "C:/Users/REG/Desktop/protocol.txt");
+        }
+
+        private void LoadButton_Click(object sender, EventArgs e)
+        {
+            LoadTree(tlvProtocol, "C:/Users/REG/Desktop/protocol.txt");
+        }
+        public static void SaveTree(TreeView tree, string filename)
+        {
+            using (Stream file = File.Open(filename, FileMode.Create))
+            {
+                BinaryFormatter bf = new BinaryFormatter();
+                bf.Serialize(file, tree.Nodes.Cast<TreeNode>().ToList());
+            }
+        }
+
+        public static void LoadTree(TreeView tree, string filename)
+        {
+            using (Stream file = File.Open(filename, FileMode.Open))
+            {
+                BinaryFormatter bf = new BinaryFormatter();
+                object obj = bf.Deserialize(file);
+
+                TreeNode[] nodeList = (obj as IEnumerable<TreeNode>).ToArray();
+                tree.Nodes.AddRange(nodeList);
+            }
+        }
+
+        private void tlvProtocol_AfterSelect(object sender, TreeViewEventArgs e)
+        {
         }
     }
 }

@@ -292,7 +292,7 @@ namespace BioBotApp.Controls.Option.Options
                 return;
             }
 
-            namedInputTextBox index = new namedInputTextBox("Index: ");
+            namedInputTextBox index = new namedInputTextBox("Index: ", row.index.ToString());
             namedInputTextBox description = new namedInputTextBox("Description", row.description);
             namedComboBox ActionType = new namedComboBox("Action Type: ");
             namedComboBox ActionValueType = new namedComboBox("Action Value Type: ");
@@ -326,7 +326,7 @@ namespace BioBotApp.Controls.Option.Options
 
             if (dialog.DialogResult.Equals(DialogResult.OK))
             {
-                row.index = string.IsNullOrEmpty(index.getInputTextValue()) ? -1 : int.Parse(index.getInputTextValue());
+                row.index = string.IsNullOrEmpty(index.getInputTextValue()) ? 0 : int.Parse(index.getInputTextValue());
                 row.description = description.getInputTextValue();
                 row.fk_action_type = Actionrow.pk_id;
                 row.fk_action_value_type = ActionValueTyperow.pk_id;
