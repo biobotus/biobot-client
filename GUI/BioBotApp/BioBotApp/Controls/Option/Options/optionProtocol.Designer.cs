@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.crudOptionsProtocol = new BioBotApp.Controls.Utils.crudOptions();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.pkidDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fkmoduleidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,17 +40,31 @@
             this.dsModuleStructureGUI = new BioBotApp.DataSets.dsModuleStructure2();
             this.dtStepCompositeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.pkidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fk_step_composite = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StepLeafStepComposite = new System.Windows.Forms.BindingSource(this.components);
             this.bs_dtStepLeafBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ta_StepLeaf = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taStepLeaf();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.crudOptionsStep = new BioBotApp.Controls.Utils.crudOptions();
             this.taStepComposite = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taStepComposite();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.pkidDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fkmoduletypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.crudOptionsActionType = new BioBotApp.Controls.Utils.crudOptions();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.index = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pkidDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fkstepleafidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.fkactiontypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dtActionTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fkactionvaluetypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dtActionValueTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.descriptionDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StepLeafActionValue = new System.Windows.Forms.BindingSource(this.components);
             this.dtActionValueBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.taModule1 = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taModule();
@@ -59,21 +74,6 @@
             this.taActionValueType = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taActionValueType();
             this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
             this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.pkidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fk_step_composite = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.index = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pkidDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fkstepleafidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.fkactiontypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.fkactionvaluetypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pkidDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fkmoduletypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.crudOptionsActionType = new BioBotApp.Controls.Utils.crudOptions();
-            this.crudOptionsStep = new BioBotApp.Controls.Utils.crudOptions();
-            this.crudOptionsProtocol = new BioBotApp.Controls.Utils.crudOptions();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ModuleStepComposite)).BeginInit();
@@ -105,6 +105,19 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Protocol";
+            // 
+            // crudOptionsProtocol
+            // 
+            this.crudOptionsProtocol.ButtonRefreshVisible = false;
+            this.crudOptionsProtocol.LayoutLeftToRight = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.crudOptionsProtocol.Location = new System.Drawing.Point(84, 16);
+            this.crudOptionsProtocol.MinimumSize = new System.Drawing.Size(37, 37);
+            this.crudOptionsProtocol.Name = "crudOptionsProtocol";
+            this.crudOptionsProtocol.Size = new System.Drawing.Size(121, 37);
+            this.crudOptionsProtocol.TabIndex = 1;
+            this.crudOptionsProtocol.AddClickHandler += new System.EventHandler(this.crudOptionsProto_AddClickHandler);
+            this.crudOptionsProtocol.DeleteClickHandler += new System.EventHandler(this.crudOptionsProto_DeleteClickHandler);
+            this.crudOptionsProtocol.ModifyClickHandler += new System.EventHandler(this.crudOptionsProto_ModifyClickHandler);
             // 
             // dataGridView2
             // 
@@ -193,6 +206,30 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.Tag = "Protocol";
             // 
+            // pkidDataGridViewTextBoxColumn
+            // 
+            this.pkidDataGridViewTextBoxColumn.DataPropertyName = "pk_id";
+            this.pkidDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.pkidDataGridViewTextBoxColumn.Name = "pkidDataGridViewTextBoxColumn";
+            this.pkidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pkidDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // fk_step_composite
+            // 
+            this.fk_step_composite.DataPropertyName = "fk_step_composite";
+            this.fk_step_composite.HeaderText = "fk_step_composite";
+            this.fk_step_composite.Name = "fk_step_composite";
+            this.fk_step_composite.ReadOnly = true;
+            this.fk_step_composite.Visible = false;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Step Name";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // StepLeafStepComposite
             // 
             this.StepLeafStepComposite.DataMember = "dtStepComposite_dtStepLeaf";
@@ -218,6 +255,19 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Steps";
+            // 
+            // crudOptionsStep
+            // 
+            this.crudOptionsStep.ButtonRefreshVisible = false;
+            this.crudOptionsStep.LayoutLeftToRight = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.crudOptionsStep.Location = new System.Drawing.Point(111, 12);
+            this.crudOptionsStep.MinimumSize = new System.Drawing.Size(37, 37);
+            this.crudOptionsStep.Name = "crudOptionsStep";
+            this.crudOptionsStep.Size = new System.Drawing.Size(118, 41);
+            this.crudOptionsStep.TabIndex = 0;
+            this.crudOptionsStep.AddClickHandler += new System.EventHandler(this.crudOptionsStep_AddClickHandler);
+            this.crudOptionsStep.DeleteClickHandler += new System.EventHandler(this.crudOptionsStep_DeleteClickHandler);
+            this.crudOptionsStep.ModifyClickHandler += new System.EventHandler(this.crudOptionsStep_ModifyClickHandler);
             // 
             // taStepComposite
             // 
@@ -252,16 +302,43 @@
             this.dataGridView3.Size = new System.Drawing.Size(199, 341);
             this.dataGridView3.TabIndex = 0;
             // 
+            // pkidDataGridViewTextBoxColumn3
+            // 
+            this.pkidDataGridViewTextBoxColumn3.DataPropertyName = "pk_id";
+            this.pkidDataGridViewTextBoxColumn3.HeaderText = "ID";
+            this.pkidDataGridViewTextBoxColumn3.Name = "pkidDataGridViewTextBoxColumn3";
+            this.pkidDataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // fkmoduletypeDataGridViewTextBoxColumn
+            // 
+            this.fkmoduletypeDataGridViewTextBoxColumn.DataPropertyName = "fk_module_type";
+            this.fkmoduletypeDataGridViewTextBoxColumn.HeaderText = "Module Type";
+            this.fkmoduletypeDataGridViewTextBoxColumn.Name = "fkmoduletypeDataGridViewTextBoxColumn";
+            this.fkmoduletypeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.crudOptionsActionType);
             this.groupBox4.Controls.Add(this.dataGridView4);
             this.groupBox4.Location = new System.Drawing.Point(684, 7);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(251, 366);
+            this.groupBox4.Size = new System.Drawing.Size(610, 366);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Action Value";
+            // 
+            // crudOptionsActionType
+            // 
+            this.crudOptionsActionType.ButtonRefreshVisible = false;
+            this.crudOptionsActionType.LayoutLeftToRight = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.crudOptionsActionType.Location = new System.Drawing.Point(111, 12);
+            this.crudOptionsActionType.MinimumSize = new System.Drawing.Size(37, 37);
+            this.crudOptionsActionType.Name = "crudOptionsActionType";
+            this.crudOptionsActionType.Size = new System.Drawing.Size(118, 41);
+            this.crudOptionsActionType.TabIndex = 0;
+            this.crudOptionsActionType.AddClickHandler += new System.EventHandler(this.crudOptionsAction_AddClickHandler);
+            this.crudOptionsActionType.DeleteClickHandler += new System.EventHandler(this.crudOptionsAction_DeleteClickHandler);
+            this.crudOptionsActionType.ModifyClickHandler += new System.EventHandler(this.crudOptionsAction_ModifyClickHandler);
             // 
             // dataGridView4
             // 
@@ -285,97 +362,9 @@
             this.dataGridView4.ReadOnly = true;
             this.dataGridView4.RowHeadersVisible = false;
             this.dataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView4.Size = new System.Drawing.Size(225, 297);
+            this.dataGridView4.Size = new System.Drawing.Size(535, 297);
             this.dataGridView4.TabIndex = 0;
             this.dataGridView4.Tag = "Protocol";
-            // 
-            // dtActionTypeBindingSource
-            // 
-            this.dtActionTypeBindingSource.DataMember = "dtActionType";
-            this.dtActionTypeBindingSource.DataSource = this.dsModuleStructureGUI;
-            // 
-            // dtActionValueTypeBindingSource
-            // 
-            this.dtActionValueTypeBindingSource.DataMember = "dtActionValueType";
-            this.dtActionValueTypeBindingSource.DataSource = this.dsModuleStructureGUI;
-            // 
-            // StepLeafActionValue
-            // 
-            this.StepLeafActionValue.DataMember = "dtStepLeaf_dtActionValue";
-            this.StepLeafActionValue.DataSource = this.StepLeafStepComposite;
-            // 
-            // dtActionValueBindingSource
-            // 
-            this.dtActionValueBindingSource.DataMember = "dtActionValue";
-            this.dtActionValueBindingSource.DataSource = this.dsModuleStructureGUI;
-            // 
-            // taModule1
-            // 
-            this.taModule1.ClearBeforeFill = true;
-            // 
-            // taActionValue1
-            // 
-            this.taActionValue1.ClearBeforeFill = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(824, 399);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Play";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // taActionType
-            // 
-            this.taActionType.ClearBeforeFill = true;
-            // 
-            // taActionValueType
-            // 
-            this.taActionValueType.ClearBeforeFill = true;
-            // 
-            // fillByToolStrip
-            // 
-            this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fillByToolStripButton});
-            this.fillByToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.fillByToolStrip.Name = "fillByToolStrip";
-            this.fillByToolStrip.Size = new System.Drawing.Size(935, 25);
-            this.fillByToolStrip.TabIndex = 3;
-            this.fillByToolStrip.Text = "fillByToolStrip";
-            // 
-            // fillByToolStripButton
-            // 
-            this.fillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillByToolStripButton.Name = "fillByToolStripButton";
-            this.fillByToolStripButton.Size = new System.Drawing.Size(39, 22);
-            this.fillByToolStripButton.Text = "FillBy";
-            this.fillByToolStripButton.Visible = false;
-            this.fillByToolStripButton.Click += new System.EventHandler(this.fillByToolStripButton_Click);
-            // 
-            // pkidDataGridViewTextBoxColumn
-            // 
-            this.pkidDataGridViewTextBoxColumn.DataPropertyName = "pk_id";
-            this.pkidDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.pkidDataGridViewTextBoxColumn.Name = "pkidDataGridViewTextBoxColumn";
-            this.pkidDataGridViewTextBoxColumn.ReadOnly = true;
-            this.pkidDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // fk_step_composite
-            // 
-            this.fk_step_composite.DataPropertyName = "fk_step_composite";
-            this.fk_step_composite.HeaderText = "fk_step_composite";
-            this.fk_step_composite.Name = "fk_step_composite";
-            this.fk_step_composite.ReadOnly = true;
-            this.fk_step_composite.Visible = false;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Step Name";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // index
             // 
@@ -419,6 +408,11 @@
             this.fkactiontypeDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.fkactiontypeDataGridViewTextBoxColumn.ValueMember = "pk_id";
             // 
+            // dtActionTypeBindingSource
+            // 
+            this.dtActionTypeBindingSource.DataMember = "dtActionType";
+            this.dtActionTypeBindingSource.DataSource = this.dsModuleStructureGUI;
+            // 
             // fkactionvaluetypeDataGridViewTextBoxColumn
             // 
             this.fkactionvaluetypeDataGridViewTextBoxColumn.DataPropertyName = "fk_action_value_type";
@@ -430,6 +424,11 @@
             this.fkactionvaluetypeDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.fkactionvaluetypeDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.fkactionvaluetypeDataGridViewTextBoxColumn.ValueMember = "pk_id";
+            // 
+            // dtActionValueTypeBindingSource
+            // 
+            this.dtActionValueTypeBindingSource.DataMember = "dtActionValueType";
+            this.dtActionValueTypeBindingSource.DataSource = this.dsModuleStructureGUI;
             // 
             // descriptionDataGridViewTextBoxColumn2
             // 
@@ -446,58 +445,60 @@
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Visible = false;
             // 
-            // pkidDataGridViewTextBoxColumn3
+            // StepLeafActionValue
             // 
-            this.pkidDataGridViewTextBoxColumn3.DataPropertyName = "pk_id";
-            this.pkidDataGridViewTextBoxColumn3.HeaderText = "ID";
-            this.pkidDataGridViewTextBoxColumn3.Name = "pkidDataGridViewTextBoxColumn3";
-            this.pkidDataGridViewTextBoxColumn3.ReadOnly = true;
+            this.StepLeafActionValue.DataMember = "dtStepLeaf_dtActionValue";
+            this.StepLeafActionValue.DataSource = this.StepLeafStepComposite;
             // 
-            // fkmoduletypeDataGridViewTextBoxColumn
+            // dtActionValueBindingSource
             // 
-            this.fkmoduletypeDataGridViewTextBoxColumn.DataPropertyName = "fk_module_type";
-            this.fkmoduletypeDataGridViewTextBoxColumn.HeaderText = "Module Type";
-            this.fkmoduletypeDataGridViewTextBoxColumn.Name = "fkmoduletypeDataGridViewTextBoxColumn";
-            this.fkmoduletypeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dtActionValueBindingSource.DataMember = "dtActionValue";
+            this.dtActionValueBindingSource.DataSource = this.dsModuleStructureGUI;
             // 
-            // crudOptionsActionType
+            // taModule1
             // 
-            this.crudOptionsActionType.ButtonRefreshVisible = false;
-            this.crudOptionsActionType.LayoutLeftToRight = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.crudOptionsActionType.Location = new System.Drawing.Point(111, 12);
-            this.crudOptionsActionType.MinimumSize = new System.Drawing.Size(37, 37);
-            this.crudOptionsActionType.Name = "crudOptionsActionType";
-            this.crudOptionsActionType.Size = new System.Drawing.Size(118, 41);
-            this.crudOptionsActionType.TabIndex = 0;
-            this.crudOptionsActionType.AddClickHandler += new System.EventHandler(this.crudOptionsAction_AddClickHandler);
-            this.crudOptionsActionType.DeleteClickHandler += new System.EventHandler(this.crudOptionsAction_DeleteClickHandler);
-            this.crudOptionsActionType.ModifyClickHandler += new System.EventHandler(this.crudOptionsAction_ModifyClickHandler);
+            this.taModule1.ClearBeforeFill = true;
             // 
-            // crudOptionsStep
+            // taActionValue1
             // 
-            this.crudOptionsStep.ButtonRefreshVisible = false;
-            this.crudOptionsStep.LayoutLeftToRight = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.crudOptionsStep.Location = new System.Drawing.Point(111, 12);
-            this.crudOptionsStep.MinimumSize = new System.Drawing.Size(37, 37);
-            this.crudOptionsStep.Name = "crudOptionsStep";
-            this.crudOptionsStep.Size = new System.Drawing.Size(118, 41);
-            this.crudOptionsStep.TabIndex = 0;
-            this.crudOptionsStep.AddClickHandler += new System.EventHandler(this.crudOptionsStep_AddClickHandler);
-            this.crudOptionsStep.DeleteClickHandler += new System.EventHandler(this.crudOptionsStep_DeleteClickHandler);
-            this.crudOptionsStep.ModifyClickHandler += new System.EventHandler(this.crudOptionsStep_ModifyClickHandler);
+            this.taActionValue1.ClearBeforeFill = true;
             // 
-            // crudOptionsProtocol
+            // button1
             // 
-            this.crudOptionsProtocol.ButtonRefreshVisible = false;
-            this.crudOptionsProtocol.LayoutLeftToRight = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.crudOptionsProtocol.Location = new System.Drawing.Point(84, 16);
-            this.crudOptionsProtocol.MinimumSize = new System.Drawing.Size(37, 37);
-            this.crudOptionsProtocol.Name = "crudOptionsProtocol";
-            this.crudOptionsProtocol.Size = new System.Drawing.Size(121, 37);
-            this.crudOptionsProtocol.TabIndex = 1;
-            this.crudOptionsProtocol.AddClickHandler += new System.EventHandler(this.crudOptionsProto_AddClickHandler);
-            this.crudOptionsProtocol.DeleteClickHandler += new System.EventHandler(this.crudOptionsProto_DeleteClickHandler);
-            this.crudOptionsProtocol.ModifyClickHandler += new System.EventHandler(this.crudOptionsProto_ModifyClickHandler);
+            this.button1.Location = new System.Drawing.Point(824, 399);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Play";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // taActionType
+            // 
+            this.taActionType.ClearBeforeFill = true;
+            // 
+            // taActionValueType
+            // 
+            this.taActionValueType.ClearBeforeFill = true;
+            // 
+            // fillByToolStrip
+            // 
+            this.fillByToolStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fillByToolStripButton});
+            this.fillByToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.fillByToolStrip.Name = "fillByToolStrip";
+            this.fillByToolStrip.Size = new System.Drawing.Size(1200, 25);
+            this.fillByToolStrip.TabIndex = 3;
+            this.fillByToolStrip.Text = "fillByToolStrip";
+            // 
+            // fillByToolStripButton
+            // 
+            this.fillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillByToolStripButton.Name = "fillByToolStripButton";
+            this.fillByToolStripButton.Size = new System.Drawing.Size(39, 22);
+            this.fillByToolStripButton.Text = "FillBy";
+            this.fillByToolStripButton.Visible = false;
+            this.fillByToolStripButton.Click += new System.EventHandler(this.fillByToolStripButton_Click);
             // 
             // optionProtocol
             // 
@@ -510,7 +511,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Name = "optionProtocol";
-            this.Size = new System.Drawing.Size(935, 461);
+            this.Size = new System.Drawing.Size(1200, 461);
             this.Tag = "Protocol";
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();

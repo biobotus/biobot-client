@@ -377,7 +377,7 @@ VALUES (?) RETURNING pk_id, description</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="taStepLeaf" GeneratorDataComponentClassName="taStepLeaf" Name="dtStepLeaf" UserDataComponentName="taStepLeaf">
             <MainSource>
-              <DbSource ConnectionRef="BioBotLocalhostConnectionString (Settings)" DbObjectName="biobot.bbt_step_leaf" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="BioBotLocalhostConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM "biobot"."biobot"."bbt_step_leaf" WHERE (("pk_id" = ?) AND ((? = 1 AND "fk_step_composite" IS NULL) OR ("fk_step_composite" = ?)))</CommandText>
@@ -389,7 +389,7 @@ VALUES (?) RETURNING pk_id, description</CommandText>
                   </DbCommand>
                 </DeleteCommand>
                 <InsertCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>INSERT INTO "biobot"."biobot"."bbt_step_leaf"
              ("description", "fk_step_composite")
 VALUES (?, ?) RETURNING pk_id</CommandText>
@@ -401,7 +401,9 @@ VALUES (?, ?) RETURNING pk_id</CommandText>
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT "pk_id", "description", "fk_step_composite" FROM "biobot"."bbt_step_leaf"</CommandText>
+                    <CommandText>SELECT        pk_id, description, fk_step_composite
+FROM            biobot.bbt_step_leaf
+ORDER BY pk_id</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -501,7 +503,7 @@ VALUES (?, ?, ?) RETURNING pk_id
                   </DbCommand>
                 </DeleteCommand>
                 <InsertCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>INSERT INTO biobot.bbt_action_value
              (fk_step_leaf_id, fk_action_type, fk_action_value_type, description, "index")
 VALUES (?, ?, ?, ?, ?) RETURNING pk_id</CommandText>
@@ -516,9 +518,9 @@ VALUES (?, ?, ?, ?, ?) RETURNING pk_id</CommandText>
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT        pk_id, fk_step_leaf_id, fk_action_type, fk_action_value_type, description, "index"
-FROM            biobot.bbt_action_value
-ORDER BY pk_id, "index"</CommandText>
+                    <CommandText>SELECT pk_id, fk_step_leaf_id, fk_action_type, fk_action_value_type, description, "index"
+FROM   biobot.bbt_action_value
+ORDER BY "index"</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>

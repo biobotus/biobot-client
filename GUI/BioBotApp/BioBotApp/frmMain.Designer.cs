@@ -101,6 +101,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.AllowDrop = true;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
@@ -139,14 +140,14 @@
             // parametersToolStripMenuItem
             // 
             this.parametersToolStripMenuItem.Name = "parametersToolStripMenuItem";
-            this.parametersToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.parametersToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.parametersToolStripMenuItem.Text = "&Options";
             this.parametersToolStripMenuItem.Click += new System.EventHandler(this.parametersToolStripMenuItem_Click);
             // 
             // playToolStripMenuItem
             // 
             this.playToolStripMenuItem.Name = "playToolStripMenuItem";
-            this.playToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.playToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.playToolStripMenuItem.Text = "Play";
             this.playToolStripMenuItem.Click += new System.EventHandler(this.playToolStripMenuItem_Click);
             // 
@@ -188,6 +189,7 @@
             // 
             // ctrlDeck
             // 
+            this.ctrlDeck.AllowDrop = true;
             this.ctrlDeck.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctrlDeck.Location = new System.Drawing.Point(0, 0);
             this.ctrlDeck.Margin = new System.Windows.Forms.Padding(4);
@@ -355,7 +357,7 @@
             this.ctrlProtocolsView.Location = new System.Drawing.Point(0, 0);
             this.ctrlProtocolsView.Margin = new System.Windows.Forms.Padding(4);
             this.ctrlProtocolsView.Name = "ctrlProtocolsView";
-            this.ctrlProtocolsView.Padding = new System.Windows.Forms.Padding(3);
+            this.ctrlProtocolsView.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.ctrlProtocolsView.Size = new System.Drawing.Size(206, 515);
             this.ctrlProtocolsView.TabIndex = 8;
             // 

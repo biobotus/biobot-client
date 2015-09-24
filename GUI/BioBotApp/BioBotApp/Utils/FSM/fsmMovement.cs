@@ -57,7 +57,15 @@ namespace BioBotApp.Utils.FSM
             {
                 //do nothing
                 System.Threading.Thread.Sleep(10);
-                test = serial.ReadLine();
+                try
+                {
+                    test = serial.ReadLine();
+                }
+                catch(Exception e)
+                {
+                    System.Console.WriteLine(e.StackTrace);
+                }
+                
             }
         }
     }
