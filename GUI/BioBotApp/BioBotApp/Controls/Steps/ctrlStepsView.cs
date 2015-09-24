@@ -94,7 +94,7 @@ namespace BioBotApp.Controls.Steps
 
                 foreach (DataSets.dsModuleStructure2.dtStepLeafRow stepLeafRow in row.GetdtStepLeafRows())
                 {
-                    TreeNode stepLeafNode = new StepLeafNode(stepLeafRow);
+                    TreeNode stepLeafNode = new StepLeafNode(stepLeafRow, _dsModuleStructure.dtActionValue);
                     treeNode.Nodes.Add(stepLeafNode);
                 }
             }
@@ -208,7 +208,7 @@ namespace BioBotApp.Controls.Steps
 
                             updateRow(stepLeafRow);
 
-                            treeNode = new StepLeafNode(stepLeafRow);
+                            treeNode = new StepLeafNode(stepLeafRow, _dsModuleStructure.dtActionValue);
 
                             Dictionary<dsModuleStructure2.dtModuleTypeActionTypeRow, ctrlCommand> command = _frmNewStep.getActionValues();
                             foreach(KeyValuePair<dsModuleStructure2.dtModuleTypeActionTypeRow, ctrlCommand> kvp in command)

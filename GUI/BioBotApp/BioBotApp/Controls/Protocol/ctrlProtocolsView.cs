@@ -42,7 +42,7 @@ namespace BioBotApp.Controls.Protocol
             }
             else if (treeNodeStepLeaf != null)
             {
-                targetNode.Nodes.Add(new StepLeafNode(treeNodeStepLeaf.getStepLeaf()));
+                targetNode.Nodes.Add(new StepLeafNode(treeNodeStepLeaf.getStepLeaf(), dsModuleStructure.dtActionValue));
             }
         }
 
@@ -66,7 +66,7 @@ namespace BioBotApp.Controls.Protocol
 
             foreach (DataSets.dsModuleStructure2.dtStepLeafRow stepLeafRow in row.GetdtStepLeafRows())
             {
-                TreeNode stepLeafNode = new StepLeafNode(stepLeafRow);
+                TreeNode stepLeafNode = new StepLeafNode(stepLeafRow, dsModuleStructure.dtActionValue);
                 treeNode.Nodes.Add(stepLeafNode);
             }
         }
@@ -123,12 +123,15 @@ namespace BioBotApp.Controls.Protocol
             {
                 StepLeafNode stepLeafNode = treeNode as StepLeafNode;
 
+                /*
                 DataSets.dsModuleStructure2.dtStepLeafRow stepLeaf = stepLeafNode.getStepLeaf();
                 DataSets.dsModuleStructure2.dtActionValueRow[] actionValueRows = stepLeaf.GetdtActionValueRows();
 
+                */
 
-                foreach (DataSets.dsModuleStructure2.dtActionValueRow actionValueRow in actionValueRows){
-
+                DataSets.dsModuleStructure2.dtActionValueDataTable table = stepLeafNode.getActionValueDataTable();
+                foreach (DataSets.dsModuleStructure2.dtActionValueRow actionValueRow in table)
+                {
                     mainProtocol.executeAction(actionValueRow);
                 }
 
