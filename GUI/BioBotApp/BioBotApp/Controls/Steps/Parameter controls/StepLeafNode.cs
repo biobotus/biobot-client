@@ -8,14 +8,15 @@ using System.Threading.Tasks;
 
 namespace BioBotApp.Controls.Steps.Parameter_controls
 {
-    [Serializable]
+    [Serializable()]
     class StepLeafNode : System.Windows.Forms.TreeNode , ISerializable
     {
-        DataSets.dsModuleStructure2.dtStepLeafRow _stepLeaf;
-        DataSets.dsModuleStructure2TableAdapters.taStepLeaf taStepLeaf ;
-        DataSets.dsModuleStructure2.dtStepLeafDataTable stepLeafDataTable;
-        DataSets.dsModuleStructure2TableAdapters.taActionValue taActionValue;
-        DataSets.dsModuleStructure2.dtActionValueDataTable ActionValueDataValue;
+        private DataSets.dsModuleStructure2.dtStepLeafRow _stepLeaf;
+        private DataSets.dsModuleStructure2TableAdapters.taStepLeaf taStepLeaf ;
+        private DataSets.dsModuleStructure2.dtStepLeafDataTable stepLeafDataTable;
+        private DataSets.dsModuleStructure2TableAdapters.taActionValue taActionValue;
+        private DataSets.dsModuleStructure2.dtActionValueDataTable ActionValueDataValue;
+        public int id { get; set; }
 
         public StepLeafNode(DataSets.dsModuleStructure2.dtStepLeafRow stepLeaf)
         {
@@ -32,7 +33,8 @@ namespace BioBotApp.Controls.Steps.Parameter_controls
             _stepLeaf = stepLeaf;
             this.Text = stepLeaf.description;
             this.BackColor = Color.LightBlue;
-
+            id = stepLeaf.pk_id;
+            this.Tag = stepLeaf.pk_id;
 
         }
 
@@ -43,9 +45,12 @@ namespace BioBotApp.Controls.Steps.Parameter_controls
             ActionValueDataValue = new DataSets.dsModuleStructure2.dtActionValueDataTable();
 
             taStepLeaf = new DataSets.dsModuleStructure2TableAdapters.taStepLeaf();
-            int id = info.GetInt16("StepLeafRowId");
+            if(Tag is int)
+            {
+                id = (int)Tag;
+            }
             taStepLeaf.Select(stepLeafDataTable, id);
-            if (stepLeafDataTable.Rows.Count == 0 || stepLeafDataTable.Rows.Count == 1)
+            if (stepLeafDataTable.Rows.Count != 1)
             {
                 System.Windows.Forms.MessageBox.Show("An error occured while loading Steps !");
             }
@@ -53,10 +58,7 @@ namespace BioBotApp.Controls.Steps.Parameter_controls
 
             taActionValue.SelectById(ActionValueDataValue, id);
         }
-        public void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            info.AddValue("StepLeafRowId", _stepLeaf.pk_id);
-        }
+
         public DataSets.dsModuleStructure2.dtStepLeafRow getStepLeaf()
         {
             return _stepLeaf;

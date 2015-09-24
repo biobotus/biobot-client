@@ -148,12 +148,27 @@ namespace BioBotApp.Controls.Protocol
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            SaveTree(tlvProtocol, "C:/Users/REG/Desktop/protocol.txt");
+            SaveFileDialog dialogue = new SaveFileDialog();
+            dialogue.Filter = "Biobot file (.biobot) | *.biobot";
+            DialogResult result = dialogue.ShowDialog();
+
+            if(result == DialogResult.OK)
+            {
+                SaveTree(tlvProtocol, dialogue.FileName);
+            }
+            
         }
 
         private void LoadButton_Click(object sender, EventArgs e)
         {
-            LoadTree(tlvProtocol, "C:/Users/REG/Desktop/protocol.txt");
+            OpenFileDialog dialogue = new OpenFileDialog();
+            dialogue.Filter = "Biobot file (.biobot) | *.biobot";
+            DialogResult result = dialogue.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                LoadTree(tlvProtocol, dialogue.FileName);
+            }
         }
         public static void SaveTree(TreeView tree, string filename)
         {
