@@ -255,20 +255,20 @@ namespace BioBotApp.Controls.Option.Options
             if (edtMoveValue.Text.Length != 0)
             {
                 Int16 value = Convert.ToInt16(edtMoveValue.Text);
-                z1coor += value;
+                z1coor -= value;
                 move("Z1", z1coor);
             }
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
-            z1coor += 10;
+            z1coor -= 10;
             move("Z1", z1coor);
         }
 
         private void button17_Click(object sender, EventArgs e)
         {
-            z1coor += 1;
+            z1coor -= 1;
             move("Z1", z1coor);
         }
 
@@ -318,13 +318,13 @@ namespace BioBotApp.Controls.Option.Options
 
         private void button32_Click(object sender, EventArgs e)
         {
-            z1coor -= 1;
+            z1coor += 1;
             move("Z1", z1coor);
         }
 
         private void button33_Click(object sender, EventArgs e)
         {
-            z1coor -= 10;
+            z1coor += 10;
             move("Z1", z1coor);
         }
 
@@ -383,6 +383,7 @@ namespace BioBotApp.Controls.Option.Options
         private void move(String axe, double position)
         {
             ComChannelFactory.getGCodeSerial().WriteLine(axe + position);
+            updatePositions();
         }
 
         public void setupGCode(double x, double y, double z1, double z2, double z3)
@@ -427,6 +428,10 @@ namespace BioBotApp.Controls.Option.Options
 
         private void refresh_Click(object sender, EventArgs e)
         {
+            updatePositions();
+        }
+        public void updatePositions()
+        {
             labelX.Text = "X :   " + xcoor;
             labelY.Text = "Y :   " + ycoor;
             labelZ1.Text = "Z1 :   " + z1coor;
@@ -437,26 +442,87 @@ namespace BioBotApp.Controls.Option.Options
         private void btnHomeZ3_Click(object sender, EventArgs e)
         {
             ComChannelFactory.getGCodeSerial().WriteLine("HZ3");
+            z3coor = 0;
+            updatePositions();
         }
 
         private void btnHomeZ2_Click(object sender, EventArgs e)
         {
             ComChannelFactory.getGCodeSerial().WriteLine("HZ2");
+            z2coor = 0;
+            updatePositions();
         }
 
         private void btnHomeZ1_Click(object sender, EventArgs e)
         {
             ComChannelFactory.getGCodeSerial().WriteLine("HZ1");
+            z1coor = 0;
+            updatePositions();
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
             ComChannelFactory.getGCodeSerial().WriteLine("HY");
+            ycoor = 0;
+            updatePositions();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
             ComChannelFactory.getGCodeSerial().WriteLine("HX");
+            xcoor = 0;
+            updatePositions();
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            if (edtMoveValue.Text.Length != 0)
+            {
+                Int16 value = Convert.ToInt16(edtMoveValue.Text);
+                xcoor = value;
+                move("X", xcoor);
+            }
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            if (edtMoveValue.Text.Length != 0)
+            {
+                Int16 value = Convert.ToInt16(edtMoveValue.Text);
+                ycoor = value;
+                move("Y", ycoor);
+            }
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            if (edtMoveValue.Text.Length != 0)
+            {
+                Int16 value = Convert.ToInt16(edtMoveValue.Text);
+                z1coor = value;
+                move("Z1", z1coor);
+            }
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            if (edtMoveValue.Text.Length != 0)
+            {
+                Int16 value = Convert.ToInt16(edtMoveValue.Text);
+                z2coor = value;
+                move("Z2", z2coor);
+            }
+        }
+
+        private void button8_Click_1(object sender, EventArgs e)
+        {
+            if (edtMoveValue.Text.Length != 0)
+            {
+                Int16 value = Convert.ToInt16(edtMoveValue.Text);
+                z3coor = value;
+                move("Z3", z3coor);
+            }
+
         }
     }
 }

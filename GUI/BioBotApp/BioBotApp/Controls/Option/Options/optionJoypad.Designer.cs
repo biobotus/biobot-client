@@ -102,6 +102,11 @@ namespace BioBotApp.Controls.Option.Options
             this.buttonZ1Plus3 = new System.Windows.Forms.Button();
             this.edtMoveValue = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.buttonZ3Plus2 = new System.Windows.Forms.Button();
             this.buttonZ3Minus = new System.Windows.Forms.Button();
             this.buttonZ3Minus3 = new System.Windows.Forms.Button();
@@ -184,6 +189,7 @@ namespace BioBotApp.Controls.Option.Options
             this.buttonYMinus3.Name = "buttonYMinus3";
             this.buttonYMinus3.Size = new System.Drawing.Size(36, 29);
             this.buttonYMinus3.TabIndex = 4;
+            this.buttonYMinus3.Text = "Y";
             this.buttonYMinus3.UseVisualStyleBackColor = true;
             this.buttonYMinus3.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -480,6 +486,7 @@ namespace BioBotApp.Controls.Option.Options
             this.buttonXMinus3.Name = "buttonXMinus3";
             this.buttonXMinus3.Size = new System.Drawing.Size(36, 29);
             this.buttonXMinus3.TabIndex = 9;
+            this.buttonXMinus3.Text = "X";
             this.buttonXMinus3.UseVisualStyleBackColor = true;
             this.buttonXMinus3.Click += new System.EventHandler(this.button10_Click);
             // 
@@ -506,14 +513,79 @@ namespace BioBotApp.Controls.Option.Options
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.button8);
+            this.groupBox3.Controls.Add(this.button7);
+            this.groupBox3.Controls.Add(this.button6);
+            this.groupBox3.Controls.Add(this.button5);
+            this.groupBox3.Controls.Add(this.button3);
             this.groupBox3.Controls.Add(this.edtMoveValue);
-            this.groupBox3.Location = new System.Drawing.Point(243, 232);
+            this.groupBox3.Location = new System.Drawing.Point(177, 230);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(151, 71);
+            this.groupBox3.Size = new System.Drawing.Size(230, 104);
             this.groupBox3.TabIndex = 40;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Valeur de Decalement";
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+            // 
+            // button8
+            // 
+            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button8.Location = new System.Drawing.Point(181, 62);
+            this.button8.Margin = new System.Windows.Forms.Padding(30);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(36, 29);
+            this.button8.TabIndex = 19;
+            this.button8.Text = "Z3";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click_1);
+            // 
+            // button7
+            // 
+            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button7.Location = new System.Drawing.Point(138, 62);
+            this.button7.Margin = new System.Windows.Forms.Padding(30);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(36, 29);
+            this.button7.TabIndex = 18;
+            this.button7.Text = "Z2";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click_1);
+            // 
+            // button6
+            // 
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button6.Location = new System.Drawing.Point(93, 62);
+            this.button6.Margin = new System.Windows.Forms.Padding(30);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(36, 29);
+            this.button6.TabIndex = 17;
+            this.button6.Text = "Z1";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click_1);
+            // 
+            // button5
+            // 
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button5.Location = new System.Drawing.Point(52, 62);
+            this.button5.Margin = new System.Windows.Forms.Padding(30);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(36, 29);
+            this.button5.TabIndex = 16;
+            this.button5.Text = "Y";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.Location = new System.Drawing.Point(12, 62);
+            this.button3.Margin = new System.Windows.Forms.Padding(30);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(36, 29);
+            this.button3.TabIndex = 15;
+            this.button3.Text = "X";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // buttonZ3Plus2
             // 
@@ -880,5 +952,10 @@ namespace BioBotApp.Controls.Option.Options
         private Button btnHomeZ1;
         private Button button1;
         private Button button2;
+        private Button button6;
+        private Button button5;
+        private Button button3;
+        private Button button8;
+        private Button button7;
     }
 }

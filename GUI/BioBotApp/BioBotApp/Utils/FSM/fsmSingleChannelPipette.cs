@@ -29,11 +29,11 @@ namespace BioBotApp.Utils.FSM
         {
             if(row.dtActionTypeRow.pk_id == PIPETTE)
             {
-                SingleChannelPipette.sendInstruction(0x00, Convert.ToInt16(row.description));
+                SingleChannelPipette.sendInstruction(0x01, Convert.ToInt16(row.description));
             }
             else if (row.dtActionTypeRow.pk_id == DISPENSE)
             {
-                SingleChannelPipette.sendInstruction(0x01, Convert.ToInt16(row.description));
+                SingleChannelPipette.sendInstruction(0x00, Convert.ToInt16(row.description));
             }
 
             wait.Reset();

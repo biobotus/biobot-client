@@ -24,16 +24,16 @@ namespace BioBotApp.Utils.FSM
         {
             if (row.dtActionTypeRow.pk_id == PIPETTE)
             {
-                MultiChannelPipette.sendInstruction(0x00, Convert.ToInt16(row.description));
+                MultiChannelPipette.sendInstruction(0x01, row.description);
             }
             else if (row.dtActionTypeRow.pk_id == DISPENSE)
             {
-                MultiChannelPipette.sendInstruction(0x01, Convert.ToInt16(row.description));
+                MultiChannelPipette.sendInstruction(0x00, row.description);
             }
-
-            wait.Reset();
             wait.WaitOne();
+            Int16 delay = Convert.ToInt16(row.description);
 
+            System.Threading.Thread.Sleep(delay/2);
         }
     }
 }

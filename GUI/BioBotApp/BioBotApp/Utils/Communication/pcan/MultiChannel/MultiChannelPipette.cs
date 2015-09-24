@@ -9,13 +9,14 @@ namespace BioBotApp.Utils.Communication.pcan.MultiChannelPipette
 {
     class MultiChannelPipette
     {
-        public static void sendInstruction(byte direction, Int16 volume)
+        public static void sendInstruction(byte direction, String volume)
         {
             TPCANMsg CANMsg = new TPCANMsg();
             CANMsg.DATA = new byte[8];
-
-            CANMsg.DATA[4] = (byte)(volume >> 8);
-            CANMsg.DATA[5] = (byte)(volume);
+            Int16 aaa;
+            Int16.TryParse(volume, out aaa);
+            CANMsg.DATA[4] = (byte)(aaa >> 8);
+            CANMsg.DATA[5] = (byte)(aaa);
             CANMsg.DATA[6] = direction;
             CANMsg.ID = CANDevice.HARDWARE_FILTER_MUTLI_CHANNEL_PIPETTE;
 

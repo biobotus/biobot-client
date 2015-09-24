@@ -137,5 +137,10 @@ namespace BioBotApp.Controls.Protocol
         {
             tlvProtocol.Nodes.Clear();
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            tlvProtocol.Nodes.Remove(tlvProtocol.SelectedNode);
+        }
     }
 }
