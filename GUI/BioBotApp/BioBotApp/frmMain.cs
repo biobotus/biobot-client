@@ -19,12 +19,16 @@ using BioBotApp.Controls.Utils;
 using BioBotApp.Utils.Form;
 using BioBotApp.Controls.Steps;
 using BioBotApp.DataSets;
+using BioBotApp.Utils.Communication.pcan.Dynamixel;
+using BioBotApp.Utils.FSM;
+using BioBotApp.Utils.Communication.pcan.SingleChannelPipette;
 
 namespace BioBotApp
 {
     public partial class frmMain : Form
     {
         AsyncTcpClient _tcpClient;
+        frmOptions option;
         //DataSets.dsModuleStructure.dtActionTypeRow row;
         //DataSets.dsModuleStructure.dtActionTypeDataTable dtActionType;
 
@@ -62,6 +66,7 @@ namespace BioBotApp
             bsModule.CurrentChanged += bsModule_CurrentChanged;
             ctrlSteps.initControl(this.dsModuleStructure, bsModule);
             ctrlTools.initControl(this.dsModuleStructure, bsModule);
+            option = new frmOptions(this.dsModuleStructure);
         }
 
         void bsModule_CurrentChanged(object sender, EventArgs e)
@@ -141,8 +146,43 @@ namespace BioBotApp
 
         private void parametersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmOptions o = new frmOptions(this.dsModuleStructure);
-            o.ShowDialog();
+
+            option.ShowDialog();
+        }
+
+        private void canCommunicationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void playToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            fsmMovement movement = new fsmMovement();
+            foreach (DataSets.dsModuleStructure2.dtActionValueRow row in this.dsModuleStructure.dtActionValue)
+            {
+                if(row.dtStepLeafRow.dtStepCompositeRow.dtModuleRow.dtModuleTypeRow.pk_id == 7)
+                {
+                    movement.move(row);
+                }
+                else if(row.dtStepLeafRow.dtStepCompositeRow.dtModuleRow.dtModuleTypeRow.pk_id == 8)
+                {
+                    fsmSingleChannelPipette.executeAction(row);
+                }
+
+                //fsmPince.executeAction(row);
+            }
+            
+           // SingleChannelPipette.sendInstruction(0x00, '\u0001');
+            
+            /*
+            SingleChannelPipette.sendInstruction(0x01, '\u00ff');
+
+            foreach (DataSets.dsModuleStructure2.dtActionValueRow row in this.dsModuleStructure.dtActionValue)
+            {
+                fsmPince.executeAction(row);
+            }
+            */
         }
     }
 }

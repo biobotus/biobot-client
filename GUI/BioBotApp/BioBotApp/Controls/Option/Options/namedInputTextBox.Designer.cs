@@ -35,33 +35,30 @@
             // edtInputValue
             // 
             this.edtInputValue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.edtInputValue.Location = new System.Drawing.Point(164, 5);
-            this.edtInputValue.Margin = new System.Windows.Forms.Padding(4);
+            this.edtInputValue.Location = new System.Drawing.Point(123, 4);
             this.edtInputValue.Name = "edtInputValue";
-            this.edtInputValue.Size = new System.Drawing.Size(261, 22);
+            this.edtInputValue.Size = new System.Drawing.Size(195, 20);
             this.edtInputValue.TabIndex = 3;
             // 
             // txtInputName
             // 
             this.txtInputName.Dock = System.Windows.Forms.DockStyle.Left;
-            this.txtInputName.Location = new System.Drawing.Point(5, 5);
-            this.txtInputName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.txtInputName.Location = new System.Drawing.Point(4, 4);
             this.txtInputName.Name = "txtInputName";
-            this.txtInputName.Size = new System.Drawing.Size(159, 21);
+            this.txtInputName.Size = new System.Drawing.Size(119, 17);
             this.txtInputName.TabIndex = 2;
             this.txtInputName.Text = "InputName";
             this.txtInputName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // namedInputTextBox
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.edtInputValue);
             this.Controls.Add(this.txtInputName);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "namedInputTextBox";
-            this.Padding = new System.Windows.Forms.Padding(5);
-            this.Size = new System.Drawing.Size(430, 31);
+            this.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Size = new System.Drawing.Size(322, 25);
             this.ResumeLayout(false);
             this.PerformLayout();
 

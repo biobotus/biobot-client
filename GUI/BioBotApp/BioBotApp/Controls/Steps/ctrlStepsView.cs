@@ -11,6 +11,7 @@ using BioBotApp.Controls.Steps;
 using BioBotApp.Controls.Parameter_controls;
 using BioBotApp.Controls.Steps.Parameter_controls;
 using BioBotApp.DataSets;
+using BioBotApp.Controls.Option.Options;
 
 namespace BioBotApp.Controls.Steps
 {
@@ -195,19 +196,6 @@ namespace BioBotApp.Controls.Steps
                     //c.fk
 
                     String headerTitle = moduleRow.pk_id;
-                    DataSets.dsModuleStructure2.dtActionTypeDataTable actionTypeTable =
-                        new DataSets.dsModuleStructure2.dtActionTypeDataTable();
-
-
-
-                    foreach (DataSets.dsModuleStructure2.dtModuleTypeActionTypeRow moduleTypeActionTypeRow in _dsModuleStructure.dtModuleTypeActionType)
-                    {
-                        if (moduleTypeActionTypeRow.fk_module_type_id.Equals(moduleRow.fk_module_type))
-                        {
-                            DataSets.dsModuleStructure2.dtActionTypeRow row = _dsModuleStructure.dtActionType.FindBypk_id(moduleTypeActionTypeRow.fk_action_type_id);
-                            actionTypeTable.LoadDataRow(row.ItemArray, true);
-                        }
-                    }
 
                     _frmNewStep = new frmNewStep(_dsModuleStructure, moduleRow);
 
@@ -230,13 +218,22 @@ namespace BioBotApp.Controls.Steps
                             Dictionary<dsModuleStructure2.dtModuleTypeActionTypeRow, ctrlCommand> command = _frmNewStep.getActionValues();
                             foreach(KeyValuePair<dsModuleStructure2.dtModuleTypeActionTypeRow, ctrlCommand> kvp in command)
                             {
-                                DataSets.dsModuleStructure2.dtActionValueRow actionValue = _dsModuleStructure.dtActionValue.NewdtActionValueRow();
-                                actionValue.fk_action_type = kvp.Key.dtActionTypeRow.pk_id;
-                                actionValue.fk_action_value_type = kvp.Key.dtActionValueTypeRow.pk_id;
-                                actionValue.fk_step_leaf_id = stepLeafRow.pk_id;
-                                actionValue.description = kvp.Value.getValue();
-                                _dsModuleStructure.dtActionValue.AdddtActionValueRow(actionValue);
-                                updateRow(actionValue);
+
+                                Dictionary<dsModuleStructure2.dtActionTypeRow, namedInputTextBox> actionTypeInputBoxDict = kvp.Value.getActionTypesValues();
+
+                                foreach(KeyValuePair<dsModuleStructure2.dtActionTypeRow, namedInputTextBox> kvpActionType in actionTypeInputBoxDict)
+                                {
+                                    if(kvpActionType.Value.getInputTextValue().Length != 0)
+                                    {
+                                        DataSets.dsModuleStructure2.dtActionValueRow actionValue = _dsModuleStructure.dtActionValue.NewdtActionValueRow();
+                                        actionValue.fk_action_type = kvpActionType.Key.pk_id;
+                                        actionValue.fk_action_value_type = kvp.Key.dtActionValueTypeRow.pk_id;
+                                        actionValue.fk_step_leaf_id = stepLeafRow.pk_id;
+                                        actionValue.description = kvpActionType.Value.getInputTextValue();
+                                        _dsModuleStructure.dtActionValue.AdddtActionValueRow(actionValue);
+                                        updateRow(actionValue);
+                                    }
+                                }
                             }
                         }
                     }
@@ -257,7 +254,6 @@ namespace BioBotApp.Controls.Steps
                     tlvSteps.Nodes.Add(treeNode);
                 }
             }
-
         }
 
         public void setSelectedModule(DataSets.dsModuleStructure2.dtModuleTypeRow moduleTypeRow, DataSets.dsModuleStructure2.dtActionTypeDataTable dtActionType)
@@ -342,6 +338,32 @@ namespace BioBotApp.Controls.Steps
                     MessageBoxIcon.Error);
                 _dsModuleStructure.RejectChanges();
             }
+        }
+
+        private void tlvSteps_MouseDown(object sender, MouseEventArgs e)
+        {
+            /*
+            if(tlvSteps.SelectedNode == null)
+            {
+                return;
+            }
+            tlvSteps.DoDragDrop(tlvSteps.SelectedNode, DragDropEffects.Move);
+            */
+        }
+
+        private void tlvSteps_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Move;
+        }
+
+        private void tlvSteps_DragDrop(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Move;
+        }
+
+        private void tlvSteps_ItemDrag(object sender, ItemDragEventArgs e)
+        {
+            DoDragDrop(e.Item, DragDropEffects.Move);
         }
     }
 }

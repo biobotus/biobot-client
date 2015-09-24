@@ -24,8 +24,9 @@ namespace BioBotApp.Controls.Parameter_controls
             InitializeComponent();
         }
 
-        public ctrlModuleParameters(dsModuleStructure2.dtModuleRow moduleRow, 
-            dsModuleStructure2 dsModuleStructure) : this()
+        public ctrlModuleParameters(dsModuleStructure2.dtModuleRow moduleRow,
+            dsModuleStructure2 dsModuleStructure)
+            : this()
         {
             _moduleRow = moduleRow;
             _dsModuleStructure = dsModuleStructure;
@@ -42,22 +43,25 @@ namespace BioBotApp.Controls.Parameter_controls
             dsModuleStructure2.dtModuleTypeActionTypeRow[] moduleTypeActionTypeRows = module.dtModuleTypeRow.GetdtModuleTypeActionTypeRows();
             foreach (dsModuleStructure2.dtModuleTypeActionTypeRow moduleTypeActionTypeRow in moduleTypeActionTypeRows)
             {
-                ctrlCommand command;
+                ctrlCommand command = new ctrlCommand();
 
-                if(actionTypeDict.ContainsKey(moduleTypeActionTypeRow))
+                foreach (KeyValuePair<dsModuleStructure2.dtModuleTypeActionTypeRow, ctrlCommand> kvp in actionTypeDict)
                 {
-                    command = actionTypeDict[moduleTypeActionTypeRow];
+                    if (moduleTypeActionTypeRow.fk_action_value_type_id == kvp.Key.fk_action_value_type_id)
+                    {
+                        command = kvp.Value;
+                    }
                 }
-                else
+
+                if (!command.isInitialized())
                 {
-                    command = new ctrlCommand();
                     command.init(moduleTypeActionTypeRow.dtActionValueTypeRow.description);
                     actionTypeDict.Add(moduleTypeActionTypeRow, command);
                 }
                 command.addCommand(moduleTypeActionTypeRow.dtActionTypeRow);
             }
-            
-            foreach(ctrlCommand commands in actionTypeDict.Values)
+
+            foreach (ctrlCommand commands in actionTypeDict.Values)
             {
                 commands.Dock = DockStyle.Top;
                 layoutMainPanel.Controls.Add(commands);
