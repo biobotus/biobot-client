@@ -3850,6 +3850,7 @@ namespace BioBotApp.DataSets {
                 this.columnpk_id.AllowDBNull = false;
                 this.columnpk_id.Unique = true;
                 this.columndescription.MaxLength = 8190;
+                this.columnindex.AllowDBNull = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5210,7 +5211,7 @@ namespace BioBotApp.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int index {
                 get {
-                    try {
+                    try{
                         return ((int)(this[this.tabledtActionValue.indexColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
