@@ -88,6 +88,10 @@ namespace BioBotApp.Controls.Option
                 setOptionControl(new optionJoypad());
 
             }
+			else if (e.Node.Name.Equals("nodeTACCalibration"))
+            {
+                setOptionControl(new optionTacCalibration(dsModuleStructure, "TAC"));
+            }
             else
             {
                 //  setOptionControl(new optionActionValueType());

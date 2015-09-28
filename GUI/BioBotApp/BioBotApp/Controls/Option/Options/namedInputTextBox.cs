@@ -27,6 +27,7 @@ namespace BioBotApp.Controls.Option.Options
         {
             edtInputValue.Text = inputTextValue;
         }
+
         /// <summary>
         /// Sets the left label text
         /// </summary>
@@ -43,6 +44,15 @@ namespace BioBotApp.Controls.Option.Options
         public String getInputTextValue()
         {
             return edtInputValue.Text;
+        }
+
+        /// <summary>
+        /// Sets the right input textbox value
+        /// </summary>
+        /// <param name="text">The value to be put into the left label text value</param>
+        public void setInputTextValue(string text)
+        {
+            edtInputValue.Text = text;
         }
     }
 }
