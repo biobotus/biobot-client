@@ -34,15 +34,10 @@ namespace BioBotApp.Controls.Protocol
             TreeNode targetNode = tlvProtocol.GetNodeAt(targetPoint);
             TreeNode dropNode = new TreeNode();
             StepCompositeNode treeNodeStepComposite = (StepCompositeNode)e.Data.GetData(typeof(StepCompositeNode));
-            StepLeafNode treeNodeStepLeaf = (StepLeafNode)e.Data.GetData(typeof(StepLeafNode));
-
+        
             if (treeNodeStepComposite != null)
             {
                 addNodes(treeNodeStepComposite.getStepCompositeRow(), targetNode);
-            }
-            else if (treeNodeStepLeaf != null)
-            {
-                targetNode.Nodes.Add(new StepLeafNode(treeNodeStepLeaf.getStepLeaf(), dsModuleStructure.dtActionValue));
             }
         }
 
@@ -62,12 +57,6 @@ namespace BioBotApp.Controls.Protocol
             foreach (DataSets.dsModuleStructure2.dtStepCompositeRow childRows in row.GetdtStepCompositeRows())
             {
                 addNodes(childRows, treeNode);
-            }
-
-            foreach (DataSets.dsModuleStructure2.dtStepLeafRow stepLeafRow in row.GetdtStepLeafRows())
-            {
-                TreeNode stepLeafNode = new StepLeafNode(stepLeafRow, dsModuleStructure.dtActionValue);
-                treeNode.Nodes.Add(stepLeafNode);
             }
         }
 
@@ -118,16 +107,11 @@ namespace BioBotApp.Controls.Protocol
                     executeAction(childNodes);
                 }
             }
-
-            if(treeNode is StepLeafNode)
+/*
+TODO: add algo for the execution of the actionvalues
+            if(treeNode is ActionValue)
             {
                 StepLeafNode stepLeafNode = treeNode as StepLeafNode;
-
-                /*
-                DataSets.dsModuleStructure2.dtStepLeafRow stepLeaf = stepLeafNode.getStepLeaf();
-                DataSets.dsModuleStructure2.dtActionValueRow[] actionValueRows = stepLeaf.GetdtActionValueRows();
-
-                */
 
                 DataSets.dsModuleStructure2.dtActionValueDataTable table = stepLeafNode.getActionValueDataTable();
                 foreach (DataSets.dsModuleStructure2.dtActionValueRow actionValueRow in table)
@@ -137,6 +121,7 @@ namespace BioBotApp.Controls.Protocol
 
                
             }
+            */
         }
 
         private void btnReset_Click(object sender, EventArgs e)

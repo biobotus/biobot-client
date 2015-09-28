@@ -35,7 +35,6 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.taStepComposite = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taStepComposite();
-            this.taStepLeaf = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taStepLeaf();
             this.taActionValue = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taActionValue();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -115,10 +114,6 @@
             // 
             this.taStepComposite.ClearBeforeFill = true;
             // 
-            // taStepLeaf
-            // 
-            this.taStepLeaf.ClearBeforeFill = true;
-            // 
             // taActionValue
             // 
             this.taActionValue.ClearBeforeFill = true;
@@ -149,7 +144,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnDelete;
         private DataSets.dsModuleStructure2TableAdapters.taStepComposite taStepComposite;
-        private DataSets.dsModuleStructure2TableAdapters.taStepLeaf taStepLeaf;
         private DataSets.dsModuleStructure2TableAdapters.taActionValue taActionValue;
 
     }

@@ -7,6 +7,9 @@ namespace BioBotApp.DataSets
 
     public partial class dsModuleStructure2
     {
+        partial class dtActionValueDataTable
+        {
+        }
 
         partial class dtStepCompositeDataTable
         {

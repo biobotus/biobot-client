@@ -183,6 +183,24 @@
     <Compile Include="Controls\Option\Options\optionProtocol.Designer.cs">
       <DependentUpon>optionProtocol.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Option\Options\optionTacCalibration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionTacCalibration.Designer.cs">
+      <DependentUpon>optionTacCalibration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionTacSampleCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optionTacSampleCtrl.Designer.cs">
+      <DependentUpon>optionTacSampleCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optnDBParameters.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Option\Options\optnDBParameters.Designer.cs">
+      <DependentUpon>optnDBParameters.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Steps\Parameter controls\ctrlCommand.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -194,7 +212,6 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\Steps\Parameter controls\StepCompositeNode.cs" />
-    <Compile Include="Controls\Steps\Parameter controls\StepLeafNode.cs" />
     <Compile Include="Controls\Protocol\ctrlProtocolsView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -238,10 +255,8 @@
       <DependentUpon>ctrlTools.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\Tools\ModuleTypeSelectionEventArgs.cs" />
-    <Compile Include="DataSets\dsModuleStructure2.cs">
-      <DependentUpon>dsModuleStructure2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSets\dsModuleStructure21.Designer.cs">
+    <Compile Include="DataSets\dsModuleStructure2.cs" />
+    <Compile Include="DataSets\dsModuleStructure2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsModuleStructure2.xsd</DependentUpon>
@@ -361,6 +376,15 @@
     <EmbeddedResource Include="Controls\Option\Options\optionProtocol.resx">
       <DependentUpon>optionProtocol.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Option\Options\optionTacCalibration.resx">
+      <DependentUpon>optionTacCalibration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Option\Options\optionTacSampleCtrl.resx">
+      <DependentUpon>optionTacSampleCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Option\Options\optnDBParameters.resx">
+      <DependentUpon>optnDBParameters.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\Protocol\ctrlProtocolsView.resx">
       <DependentUpon>ctrlProtocolsView.cs</DependentUpon>
     </EmbeddedResource>
@@ -412,8 +436,8 @@
     </None>
     <None Include="DataSets\dsModuleStructure2.xsd">
       <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsModuleStructure2.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
-      <LastGenOutput>dsModuleStructure21.Designer.cs</LastGenOutput>
     </None>
     <None Include="DataSets\dsModuleStructure2.xss">
       <DependentUpon>dsModuleStructure2.xsd</DependentUpon>

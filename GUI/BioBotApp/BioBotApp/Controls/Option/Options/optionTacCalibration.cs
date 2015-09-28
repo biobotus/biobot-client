@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BioBotApp.Matrix;
 
 namespace BioBotApp.Controls.Option.Options
 {
@@ -95,8 +94,8 @@ namespace BioBotApp.Controls.Option.Options
 
                 opticalDesityValue = opticalDesityValue.Select(d => Math.Log(d)).ToArray();
 
-                Matrix.Matrix res = Matrix.Matrix.PolyFit(tacSample, opticalDesityValue, 3);
-                Console.WriteLine(res);
+                //Matrix.Matrix res = Matrix.Matrix.PolyFit(tacSample, opticalDesityValue, 3);
+                //Console.WriteLine(res);
             }
             else
             {

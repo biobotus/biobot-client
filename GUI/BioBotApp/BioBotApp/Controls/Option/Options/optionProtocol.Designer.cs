@@ -45,7 +45,6 @@
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StepLeafStepComposite = new System.Windows.Forms.BindingSource(this.components);
             this.bs_dtStepLeafBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ta_StepLeaf = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taStepLeaf();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.crudOptionsStep = new BioBotApp.Controls.Utils.crudOptions();
             this.taStepComposite = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taStepComposite();
@@ -241,10 +240,6 @@
             this.bs_dtStepLeafBindingSource.DataSource = this.dsModuleStructureGUI;
             this.bs_dtStepLeafBindingSource.CurrentItemChanged += new System.EventHandler(this.bs_dtStepLeafBindingSource_CurrentChanged);
             // 
-            // ta_StepLeaf
-            // 
-            this.ta_StepLeaf.ClearBeforeFill = true;
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.crudOptionsStep);
@@ -265,9 +260,6 @@
             this.crudOptionsStep.Name = "crudOptionsStep";
             this.crudOptionsStep.Size = new System.Drawing.Size(118, 41);
             this.crudOptionsStep.TabIndex = 0;
-            this.crudOptionsStep.AddClickHandler += new System.EventHandler(this.crudOptionsStep_AddClickHandler);
-            this.crudOptionsStep.DeleteClickHandler += new System.EventHandler(this.crudOptionsStep_DeleteClickHandler);
-            this.crudOptionsStep.ModifyClickHandler += new System.EventHandler(this.crudOptionsStep_ModifyClickHandler);
             // 
             // taStepComposite
             // 
@@ -551,7 +543,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource bs_dtStepLeafBindingSource;
         private DataSets.dsModuleStructure2 dsModuleStructureGUI;
-        private DataSets.dsModuleStructure2TableAdapters.taStepLeaf ta_StepLeaf;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.BindingSource dtStepCompositeBindingSource;
         private System.Windows.Forms.GroupBox groupBox2;

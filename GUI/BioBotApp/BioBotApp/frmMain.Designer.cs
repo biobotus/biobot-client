@@ -74,7 +74,6 @@
             this.taLabwareParameterType = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taLabwareParameterType();
             this.taLabwareTypeLabwareParameterType = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taLabwareTypeLabwareParameterType();
             this.taStepComposite = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taStepComposite();
-            this.taStepLeaf = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taStepLeaf();
             this.taActionValue = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taActionValue();
             ((System.ComponentModel.ISupportInitialize)(this.bsModuleStructure)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtActionTypeBindingSource)).BeginInit();
@@ -442,10 +441,6 @@
             // 
             this.taStepComposite.ClearBeforeFill = true;
             // 
-            // taStepLeaf
-            // 
-            this.taStepLeaf.ClearBeforeFill = true;
-            // 
             // taActionValue
             // 
             this.taActionValue.ClearBeforeFill = true;
@@ -531,7 +526,6 @@
         private DataSets.dsModuleStructure2TableAdapters.taLabwareParameterType taLabwareParameterType;
         private DataSets.dsModuleStructure2TableAdapters.taLabwareTypeLabwareParameterType taLabwareTypeLabwareParameterType;
         private DataSets.dsModuleStructure2TableAdapters.taStepComposite taStepComposite;
-        private DataSets.dsModuleStructure2TableAdapters.taStepLeaf taStepLeaf;
         private DataSets.dsModuleStructure2TableAdapters.taActionValue taActionValue;
         private System.Windows.Forms.ToolStripMenuItem canCommunicationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem playToolStripMenuItem;

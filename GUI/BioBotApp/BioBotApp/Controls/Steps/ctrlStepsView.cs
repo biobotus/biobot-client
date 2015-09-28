@@ -91,12 +91,14 @@ namespace BioBotApp.Controls.Steps
                 {
                     addNodes(childRows, treeNode);
                 }
-
+                /*
+                TODO: add algo to add actionvalues
                 foreach (DataSets.dsModuleStructure2.dtStepLeafRow stepLeafRow in row.GetdtStepLeafRows())
                 {
                     TreeNode stepLeafNode = new StepLeafNode(stepLeafRow, _dsModuleStructure.dtActionValue);
                     treeNode.Nodes.Add(stepLeafNode);
                 }
+                */
             }
         }
 
@@ -199,6 +201,8 @@ namespace BioBotApp.Controls.Steps
                     {
                         if (tlvSteps.SelectedNode is StepCompositeNode)
                         {
+                            /*
+                            TODO: add algo to create the correct actionValue
                             StepCompositeNode stepCompositeNode = tlvSteps.SelectedNode as StepCompositeNode;
                             DataSets.dsModuleStructure2.dtStepLeafRow stepLeafRow = _dsModuleStructure.dtStepLeaf.NewdtStepLeafRow();
                             stepLeafRow.fk_step_composite = stepCompositeNode.getStepCompositeRow().pk_id;
@@ -230,6 +234,7 @@ namespace BioBotApp.Controls.Steps
                                     }
                                 }
                             }
+                            */
                         }
                     }
 
@@ -273,16 +278,19 @@ namespace BioBotApp.Controls.Steps
 
         private void tlvSteps_AfterSelect(object sender, TreeViewEventArgs e)
         {
+            
             if (e.Node is StepCompositeNode)
             {
                 _protocolToolStripItem.Enabled = true;
                 _stepToolStripItem.Enabled = true;
             }
+            /*
             else if (e.Node is StepLeafNode)
             {
                 _protocolToolStripItem.Enabled = false;
                 _stepToolStripItem.Enabled = false;
             }
+            */
             else
             {
                 throw new Exception("Wrong node type in steps treelist !");
@@ -309,21 +317,6 @@ namespace BioBotApp.Controls.Steps
             try
             {
                 taActionValue.Update(updateRow);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Invalid step composite row, try again !",
-                    "Error !",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-                _dsModuleStructure.RejectChanges();
-            }
-        }
-        public void updateRow(DataSets.dsModuleStructure2.dtStepLeafRow updateRow)
-        {
-            try
-            {
-                taStepLeaf.Update(updateRow);
             }
             catch (Exception ex)
             {

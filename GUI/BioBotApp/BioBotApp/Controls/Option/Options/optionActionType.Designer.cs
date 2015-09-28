@@ -39,7 +39,6 @@
             this.crudOptions = new BioBotApp.Controls.Utils.crudOptions();
             this.bs_bbt_action_type = new System.Windows.Forms.BindingSource(this.components);
             this.ta_bbt_action_type = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taActionType();
-            this.taStepLeaf = new BioBotApp.DataSets.dsModuleStructure2TableAdapters.taStepLeaf();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvActionType)).BeginInit();
@@ -140,10 +139,6 @@
             // 
             this.ta_bbt_action_type.ClearBeforeFill = true;
             // 
-            // taStepLeaf
-            // 
-            this.taStepLeaf.ClearBeforeFill = true;
-            // 
             // optionActionType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -176,6 +171,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pkidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource dtStepLeafBindingSource;
-        private DataSets.dsModuleStructure2TableAdapters.taStepLeaf taStepLeaf;
+        
     }
 }

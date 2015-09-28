@@ -32,7 +32,7 @@ namespace BioBotApp.Utils.FSM
 
         public void executeAction(DataSets.dsModuleStructure2.dtActionValueRow action)
         {
-            int moduleTypeId = action.dtStepLeafRow.dtStepCompositeRow.dtModuleRow.dtModuleTypeRow.pk_id;
+            int moduleTypeId = action.dtStepCompositeRow.dtModuleRow.dtModuleTypeRow.pk_id;
             if (moduleTypeId == TOOL_HOLDER)
             {
                 movement.move(action);
