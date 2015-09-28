@@ -32,6 +32,7 @@
             this.dgvTacCalibrationDataView = new System.Windows.Forms.DataGridView();
             this.cmbTacSelector = new System.Windows.Forms.ComboBox();
             this.dsModuleStructure = new BioBotApp.DataSets.dsModuleStructure2();
+            
             this.crudOptions1 = new BioBotApp.Controls.Utils.crudOptions();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTacCalibrationDataView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsModuleStructure)).BeginInit();
@@ -66,11 +67,6 @@
             this.cmbTacSelector.Name = "cmbTacSelector";
             this.cmbTacSelector.Size = new System.Drawing.Size(146, 21);
             this.cmbTacSelector.TabIndex = 3;
-            // 
-            // dsModuleStructure
-            // 
-            this.dsModuleStructure.DataSetName = "dsModuleStructure2";
-            this.dsModuleStructure.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // crudOptions1
             // 
